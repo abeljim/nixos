@@ -39,7 +39,7 @@
     pkgs.devenv
     pkgs.direnv
     pkgs.alacritty
-    
+    pkgs.gh   
     pkgs.neovim
     pkgs.lazygit
     pkgs.ripgrep

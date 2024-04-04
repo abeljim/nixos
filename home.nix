@@ -49,6 +49,7 @@
     pkgs.rustup    
     pkgs.vscode
     pkgs.nerdfonts
+    pkgs.insync 
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -86,7 +87,7 @@
   programs.starship.enableFishIntegration = true;
 
   home.shellAliases = {
-    nupdate = "sudo nix-channel --update";
+    nupdate = "sudo nix-channel --update nixpkgs";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
   };
 

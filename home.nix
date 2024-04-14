@@ -39,6 +39,7 @@
     pkgs.devenv
     pkgs.direnv
     pkgs.alacritty
+    pkgs.alacritty-theme
     pkgs.gh   
     pkgs.neovim
     pkgs.lazygit
@@ -75,6 +76,9 @@
    font.normal.family = "JetBrainsMonoNL Nerd Font";
    font.normal.style = "Regular";
    # window.opacity = 0.9;
+   import = [
+    "~/.config/alacritty/themes/themes/catppuccin_latte.toml"
+   ];
  };
   
   programs.fish = {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -34,6 +34,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.jetbrains.rust-rover
     pkgs.git
     pkgs.webcord
     pkgs.devenv
@@ -50,7 +51,9 @@
     pkgs.rustup    
     pkgs.vscode
     pkgs.nerdfonts
-    pkgs.insync 
+    pkgs.insync
+    inputs.nix-citzen.packages.${pkgs.system}.star-citizen
+    inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

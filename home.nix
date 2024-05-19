@@ -46,6 +46,7 @@
     pkgs.alacritty-theme
     pkgs.gh   
     pkgs.neovim
+    pkgs.lua-language-server
     pkgs.lazygit
     pkgs.ripgrep
     pkgs.fd
@@ -116,7 +117,7 @@
   #  /etc/profiles/per-user/abeljim/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

@@ -15,6 +15,7 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -34,6 +35,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    # pkgs.chromium
+    pkgs.zellij
     pkgs.jetbrains.rust-rover
     pkgs.git
     pkgs.webcord
@@ -51,8 +54,9 @@
     pkgs.rustup    
     pkgs.vscode
     pkgs.nerdfonts
-    pkgs.insync
-    inputs.nix-citzen.packages.${pkgs.system}.star-citizen
+    pkgs.warp-terminal
+    # pkgs.insync
+    inputs.nix-citizen.packages.${pkgs.system}.star-citizen
     inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
   ];
 
@@ -79,9 +83,7 @@
    font.normal.family = "JetBrainsMonoNL Nerd Font";
    font.normal.style = "Regular";
    # window.opacity = 0.9;
-   import = [
-    "~/.config/alacritty/themes/themes/catppuccin_latte.toml"
-   ];
+   import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
  };
   
   programs.fish = {
@@ -94,7 +96,7 @@
   programs.starship.enableFishIntegration = true;
 
   home.shellAliases = {
-    nupdate = "sudo nix-channel --update nixpkgs";
+    nupdate = "sudo nix flake update";    
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
   };
 

@@ -50,7 +50,11 @@
     pkgs.rustup    
     pkgs.vscode
     pkgs.nerdfonts
-    pkgs.insync 
+    pkgs.insync
+    pkgs.zellij
+    pkgs.helix
+    pkgs.unzip
+    # pkgs.arduino
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -79,7 +83,21 @@
    import = [
     "~/.config/alacritty/themes/themes/catppuccin_latte.toml"
    ];
- };
+  };
+
+  programs.helix.enable = true;
+  programs.helix.settings = {
+      theme = "tokyonight";
+      editor = {
+        line-number = "relative";
+        mouse = false;
+        lsp.display-inlay-hints = true;
+      };
+      keys.normal = {
+        space.space = "file_picker";
+        space.q.q = ":qa";
+      };
+  };
   
   programs.fish = {
     enable = true;
@@ -91,7 +109,7 @@
   programs.starship.enableFishIntegration = true;
 
   home.shellAliases = {
-    nupdate = "sudo nix-channel --update nixpkgs";
+    nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
   };
 

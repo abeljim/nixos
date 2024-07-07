@@ -85,7 +85,7 @@
   users.users.abeljim = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout"];
     packages = with pkgs; [
       firefox
       #discord

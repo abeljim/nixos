@@ -26,6 +26,11 @@
     trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
   };
 
+  nix.gc = {
+     automatic = true;
+     dates = "monthly";
+  };
+
   # NixOS configuration for Star Citizen requirements
   boot.kernel.sysctl = {
     "vm.max_map_count" = 16777216;
@@ -74,7 +79,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -99,11 +104,9 @@
     description = "Abel Jimenez";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      #discord
+      firefox-beta
       fish
-      #webcord
-    #  thunderbird
+      xclip
     ];
   };
 
@@ -162,6 +165,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }

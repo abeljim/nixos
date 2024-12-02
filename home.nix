@@ -13,7 +13,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
 
   # The home.packages option allows you to install Nix packages into your
@@ -35,9 +35,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    # pkgs.chromium
+    pkgs.chromium
     pkgs.zellij
-    pkgs.jetbrains.rust-rover
+    # pkgs.jetbrains.rust-rover
     pkgs.git
     pkgs.webcord
     pkgs.devenv
@@ -56,9 +56,17 @@
     pkgs.vscode
     pkgs.nerdfonts
     pkgs.warp-terminal
+    pkgs.filebot
+    pkgs.kicad
     # pkgs.insync
     inputs.nix-citizen.packages.${pkgs.system}.star-citizen
     inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
+    pkgs.gamescope
+    pkgs.darktable
+    # pkgs.unstable.zoom-us
+    pkgs.yt-dlp
+    pkgs.kdePackages.kdenlive
+    pkgs.prismlauncher
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -84,11 +92,16 @@
    font.normal.family = "JetBrainsMonoNL Nerd Font";
    font.normal.style = "Regular";
    # window.opacity = 0.9;
-   import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
+   general.import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
  };
   
   programs.fish = {
     enable = true;
+  };
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
   };
 
   programs.direnv.enableFishIntegration = true;

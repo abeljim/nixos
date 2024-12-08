@@ -9,7 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

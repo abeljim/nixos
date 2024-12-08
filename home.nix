@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "abeljim";
-  home.homeDirectory = "/home/abeljim";
+  home.username = "abelj1";
+  home.homeDirectory = "/home/abelj1";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -35,15 +35,10 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.chromium
     pkgs.zellij
-    # pkgs.jetbrains.rust-rover
     pkgs.git
-    pkgs.webcord
     pkgs.devenv
     pkgs.direnv
-    pkgs.alacritty
-    pkgs.alacritty-theme
     pkgs.gh   
     pkgs.neovim
     pkgs.lua-language-server
@@ -53,20 +48,8 @@
     pkgs.gcc
     pkgs.gnumake
     pkgs.rustup    
-    pkgs.vscode
     pkgs.nerdfonts
-    pkgs.warp-terminal
-    pkgs.filebot
-    pkgs.kicad
-    # pkgs.insync
-    inputs.nix-citizen.packages.${pkgs.system}.star-citizen
-    inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
-    pkgs.gamescope
-    pkgs.darktable
-    # pkgs.unstable.zoom-us
     pkgs.yt-dlp
-    pkgs.kdePackages.kdenlive
-    pkgs.prismlauncher
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -83,18 +66,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
-
-  programs.alacritty.enable = true;
-  programs.alacritty.settings = {
-   window.padding.x = 30;
-   window.padding.y = 30;
-   font.normal.family = "JetBrainsMonoNL Nerd Font";
-   font.normal.style = "Regular";
-   # window.opacity = 0.9;
-   general.import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
- };
-  
+ 
   programs.fish = {
     enable = true;
   };
@@ -102,6 +74,8 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
+    userEmail = "abelj1@uci.edu";
+    userName = "abeljim";
   };
 
   programs.direnv.enableFishIntegration = true;

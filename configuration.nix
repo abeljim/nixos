@@ -18,6 +18,27 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # Add ZFS Support
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.initrd.supportedFilesystems = [ "zfs" ];
+  
+  # For ZFS
+  # https://mynixos.com/nixpkgs/option/networking.hostId
+  networking.hostId = "80ccecb1";
+  boot.zfs.extraPools = [ "scratchdata" "lilboi" "fatboi" ];
+  services.zfs.autoScrub.enable = true;
+  services.samba.enable = true;
+
+  # services.zfs = {
+  #   enable = true;        # Enable ZFS services
+  #   # autoScrub = true;     # Automatically scrub pools periodically
+  #   # autoSnapshot = {
+  #   #   enable = true;      # Enable automatic snapshots
+  #   #   frequency = "weekly"; # Set snapshot frequency (daily/weekly/monthly)
+  #   # };
+  # };
+
+
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   nix.gc = {
@@ -101,6 +122,8 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    linuxKernel.packages.linux_6_6.zfs
+    zfs
   ];
 
   # services.flatpak.enable = true; 

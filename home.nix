@@ -77,9 +77,7 @@
     userEmail = "abelj1@uci.edu";
     userName = "abeljim";
     extraConfig = {
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+      credential.helper = "store";
     };
   };
 

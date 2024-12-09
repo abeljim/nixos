@@ -18,7 +18,15 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Add ZFS Support
+  # enable mdadm
+  boot.swraid.enable = true;
+  boot.swraid.mdadmConf = "MAILADDR abelj1@uci.edu";
+  fileSystems."/mnt/nvme" = {
+    device = "/dev/md127";
+    fsType = "ext4";
+  };
+
+  # Add ZFS Support. Might not needs these two lines
   boot.supportedFilesystems = [ "zfs" ];
   boot.initrd.supportedFilesystems = [ "zfs" ];
   
@@ -27,17 +35,41 @@
   networking.hostId = "80ccecb1";
   boot.zfs.extraPools = [ "scratchdata" "lilboi" "fatboi" ];
   services.zfs.autoScrub.enable = true;
-  services.samba.enable = true;
+  # sudo smbpasswd -a yourusername; to add users.
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+	  settings = {
+	    global = {
+	      "workgroup" = "WORKGROUP";
+	      "server string" = "cowcloud";
+	      "netbios name" = "cowcloud";
+	      "security" = "user";
+	      #"use sendfile" = "yes";
+	      #"max protocol" = "smb2";
+	      # note: localhost is the ipv6 localhost ::1
+	      # "hosts allow" = "192.168.0. 127.0.0.1 localhost";
+	      # "hosts deny" = "0.0.0.0/0";
+	      #"guest account" = "nobody";
+	      #"map to guest" = "bad user";
+	    };
+	    "cloud" = {
+	      "path" = "/fatboi/personal";
+	      "browseable" = "yes";
+	      "read only" = "no";
+	      "guest ok" = "no";
+	      "create mask" = "0644";
+	      "directory mask" = "0755";
+	      #"force user" = "username";
+	      #"force group" = "groupname";
+	    };
+	  };
+  };
 
-  # services.zfs = {
-  #   enable = true;        # Enable ZFS services
-  #   # autoScrub = true;     # Automatically scrub pools periodically
-  #   # autoSnapshot = {
-  #   #   enable = true;      # Enable automatic snapshots
-  #   #   frequency = "weekly"; # Set snapshot frequency (daily/weekly/monthly)
-  #   # };
-  # };
-
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
@@ -73,15 +105,15 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.abelj1 = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       fish
       xclip
@@ -94,12 +126,17 @@
     podman = {
       enable = true;
 
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
     };
+    docker = {
+      enable = true;
+
+    };
+  };
+
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_unprivileged_port_start" = 80;
   };
 
   nix.settings.trusted-users = ["abelj1"];  
@@ -124,6 +161,7 @@
   #  wget
     linuxKernel.packages.linux_6_6.zfs
     zfs
+    podman-compose
   ];
 
   # services.flatpak.enable = true; 

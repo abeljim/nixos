@@ -48,8 +48,8 @@
     pkgs.gcc
     pkgs.gnumake
     pkgs.rustup    
-    pkgs.nerdfonts
     pkgs.yt-dlp
+    pkgs.podman-tui
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

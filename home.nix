@@ -55,6 +55,7 @@
     pkgs.krita
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
+    pkgs.fzf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

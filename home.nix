@@ -54,6 +54,7 @@
     pkgs.zellij
     pkgs.helix
     pkgs.unzip
+    pkgs.krita
     # pkgs.arduino
   ];
 

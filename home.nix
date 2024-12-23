@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -13,7 +13,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -40,7 +40,6 @@
     pkgs.direnv
     pkgs.alacritty
     pkgs.alacritty-theme
-    pkgs.gh   
     pkgs.neovim
     pkgs.lazygit
     pkgs.ripgrep
@@ -50,12 +49,12 @@
     pkgs.rustup    
     pkgs.vscode
     pkgs.nerdfonts
-    pkgs.insync
     pkgs.zellij
     pkgs.helix
     pkgs.unzip
     pkgs.krita
     # pkgs.arduino
+    inputs.zen-browser.packages.x86_64-linux.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -81,9 +80,7 @@
    font.normal.family = "JetBrainsMonoNL Nerd Font";
    font.normal.style = "Regular";
    # window.opacity = 0.9;
-   import = [
-    "~/.config/alacritty/themes/themes/catppuccin_latte.toml"
-   ];
+    general.import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
   };
 
   programs.helix.enable = true;
@@ -102,6 +99,16 @@
   
   programs.fish = {
     enable = true;
+  };
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+    userEmail = "abelj1@uci.edu";
+    userName = "abeljim";
+    extraConfig = {
+      credential.helper = "store";
+    };
   };
 
   programs.direnv.enableFishIntegration = true;
@@ -130,7 +137,7 @@
   #  /etc/profiles/per-user/abeljim/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

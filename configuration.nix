@@ -20,6 +20,11 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
+  nix.gc = {
+    automatic = true;
+    dates = "monthly";
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -49,13 +54,13 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -88,10 +93,8 @@
     extraGroups = [ "networkmanager" "wheel" "dialout"];
     packages = with pkgs; [
       firefox
-      #discord
       fish
-      #webcord
-    #  thunderbird
+      xclip
     ];
   };
 

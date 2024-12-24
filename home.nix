@@ -8,7 +8,7 @@
 
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
-    ./neovim/plugins/lazygit.nix
+    ./neovim/plugins
   ];
 
   # This value determines the Home Manager release that your configuration is

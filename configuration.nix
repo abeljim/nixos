@@ -71,6 +71,12 @@
     openFirewall = true;
   };
 
+  services.nfs.server.enable = true;
+  services.nfs.server.exports = ''
+    /fatboi/content/media  192.168.50.94(ro,nohide,insecure,no_subtree_check)
+
+  '';
+
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   nix.gc = {
@@ -123,12 +129,12 @@
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
   virtualisation = {
-    podman = {
-      enable = true;
-
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
+    # podman = {
+    #   enable = true;
+    #
+    #   # Required for containers under podman-compose to be able to talk to each other.
+    #   defaultNetwork.settings.dns_enabled = true;
+    # };
     docker = {
       enable = true;
 
@@ -158,10 +164,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    wget
     linuxKernel.packages.linux_6_6.zfs
     zfs
-    podman-compose
+    # podman-compose
   ];
 
   # services.flatpak.enable = true; 

@@ -6,6 +6,11 @@
   home.username = "abelj1";
   home.homeDirectory = "/home/abelj1";
 
+  imports = [ 
+    inputs.nixvim.homeManagerModules.nixvim 
+    ./neovim/plugins/lazygit.nix
+  ];
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -40,7 +45,7 @@
     pkgs.devenv
     pkgs.direnv
     pkgs.gh   
-    pkgs.neovim
+    # pkgs.neovim
     pkgs.lua-language-server
     pkgs.lazygit
     pkgs.ripgrep
@@ -50,6 +55,9 @@
     pkgs.rustup    
     pkgs.yt-dlp
     pkgs.podman-tui
+    pkgs.oxker
+    pkgs.intel-gpu-tools
+    pkgs.zenith
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -69,7 +77,25 @@
  
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      
+
+      function cp2
+	    if test (count $argv) -ne 2
+		echo "Usage: cp2 <source> <destination>"
+		return 1
+	    end
+
+	    set source $argv[1]
+	    set destination $argv[2]
+
+	    # Use rsync with progress and resumable options
+	    rsync -ah --progress --partial --inplace $source $destination
+      end
+    '';
   };
+
 
   programs.git = {
     enable = true;
@@ -108,6 +134,30 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+  };
+
+
+  # programs.neovim = {
+  #   enable = true;
+  #   viAlias = true;
+  #   vimAlias = true;
+  #   vimdiffAlias = true;
+  # };
+
+  programs.nixvim = {
+    enable = true;
+
+    colorschemes.tokyonight.enable = true;
+    # plugins.lualine.enable = true;
+
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    luaLoader.enable = true;
+
+    # plugins = [
+    # 	pkgs.vimPlugins.nvim-lspconfig
+    # ];
   };
 
   # Let Home Manager install and manage itself.

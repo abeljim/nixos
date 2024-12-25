@@ -8,7 +8,7 @@
 
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
-    ./neovim/plugins
+    ./neovim
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -155,9 +155,6 @@
     vimAlias = true;
     luaLoader.enable = true;
 
-    # plugins = [
-    # 	pkgs.vimPlugins.nvim-lspconfig
-    # ];
   };
 
   # Let Home Manager install and manage itself.

@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./keymappings.nix
+    ./plugins
+  ];
+
+}

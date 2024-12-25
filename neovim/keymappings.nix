@@ -1,16 +1,19 @@
 {
-  programs.nixvim {
+  programs.nixvim = {
     globals = {
       mapleader = " ";
       maplocalleader = " ";
     };
-  };
 
   keymaps = [
     {
-      action = ":Neotree toggle";
+      action = ":Neotree toggle<CR>";
       key = "<leader>e";
-
+      options = {
+        silent = true;
+	noremap = true;
+	desc = "Toggle Neotree";
+      };
     }
 
 
@@ -24,4 +27,5 @@
       #   };
       # }
   ];
+  };
 }

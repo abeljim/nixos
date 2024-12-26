@@ -6,6 +6,11 @@
   home.username = "abeljim";
   home.homeDirectory = "/home/abeljim";
 
+  imports = [ 
+    inputs.nixvim.homeManagerModules.nixvim 
+    ./neovim
+  ];
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -55,7 +60,7 @@
     pkgs.krita
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
-    pkgs.fzf
+    # pkgs.fzf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -139,6 +144,19 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+  };
+
+  programs.nixvim = {
+    enable = true;
+
+    colorschemes.tokyonight.enable = true;
+    # plugins.lualine.enable = true;
+
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    luaLoader.enable = true;
+
   };
 
   # Let Home Manager install and manage itself.

@@ -4,6 +4,7 @@
     ./lazygit.nix
     ./neotree.nix
     ./whichkey.nix
+    ./telescope.nix
   ];
 
 }

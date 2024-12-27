@@ -45,7 +45,6 @@
     pkgs.direnv
     pkgs.alacritty
     pkgs.alacritty-theme
-    pkgs.neovim
     pkgs.lazygit
     pkgs.ripgrep
     pkgs.fd

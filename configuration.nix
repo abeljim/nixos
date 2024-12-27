@@ -1,15 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -18,17 +20,18 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Gaming cachix 
+  # Gaming cachix
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
     trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
   };
 
   nix.gc = {
-     automatic = true;
-     dates = "monthly";
+    automatic = true;
+    dates = "monthly";
+    options = "--delete-older-than 30d";
   };
 
   # NixOS configuration for Star Citizen requirements
@@ -66,13 +69,13 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -102,7 +105,7 @@
   users.users.abeljim = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox-beta
       fish
@@ -110,16 +113,16 @@
     ];
   };
 
-  nix.settings.trusted-users = ["abeljim"];  
+  nix.settings.trusted-users = ["abeljim"];
 
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   home-manager = {
-	extraSpecialArgs = {inherit inputs; };
-	users = {
-		"abeljim" = import ./home.nix;
-	};
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "abeljim" = import ./home.nix;
+    };
   };
 
   # Allow unfree packages
@@ -128,11 +131,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
-  services.flatpak.enable = true; 
+  services.flatpak.enable = true;
 
   programs.steam = {
     enable = true;
@@ -166,5 +169,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

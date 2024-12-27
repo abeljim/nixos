@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abeljim";
@@ -44,7 +47,7 @@
     pkgs.direnv
     pkgs.alacritty
     pkgs.alacritty-theme
-    pkgs.gh   
+    pkgs.gh
     pkgs.neovim
     pkgs.lua-language-server
     pkgs.lazygit
@@ -52,7 +55,7 @@
     pkgs.fd
     pkgs.gcc
     pkgs.gnumake
-    pkgs.rustup    
+    pkgs.rustup
     pkgs.vscode
     pkgs.nerdfonts
     pkgs.warp-terminal
@@ -67,6 +70,9 @@
     pkgs.yt-dlp
     pkgs.kdePackages.kdenlive
     pkgs.prismlauncher
+    pkgs.erlang
+    pkgs.gleam
+    pkgs.alejandra
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -84,19 +90,29 @@
     # '';
   };
 
-
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
-   window.padding.x = 30;
-   window.padding.y = 30;
-   font.normal.family = "JetBrainsMonoNL Nerd Font";
-   font.normal.style = "Regular";
-   # window.opacity = 0.9;
-   general.import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
- };
-  
+    window.padding.x = 30;
+    window.padding.y = 30;
+    font.normal.family = "JetBrainsMonoNL Nerd Font";
+    font.normal.style = "Regular";
+    # window.opacity = 0.9;
+    general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
+  };
+
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      set -x PATH ~/.cargo/bin/ $PATH
+
+      function kopen
+          set file (find . -type f -name "*.kicad_pro" | head -n 1)
+          if test -n "$file"
+              nohup kicad "$file" >/dev/null 2>&1 &
+          end
+      end
+    '';
   };
 
   programs.git = {
@@ -105,12 +121,12 @@
   };
 
   programs.direnv.enableFishIntegration = true;
-  
+
   programs.starship.enable = true;
   programs.starship.enableFishIntegration = true;
 
   home.shellAliases = {
-    nupdate = "sudo nix flake update";    
+    nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
   };
 

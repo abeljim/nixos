@@ -3,7 +3,6 @@
     rustaceanvim = {
       enable = true;
       settings = {
-
         dap = {
           autoloadConfigurations = true;
         };

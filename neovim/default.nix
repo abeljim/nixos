@@ -6,5 +6,4 @@
     ./lsp/lsp.nix
     ./lsp/rustaceanvim.nix
   ];
-
 }

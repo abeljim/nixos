@@ -9,5 +9,4 @@
     ./lualine.nix
     ./noice.nix
   ];
-
 }

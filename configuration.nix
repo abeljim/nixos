@@ -1,15 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -18,7 +20,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.gc = {
     automatic = true;
@@ -90,7 +92,7 @@
   users.users.abeljim = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = [ "networkmanager" "wheel" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "dialout"];
     packages = with pkgs; [
       firefox
       fish
@@ -98,16 +100,16 @@
     ];
   };
 
-  nix.settings.trusted-users = ["abeljim"];  
+  nix.settings.trusted-users = ["abeljim"];
 
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   home-manager = {
-	extraSpecialArgs = {inherit inputs; };
-	users = {
-		"abeljim" = import ./home.nix;
-	};
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "abeljim" = import ./home.nix;
+    };
   };
 
   # Allow unfree packages
@@ -116,8 +118,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   services.flatpak.enable = true;
@@ -148,5 +150,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

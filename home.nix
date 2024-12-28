@@ -1,13 +1,16 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abeljim";
   home.homeDirectory = "/home/abeljim";
 
-  imports = [ 
-    inputs.nixvim.homeManagerModules.nixvim 
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     ./neovim
   ];
 
@@ -50,7 +53,7 @@
     pkgs.fd
     pkgs.gcc
     pkgs.gnumake
-    pkgs.rustup    
+    pkgs.rustup
     pkgs.vscode
     pkgs.nerdfonts
     pkgs.zellij
@@ -83,31 +86,30 @@
     # '';
   };
 
-
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
-   window.padding.x = 30;
-   window.padding.y = 30;
-   font.normal.family = "JetBrainsMonoNL Nerd Font";
-   font.normal.style = "Regular";
-   # window.opacity = 0.9;
-    general.import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
+    window.padding.x = 30;
+    window.padding.y = 30;
+    font.normal.family = "JetBrainsMonoNL Nerd Font";
+    font.normal.style = "Regular";
+    # window.opacity = 0.9;
+    general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
   };
 
   programs.helix.enable = true;
   programs.helix.settings = {
-      theme = "tokyonight";
-      editor = {
-        line-number = "relative";
-        mouse = false;
-        lsp.display-inlay-hints = true;
-      };
-      keys.normal = {
-        space.space = "file_picker";
-        space.q.q = ":qa";
-      };
+    theme = "tokyonight";
+    editor = {
+      line-number = "relative";
+      mouse = false;
+      lsp.display-inlay-hints = true;
+    };
+    keys.normal = {
+      space.space = "file_picker";
+      space.q.q = ":qa";
+    };
   };
-  
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -121,7 +123,7 @@
           end
       end
     '';
-    };
+  };
 
   programs.git = {
     enable = true;
@@ -134,7 +136,7 @@
   };
 
   programs.direnv.enableFishIntegration = true;
-  
+
   programs.starship.enable = true;
   programs.starship.enableFishIntegration = true;
 
@@ -146,9 +148,8 @@
 
   programs.zoxide = {
     enable = true;
-    enableFishIntegration= true;
+    enableFishIntegration = true;
   };
-
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
@@ -179,7 +180,6 @@
     viAlias = true;
     vimAlias = true;
     luaLoader.enable = true;
-
   };
 
   # Let Home Manager install and manage itself.

@@ -8,43 +8,31 @@
   keymaps = [
 
     {
+      mode = "n";
       action = "<C-w>h";
       key = "<C-h>";
-      options = {
-        silent = true;
-	      remap = true;
-	      desc = "Go to Left Window";
-      };
+      options.desc = "Go to Left Window";
     }
 
     {
+      mode = "n";
       action = "<C-w>j";
       key = "<C-j>";
-      options = {
-        silent = true;
-	      remap = true;
-	      desc = "Go to Lower Window";
-      };
+      options.desc = "Go to Lower Window";
     }
 
     {
+      mode = "n";
       action = "<C-w>k";
       key = "<C-k>";
-      options = {
-        silent = true;
-	      remap = true;
-	      desc = "Go to Upper Window";
-      };
+      options.desc = "Go to Upper Window";
     }
 
     {
+      mode = "n";
       action = "<C-w>l";
       key = "<C-l>";
-      options = {
-        silent = true;
-	      remap = true;
-	      desc = "Go to Right Window";
-      };
+      options.desc = "Go to Right Window";
     }
 
     {
@@ -68,6 +56,7 @@
     }
 
     {
+      mode = "n";
       action = ":Telescope find_files<CR>";
       key = "<leader><leader>";
       options = {
@@ -78,6 +67,7 @@
     }
 
     {
+      mode = "n";
       action = ":LazyGit<CR>";
       key = "<leader>gg";
       options = {
@@ -86,16 +76,6 @@
 	      desc = "LazyGit";
       };
     }
-
-      # {
-      #   action = ":Oil<CR>";
-      #   key = "<leader>o";
-      #   options = {
-      #     silent = true;
-      #     noremap = true;
-      #     desc = "Oil Mapping";
-      #   };
-      # }
   ];
   };
 }

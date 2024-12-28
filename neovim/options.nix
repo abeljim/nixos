@@ -1,11 +1,11 @@
 {
   programs.nixvim = {
-    extraConfigLuaPre = ''
-      vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
-      vim.fn.sign_define("diagnosticsignwarn", { text = " ", texthl = "diagnosticwarn", linehl = "", numhl = "" })
-      vim.fn.sign_define("diagnosticsignhint", { text = "󰌵", texthl = "diagnostichint", linehl = "", numhl = "" })
-      vim.fn.sign_define("diagnosticsigninfo", { text = " ", texthl = "diagnosticinfo", linehl = "", numhl = "" })
-    '';
+    # extraConfigLuaPre = ''
+    #   vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
+    #   vim.fn.sign_define("diagnosticsignwarn", { text = " ", texthl = "diagnosticwarn", linehl = "", numhl = "" })
+    #   vim.fn.sign_define("diagnosticsignhint", { text = "󰌵", texthl = "diagnostichint", linehl = "", numhl = "" })
+    #   vim.fn.sign_define("diagnosticsigninfo", { text = " ", texthl = "diagnosticinfo", linehl = "", numhl = "" })
+    # '';
 
     clipboard = {
       register = "unnamedplus";
@@ -55,6 +55,8 @@
       updatetime = 50; # faster completion (4000ms default)
 
       scrolloff = 8; # Will never have less than 8 characters as you scroll down
+
+      numberwidth=4;
     };
   };
 }

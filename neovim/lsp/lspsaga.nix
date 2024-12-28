@@ -27,8 +27,9 @@
       };
 
       lightbulb = {
-        enable = true;
-        sign = true;
+        enable = false;
+        # enable = true;
+        # sign = true;
       };
 
       rename.keys = {

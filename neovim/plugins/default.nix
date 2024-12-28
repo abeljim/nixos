@@ -5,6 +5,7 @@
     ./neotree.nix
     ./whichkey.nix
     ./telescope.nix
+    ./bufferline.nix
   ];
 
 }

@@ -57,9 +57,15 @@
     pkgs.helix
     pkgs.unzip
     pkgs.krita
+    pkgs.zenith
+    pkgs.kicad
+    pkgs.zoxide
+    pkgs.fzf
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
-    # pkgs.fzf
+    inputs.ghostty.packages.x86_64-linux.default
+    pkgs.typos-lsp
+    pkgs.alejandra
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -104,7 +110,18 @@
   
   programs.fish = {
     enable = true;
-  };
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      set -x PATH ~/.cargo/bin/ $PATH
+
+      function kopen
+          set file (find . -type f -name "*.kicad_pro" | head -n 1)
+          if test -n "$file"
+              nohup kicad "$file" >/dev/null 2>&1 &
+          end
+      end
+    '';
+    };
 
   programs.git = {
     enable = true;
@@ -124,7 +141,14 @@
   home.shellAliases = {
     nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
+    cd = "z";
   };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration= true;
+  };
+
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home

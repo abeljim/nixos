@@ -1,10 +1,12 @@
+let 
+  icons = import ./icons.nix;
+in
 {
-  icons = import ./icons.nix
 
   imports = [
     ./keymappings.nix
     ./options.nix
-    ./plugins
+    ./plugins { inherit icons; }
     ./lsp/lsp.nix
     ./lsp/rustaceanvim.nix
   ];

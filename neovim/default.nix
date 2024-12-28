@@ -12,6 +12,7 @@
     ./options.nix
     ./plugins
     ./lsp/lsp.nix
+    ./lsp/lspsaga.nix
     ./lsp/rustaceanvim.nix
   ];
 }

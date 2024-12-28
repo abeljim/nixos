@@ -1,5 +1,4 @@
-{icons, ...}:
-{
+{...}: {
   imports = [
     ./mini.nix
     ./lazygit.nix

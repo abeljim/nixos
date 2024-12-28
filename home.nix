@@ -170,17 +170,17 @@
     EDITOR = "nvim";
   };
 
-  programs.nixvim = {
-    enable = true;
-
-    colorschemes.tokyonight.enable = true;
-    # plugins.lualine.enable = true;
-
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    luaLoader.enable = true;
-  };
+  # programs.nixvim = {
+  #   enable = true;
+  #
+  #   colorschemes.tokyonight.enable = true;
+  #   # plugins.lualine.enable = true;
+  #
+  #   defaultEditor = true;
+  #   viAlias = true;
+  #   vimAlias = true;
+  #   luaLoader.enable = true;
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

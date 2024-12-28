@@ -1,12 +1,16 @@
-let 
-  icons = import ./icons.nix;
-in
 {
+  programs.nixvim = {
+    enable = true;
+    colorschemes.tokyonight.enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   imports = [
     ./keymappings.nix
     ./options.nix
-    ./plugins { inherit icons; }
+    ./plugins
     ./lsp/lsp.nix
     ./lsp/rustaceanvim.nix
   ];

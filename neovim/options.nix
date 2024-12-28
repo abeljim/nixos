@@ -1,6 +1,5 @@
 {
   programs.nixvim = {
-
     extraConfigLuaPre = ''
       vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
       vim.fn.sign_define("diagnosticsignwarn", { text = " ", texthl = "diagnosticwarn", linehl = "", numhl = "" })
@@ -8,13 +7,12 @@
       vim.fn.sign_define("diagnosticsigninfo", { text = " ", texthl = "diagnosticinfo", linehl = "", numhl = "" })
     '';
 
-
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
     };
 
-    # feature that enhances the way Neovim loads and executes Lua modules, 
+    # feature that enhances the way Neovim loads and executes Lua modules,
     # offering improved performance and flexibility.
     luaLoader.enable = true;
 
@@ -26,7 +24,7 @@
       softtabstop = 2;
       shiftwidth = 2;
       expandtab = true;
-      
+
       smartindent = true;
       wrap = true;
 
@@ -48,7 +46,7 @@
 
       # Enable ignorecase + smartcase for better searching
       ignorecase = true;
-      smartcase = true; # Don't ignore case with capitals   
+      smartcase = true; # Don't ignore case with capitals
 
       # Better colors
       termguicolors = true;

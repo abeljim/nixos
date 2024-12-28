@@ -1,6 +1,7 @@
-{ icons, ... }:
-{
-  plugins.neo-tree = {
+{...}: let
+  icons = import ../icons.nix;
+in {
+  programs.nixvim.plugins.neo-tree = {
     enable = true;
     closeIfLastWindow = true;
     sources = [
@@ -38,7 +39,7 @@
     };
   };
 
-  keymaps = [
+  programs.nixvim.keymaps = [
     {
       mode = "n";
       key = "<leader>e";

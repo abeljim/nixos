@@ -1,6 +1,5 @@
 # { config, ... }:
-{...}:
-let
+{...}: let
   get_bufnrs.__raw = ''
     function()
       local buf_size_limit = 1024 * 1024 -- 1MB size limit
@@ -14,8 +13,7 @@ let
       return valid_bufs
     end
   '';
-in
-{
+in {
   programs.nixvim.plugins = {
     cmp = {
       # enable = !config.plugins.blink-cmp.enable;
@@ -24,26 +22,35 @@ in
 
       settings = {
         mapping = {
-          "<C-b>" = # Lua
+          "<C-b>" =
+            # Lua
             "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = # Lua
+          "<C-f>" =
+            # Lua
             "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = # Lua
+          "<C-Space>" =
+            # Lua
             "cmp.mapping.complete()";
-          "<C-e>" = # Lua
+          "<C-e>" =
+            # Lua
             "cmp.mapping.close()";
-          "<Tab>" = # Lua
+          "<Tab>" =
+            # Lua
             "cmp.mapping(cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}), {'i', 's'})";
-          "<S-Tab>" = # Lua
+          "<S-Tab>" =
+            # Lua
             "cmp.mapping(cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}), {'i', 's'})";
-          "<CR>" = # Lua
+          "<CR>" =
+            # Lua
             "cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace })";
         };
 
-        preselect = # Lua
+        preselect =
+          # Lua
           "cmp.PreselectMode.None";
 
-        snippet.expand = # Lua
+        snippet.expand =
+          # Lua
           "function(args) require('luasnip').lsp_expand(args.body) end";
 
         sources = [
@@ -72,27 +79,27 @@ in
         #   documentation.__raw = ''cmp.config.window.bordered()'';
         # };
 
-        formatting.format = '' 
-            function(entry, item)
-              -- local icons = LazyVim.config.icons.kinds
-              -- if icons[item.kind] then
-              --   item.kind = icons[item.kind] .. item.kind
-              -- end
+        formatting.format = ''
+          function(entry, item)
+            -- local icons = LazyVim.config.icons.kinds
+            -- if icons[item.kind] then
+            --   item.kind = icons[item.kind] .. item.kind
+            -- end
 
-              local widths = {
-                abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
-                menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
-              }
+            local widths = {
+              abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
+              menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+            }
 
-              for key, width in pairs(widths) do
-                if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
-                  item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
-                end
+            for key, width in pairs(widths) do
+              if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+                item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
               end
-
-              return item
             end
-          '';
+
+            return item
+          end
+        '';
       };
     };
   };

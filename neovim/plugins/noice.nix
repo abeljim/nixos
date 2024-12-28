@@ -33,93 +33,104 @@
           };
           view = "mini";
         }
-      ];
+     ];
     };
   };
 
-  programs.nixvim.keymaps = [
-    {
-      mode = "n";
-      action = "lua require('noice').cmd('last')";
-      key = "<leader>snl";
-      options.desc = "Noice Last Message";
-    }
-
-    {
-      mode = "n";
-      action = "lua require('noice').cmd('history')";
-      key = "<leader>snh";
-      options.desc = "Noice History";
-    }
-
-    {
-      mode = "n";
-      action = "lua require('noice').cmd('all')";
-      key = "<leader>sna";
-      options.desc = "Noice All";
-    }
-
-    {
-      mode = "n";
-      action = "lua require('noice').cmd('dismiss')";
-      key = "<leader>snd";
-      options.desc = "Dismiss All";
-    }
-
-    {
-      mode = "n";
-      action = "lua require('noice').cmd('pick')";
-      key = "<leader>snt";
-      options.desc = "Noice Picker (Telescope/FzfLua)";
-    }
-
-    {
-      mode = "c";
-      action = "lua require('noice').redirect(vim.fn.getcmdline())";
-      key = "<S-Enter>";
-      options.desc = "Redirect Cmdline";
-    }
-
-    {
-      mode = "i";
-      action = "lua if not require('noice.lsp').scroll(4) then return '<c-f>' end";
-      key = "<c-f>";
-      options.desc = "Scroll Forward";
-    }
-
-    {
-      mode = "n";
-      action = "lua if not require('noice.lsp').scroll(4) then return '<c-f>' end";
-      key = "<c-f>";
-      options.desc = "Scroll Forward";
-    }
-
-    {
-      mode = "s";
-      action = "lua if not require('noice.lsp').scroll(4) then return '<c-f>' end";
-      key = "<c-f>";
-      options.desc = "Scroll Forward";
-    }
-
-    {
-      mode = "i";
-      action = "lua if not require('noice.lsp').scroll(-4) then return '<c-b>' end";
-      key = "<c-b>";
-      options.desc = "Scroll Backward";
-    }
-
-    {
-      mode = "n";
-      action = "lua if not require('noice.lsp').scroll(-4) then return '<c-b>' end";
-      key = "<c-b>";
-      options.desc = "Scroll Backward";
-    }
-
-    {
-      mode = "s";
-      action = "lua if not require('noice.lsp').scroll(-4) then return '<c-b>' end";
-      key = "<c-b>";
-      options.desc = "Scroll Backward";
-    }
-  ];
+  # programs.nixvim.keymaps = [
+  #
+  #   # {
+  #   #   action = "<leader>sn";
+  #   #   key = "";
+  #   #   options.desc = "+noice";
+  #   # }
+  #
+  #   {
+  #     mode = "n";
+  #     action = ":lua require('noice').cmd('history')<CR>";
+  #     key = "<leader>snl";
+  #     options = {
+  #       silent = true;
+  #       noremap = true;
+  #       desc = "Noice Last Message";
+  #     };
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     action = "lua require('noice').cmd('history')";
+  #     key = "<leader>snh";
+  #     options.desc = "Noice History";
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     action = "lua require('noice').cmd('all')";
+  #     key = "<leader>sna";
+  #     options.desc = "Noice All";
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     action = "lua require('noice').cmd('dismiss')";
+  #     key = "<leader>snd";
+  #     options.desc = "Dismiss All";
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     action = "lua require('noice').cmd('pick')";
+  #     key = "<leader>snt";
+  #     options.desc = "Noice Picker (Telescope/FzfLua)";
+  #   }
+  #
+  #   {
+  #     mode = "c";
+  #     action = "lua require('noice').redirect(vim.fn.getcmdline())";
+  #     key = "<S-Enter>";
+  #     options.desc = "Redirect Cmdline";
+  #   }
+  #
+  #   {
+  #     mode = "i";
+  #     action = "lua if not require('noice.lsp').scroll(4) then return '<c-f>' end";
+  #     key = "<c-f>";
+  #     options.desc = "Scroll Forward";
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     action = "lua if not require('noice.lsp').scroll(4) then return '<c-f>' end";
+  #     key = "<c-f>";
+  #     options.desc = "Scroll Forward";
+  #   }
+  #
+  #   {
+  #     mode = "s";
+  #     action = "lua if not require('noice.lsp').scroll(4) then return '<c-f>' end";
+  #     key = "<c-f>";
+  #     options.desc = "Scroll Forward";
+  #   }
+  #
+  #   {
+  #     mode = "i";
+  #     action = "lua if not require('noice.lsp').scroll(-4) then return '<c-b>' end";
+  #     key = "<c-b>";
+  #     options.desc = "Scroll Backward";
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     action = "lua if not require('noice.lsp').scroll(-4) then return '<c-b>' end";
+  #     key = "<c-b>";
+  #     options.desc = "Scroll Backward";
+  #   }
+  #
+  #   {
+  #     mode = "s";
+  #     action = "lua if not require('noice.lsp').scroll(-4) then return '<c-b>' end";
+  #     key = "<c-b>";
+  #     options.desc = "Scroll Backward";
+  #   }
+  # ];
 }

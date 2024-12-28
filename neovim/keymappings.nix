@@ -37,12 +37,12 @@
     }
 
     {
-      action = ":Lazygit<CR>";
+      action = ":LazyGit<CR>";
       key = "<leader>gg";
       options = {
         silent = true;
 	      noremap = true;
-	      desc = "Lazygit";
+	      desc = "LazyGit";
       };
     }
 

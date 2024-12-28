@@ -6,6 +6,7 @@
     ./whichkey.nix
     ./telescope.nix
     ./bufferline.nix
+    ./lualine.nix
   ];
 
 }

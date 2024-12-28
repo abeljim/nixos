@@ -4,10 +4,11 @@
 
       lsp = {
         enable = true;
+        inlayHints = true;
         servers.typos_lsp.enable = true;
-        servers.rust_analyzer.enable = true;
-        servers.rust_analyzer.installRustc = false;
-        servers.rust_analyzer.installCargo = false;
+        # servers.rust_analyzer.enable = true;
+        # servers.rust_analyzer.installRustc = false;
+        # servers.rust_analyzer.installCargo = false;
         keymaps.lspBuf = {
           "<c-k>" = "signature_help";
           "gi" = "implementation";

@@ -7,6 +7,7 @@
     ./telescope.nix
     ./bufferline.nix
     ./lualine.nix
+    ./noice.nix
   ];
 
 }

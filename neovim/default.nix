@@ -1,4 +1,6 @@
 {
+  icons = import ./icons.nix
+
   imports = [
     ./keymappings.nix
     ./options.nix

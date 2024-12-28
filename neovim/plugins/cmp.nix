@@ -16,7 +16,7 @@ let
   '';
 in
 {
-  plugins = {
+  programs.nixvim.plugins = {
     cmp = {
       # enable = !config.plugins.blink-cmp.enable;
       enable = true;
@@ -54,40 +54,6 @@ in
               inherit get_bufnrs;
             };
           }
-          # {
-          #   name = "nvim_lsp_signature_help";
-          #   priority = 1000;
-          #   option = {
-          #     inherit get_bufnrs;
-          #   };
-          # }
-          # {
-          #   name = "nvim_lsp_document_symbol";
-          #   priority = 1000;
-          #   option = {
-          #     inherit get_bufnrs;
-          #   };
-          # }
-          # {
-          #   name = "treesitter";
-          #   priority = 850;
-          #   option = {
-          #     inherit get_bufnrs;
-          #   };
-          # }
-          # {
-          #   name = "luasnip";
-          #   priority = 750;
-          # }
-          # {
-          #   name = "copilot";
-          #   priority = 600;
-          # }
-          # TODO: figure out infinite recursion when making conditional
-          # {
-          #   name = "codeium";
-          #   priority = 600;
-          # }
           {
             name = "buffer";
             priority = 500;
@@ -99,54 +65,34 @@ in
             name = "path";
             priority = 300;
           }
-          # {
-          #   name = "cmdline";
-          #   priority = 300;
-          # }
-          # {
-          #   name = "spell";
-          #   priority = 300;
-          # }
-          # {
-          #   name = "fish";
-          #   priority = 250;
-          # }
-          # {
-          #   name = "git";
-          #   priority = 250;
-          # }
-          # FIXME: lazy load
-          # {
-          #   name = "neorg";
-          #   priority = 250;
-          # }
-          # {
-          #   name = "npm";
-          #   priority = 250;
-          # }
-          # {
-          #   name = "tmux";
-          #   priority = 250;
-          # }
-          # {
-          #   name = "zsh";
-          #   priority = 250;
-          # }
-          # {
-          #   name = "calc";
-          #   priority = 150;
-          # }
-          # {
-          #   name = "emoji";
-          #   priority = 100;
-          # }
-          # { name = "nixpkgs_maintainers"; }
         ];
 
         # window = {
         #   completion.__raw = ''cmp.config.window.bordered()'';
         #   documentation.__raw = ''cmp.config.window.bordered()'';
         # };
+
+        formatting.format = '' 
+            function(entry, item)
+              -- local icons = LazyVim.config.icons.kinds
+              -- if icons[item.kind] then
+              --   item.kind = icons[item.kind] .. item.kind
+              -- end
+
+              local widths = {
+                abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
+                menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+              }
+
+              for key, width in pairs(widths) do
+                if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+                  item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
+                end
+              end
+
+              return item
+            end
+          '';
       };
     };
   };

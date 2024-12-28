@@ -1,3 +1,4 @@
+{icons, ...}:
 {
   imports = [
     ./mini.nix

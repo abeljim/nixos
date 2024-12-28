@@ -6,6 +6,47 @@
     };
 
   keymaps = [
+
+    {
+      action = "<C-w>h";
+      key = "<C-h>";
+      options = {
+        silent = true;
+	      remap = true;
+	      desc = "Go to Left Window";
+      };
+    }
+
+    {
+      action = "<C-w>j";
+      key = "<C-j>";
+      options = {
+        silent = true;
+	      remap = true;
+	      desc = "Go to Lower Window";
+      };
+    }
+
+    {
+      action = "<C-w>k";
+      key = "<C-k>";
+      options = {
+        silent = true;
+	      remap = true;
+	      desc = "Go to Upper Window";
+      };
+    }
+
+    {
+      action = "<C-w>l";
+      key = "<C-l>";
+      options = {
+        silent = true;
+	      remap = true;
+	      desc = "Go to Right Window";
+      };
+    }
+
     {
       action = ":Neotree toggle<CR>";
       key = "<leader>e";

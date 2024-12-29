@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins = {
     transparent = {
-      enable = false;
+      enable = true;
       # autoLoad = true;
     };
   };

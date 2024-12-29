@@ -101,7 +101,7 @@
   xdg.configFile."ghostty/config".text = ''
     window-padding-x = 20
     window-padding-y = 10
-    theme = tokyonight
+    theme = "Kanagawa Wave"
     font-family = "JetBrainsMonoNL Nerd Font"
     background-opacity = 0.9
   '';

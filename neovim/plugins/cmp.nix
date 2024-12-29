@@ -79,6 +79,10 @@ in {
         #   documentation.__raw = ''cmp.config.window.bordered()'';
         # };
 
+        experimental = {
+          ghost_text = true;
+        };
+
         formatting.format = ''
           function(entry, item)
             -- local icons = LazyVim.config.icons.kinds

@@ -43,7 +43,7 @@
                 discriminantHints.enable = "always";
                 expressionAdjustmentHints.enable = "always";
                 implicitDrops.enable = true;
-                lifetimeElisionHints.enable = "always";
+                # lifetimeElisionHints.enable = "always";
                 rangeExclusiveHints.enable = true;
               };
 

@@ -107,6 +107,7 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
+    backupFileExtension = "backup";
     users = {
       "abeljim" = import ./home.nix;
     };

@@ -56,7 +56,7 @@
 
       scrolloff = 8; # Will never have less than 8 characters as you scroll down
 
-      numberwidth=4;
+      numberwidth = 4;
     };
   };
 }

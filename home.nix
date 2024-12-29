@@ -69,6 +69,15 @@
     inputs.ghostty.packages.x86_64-linux.default
     pkgs.typos-lsp
     pkgs.alejandra
+
+    # Gnome
+    pkgs.gnome-tweaks
+    pkgs.tokyonight-gtk-theme
+    pkgs.papirus-nord
+    pkgs.gnomeExtensions.just-perfection
+    pkgs.gnomeExtensions.media-controls
+    pkgs.gnomeExtensions.open-bar
+    pkgs.gnomeExtensions.pop-shell
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -86,13 +95,21 @@
     # '';
   };
 
+  xdg.configFile."ghostty/config".text = ''
+    window-padding-x = 20
+    window-padding-y = 10
+    theme = tokyonight
+    font-family = "JetBrainsMonoNL Nerd Font"
+    background-opacity = 0.8
+  '';
+
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     window.padding.x = 30;
     window.padding.y = 30;
     font.normal.family = "JetBrainsMonoNL Nerd Font";
     font.normal.style = "Regular";
-    # window.opacity = 0.9;
+    window.opacity = 0.8;
     general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
   };
 
@@ -181,6 +198,19 @@
   #   vimAlias = true;
   #   luaLoader.enable = true;
   # };
+
+  # xdg.configFile."gtk-3.0/settings.ini".text = ''
+  #   [Settings]
+  #   gtk-theme-name=Tokyonight
+  #   gtk-icon-theme-name=Tokyonight-Dark
+  # '';
+  #
+  #
+  # xdg.configFile."gtk-4.0/settings.ini".text = ''
+  #   [Settings]
+  #   gtk-theme-name=Tokyonight
+  #   gtk-icon-theme-name=Tokyonight-Dark
+  # '';
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

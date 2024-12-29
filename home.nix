@@ -62,6 +62,8 @@
     pkgs.krita
     pkgs.zenith
     pkgs.kicad
+    pkgs.btop
+    pkgs.ranger
     pkgs.zoxide
     pkgs.fzf
     # pkgs.arduino
@@ -78,6 +80,7 @@
     pkgs.gnomeExtensions.media-controls
     pkgs.gnomeExtensions.open-bar
     pkgs.gnomeExtensions.pop-shell
+    pkgs.dconf2nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -100,7 +103,7 @@
     window-padding-y = 10
     theme = tokyonight
     font-family = "JetBrainsMonoNL Nerd Font"
-    background-opacity = 0.8
+    background-opacity = 0.9
   '';
 
   programs.alacritty.enable = true;
@@ -109,7 +112,7 @@
     window.padding.y = 30;
     font.normal.family = "JetBrainsMonoNL Nerd Font";
     font.normal.style = "Regular";
-    window.opacity = 0.8;
+    window.opacity = 0.9;
     general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
   };
 

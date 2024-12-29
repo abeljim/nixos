@@ -9,5 +9,6 @@
     ./lualine.nix
     ./noice.nix
     ./cmp.nix
+    ./transparent.nix
   ];
 }

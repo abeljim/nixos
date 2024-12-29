@@ -43,7 +43,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.git
-    pkgs.webcord
+    pkgs.vesktop
     pkgs.devenv
     pkgs.direnv
     pkgs.alacritty
@@ -63,7 +63,7 @@
     pkgs.zenith
     pkgs.kicad
     pkgs.btop
-    pkgs.ranger
+    pkgs.yazi
     pkgs.zoxide
     pkgs.fzf
     # pkgs.arduino
@@ -163,6 +163,8 @@
   home.shellAliases = {
     nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
+    nclean = "sudo nix-env --delete-generations old";
+    ngarbage = "sudo nix-collect-garbage -d";
     cd = "z";
   };
 

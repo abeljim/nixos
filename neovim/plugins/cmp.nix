@@ -42,7 +42,7 @@ in {
             "cmp.mapping(cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}), {'i', 's'})";
           "<CR>" =
             # Lua
-            "cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace })";
+            "cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })";
         };
 
         preselect =

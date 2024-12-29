@@ -10,5 +10,6 @@
     ./noice.nix
     ./cmp.nix
     ./transparent.nix
+    ./luasnip.nix
   ];
 }

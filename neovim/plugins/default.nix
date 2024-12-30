@@ -12,5 +12,6 @@
     ./transparent.nix
     ./luasnip.nix
     ./snacks.nix
+    ./toggleterm.nix
   ];
 }

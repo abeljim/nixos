@@ -74,14 +74,28 @@
 
     # Gnome
     pkgs.gnome-tweaks
-    pkgs.tokyonight-gtk-theme
-    pkgs.papirus-nord
+    pkgs.kanagawa-gtk-theme
+    pkgs.kanagawa-icon-theme
     pkgs.gnomeExtensions.just-perfection
     pkgs.gnomeExtensions.media-controls
     pkgs.gnomeExtensions.open-bar
     pkgs.gnomeExtensions.pop-shell
     pkgs.dconf2nix
+
+    # lsp 
+    pkgs.taplo
+
+    # Programming
+    pkgs.python313
+    pkgs.vscode
   ];
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      myriad-dreamin.tinymist
+    ];
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -135,11 +149,12 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       set -x PATH ~/.cargo/bin/ $PATH
+      set -x PATH ~/Scripts/rekgen/ $PATH
 
       function kopen
           set file (find . -type f -name "*.kicad_pro" | head -n 1)
           if test -n "$file"
-              nohup kicad "$file" >/dev/null 2>&1 &
+              GTK_THEME=Adwaita nohup kicad "$file" >/dev/null 2>&1 &
           end
       end
     '';

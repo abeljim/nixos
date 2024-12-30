@@ -11,5 +11,6 @@
     ./cmp.nix
     ./transparent.nix
     ./luasnip.nix
+    ./snacks.nix
   ];
 }

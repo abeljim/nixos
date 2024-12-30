@@ -34,7 +34,27 @@
           view = "mini";
         }
       ];
+
+      # For transparent
+      # Might not be required anymore
+      mini = {
+        win_options = {
+          winblend = 0;
+        };
+      };
+
+      # # For transparent
+      # views = {
+      #   mini = {
+      #     winhighlight = {};
+      #   };
+      # };
+
     };
+  };
+
+  programs.nixvim.plugins.notify = {
+    backgroundColour = "#000000";
   };
 
   # programs.nixvim.keymaps = [

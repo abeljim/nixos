@@ -66,6 +66,7 @@
     pkgs.yazi
     pkgs.zoxide
     pkgs.fzf
+    pkgs.fastfetch
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
     inputs.ghostty.packages.x86_64-linux.default
@@ -88,6 +89,9 @@
     # Programming
     pkgs.python313
     pkgs.vscode
+
+    # Shell
+    pkgs.nushell
   ];
 
   programs.vscode = {

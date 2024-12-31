@@ -74,6 +74,18 @@ in {
           }
         ];
 
+        window = {
+          completion = {
+            border = "rounded";
+            winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+            scrollbar = false;
+          };
+          documentation = {
+              border = "rounded";
+              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              scrollbar = false;
+          };
+        };
         # window = {
         #   completion.__raw = ''cmp.config.window.bordered()'';
         #   documentation.__raw = ''cmp.config.window.bordered()'';

@@ -39,41 +39,91 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.chromium
-    pkgs.zellij
-    # pkgs.jetbrains.rust-rover
-    pkgs.git
-    pkgs.webcord
-    pkgs.devenv
-    pkgs.direnv
-    pkgs.alacritty
-    pkgs.alacritty-theme
-    pkgs.gh
-    pkgs.neovim
-    pkgs.lua-language-server
-    pkgs.lazygit
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.rustup
-    pkgs.vscode
+    inputs.zen-browser.packages.x86_64-linux.default
     pkgs.nerdfonts
-    pkgs.warp-terminal
-    pkgs.filebot
+
+    # Gnome
+    pkgs.gnome-tweaks
+    pkgs.kanagawa-gtk-theme
+    pkgs.kanagawa-icon-theme
+    pkgs.gnomeExtensions.just-perfection
+    pkgs.gnomeExtensions.media-controls
+    pkgs.gnomeExtensions.open-bar
+    pkgs.gnomeExtensions.pop-shell
+    pkgs.dconf2nix
+    
+    # Electrical
     pkgs.kicad
-    # pkgs.insync
+    
+    # Media Software
+    pkgs.darktable
+    pkgs.kdePackages.kdenlive
+    
+    # Homelab
+    pkgs.yt-dlp
+    pkgs.filebot
+
+    # Game
+    pkgs.prismlauncher
     inputs.nix-citizen.packages.${pkgs.system}.star-citizen
     inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
     pkgs.gamescope
-    pkgs.darktable
-    # pkgs.unstable.zoom-us
-    pkgs.yt-dlp
-    pkgs.kdePackages.kdenlive
-    pkgs.prismlauncher
+    pkgs.vesktop
+
+    # Gnome
+    pkgs.gnome-tweaks
+    pkgs.kanagawa-gtk-theme
+    pkgs.kanagawa-icon-theme
+    pkgs.gnomeExtensions.just-perfection
+    pkgs.gnomeExtensions.media-controls
+    pkgs.gnomeExtensions.open-bar
+    pkgs.gnomeExtensions.pop-shell
+    pkgs.dconf2nix
+
+    # Programming
+    pkgs.devenv
+    pkgs.direnv
+    pkgs.python313
+    pkgs.vscode
     pkgs.erlang
     pkgs.gleam
     pkgs.alejandra
+    pkgs.rustup
+    pkgs.vscode
+    pkgs.git
+    pkgs.gcc
+    pkgs.gnumake
+    
+    # lsp 
+    pkgs.taplo
+    pkgs.lua-language-server
+    pkgs.typos-lsp
+
+    # Shell
+    pkgs.nushell
+    
+    # Cli Tools
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.zellij
+    pkgs.gh
+    pkgs.lazygit
+    pkgs.alacritty
+    pkgs.alacritty-theme
+    inputs.ghostty.packages.x86_64-linux.default
+    pkgs.btop
+    pkgs.yazi
+    pkgs.zoxide
+    pkgs.fzf
+    pkgs.fastfetch
   ];
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      myriad-dreamin.tinymist
+    ];
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -90,13 +140,21 @@
     # '';
   };
 
+  xdg.configFile."ghostty/config".text = ''
+    window-padding-x = 20
+    window-padding-y = 10
+    theme = "Kanagawa Wave"
+    font-family = "JetBrainsMonoNL Nerd Font"
+    background-opacity = 0.9
+  '';
+
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     window.padding.x = 30;
     window.padding.y = 30;
     font.normal.family = "JetBrainsMonoNL Nerd Font";
     font.normal.style = "Regular";
-    # window.opacity = 0.9;
+    window.opacity = 0.9;
     general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
   };
 
@@ -118,6 +176,11 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
+    userEmail = "abelj1@uci.edu";
+    userName = "abeljim";
+    extraConfig = {
+      credential.helper = "store";
+    };
   };
 
   programs.direnv.enableFishIntegration = true;
@@ -128,6 +191,14 @@
   home.shellAliases = {
     nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
+    nclean = "sudo nix-env --delete-generations old";
+    ngarbage = "sudo nix-collect-garbage -d";
+    cd = "z";
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   # Home Manager can also manage your environment variables through

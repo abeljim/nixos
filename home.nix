@@ -83,7 +83,7 @@
     pkgs.gnomeExtensions.pop-shell
     pkgs.dconf2nix
 
-    # lsp 
+    # lsp
     pkgs.taplo
 
     # Programming
@@ -167,7 +167,7 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userEmail = "abelj1@uci.edu";
+    userEmail = "abel.jimenez@rekovar.com";
     userName = "abeljim";
     extraConfig = {
       credential.helper = "store";

@@ -75,7 +75,7 @@
           desc = "LazyGit";
         };
       }
-      
+
       {
         mode = "n";
         action = "<cmd>ToggleTerm direction=float<CR>";
@@ -86,7 +86,7 @@
           desc = "Open Terminal";
         };
       }
-      
+
       {
         mode = "t";
         action = "<cmd>close<CR>";
@@ -97,7 +97,7 @@
           desc = "Hide Terminal";
         };
       }
-      
+
       {
         mode = "v";
         action = ">gv";
@@ -106,7 +106,7 @@
           noremap = true;
         };
       }
-      
+
       {
         mode = "v";
         action = "<gv";

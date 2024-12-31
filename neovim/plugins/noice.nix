@@ -49,10 +49,9 @@
       #     winhighlight = {};
       #   };
       # };
-
     };
-   
-    # For Transparent 
+
+    # For Transparent
     luaConfig.post = ''
       local search = vim.api.nvim_get_hl_by_name("Search", true)
       vim.api.nvim_set_hl(0, 'TransparentSearch', { fg = search.foreground })

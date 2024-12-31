@@ -58,10 +58,9 @@
         };
       };
     };
-  
+
     crates-nvim = {
       enable = true;
     };
-
   };
 }

@@ -72,6 +72,7 @@
     inputs.ghostty.packages.x86_64-linux.default
     pkgs.typos-lsp
     pkgs.alejandra
+    pkgs.dbeaver-bin
 
     # Gnome
     pkgs.gnome-tweaks
@@ -89,6 +90,7 @@
     # Programming
     pkgs.python313
     pkgs.vscode
+    pkgs.yamlfmt
 
     # Shell
     pkgs.nushell
@@ -159,6 +161,7 @@
           set file (find . -type f -name "*.kicad_pro" | head -n 1)
           if test -n "$file"
               GTK_THEME=Adwaita nohup kicad "$file" >/dev/null 2>&1 &
+              disown
           end
       end
     '';

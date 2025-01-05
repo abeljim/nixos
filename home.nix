@@ -75,6 +75,8 @@
     inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
     pkgs.gamescope
     pkgs.vesktop
+    pkgs.mangohud
+    pkgs.cemu
 
     # Gnome
     pkgs.gnome-tweaks
@@ -85,6 +87,7 @@
     pkgs.gnomeExtensions.open-bar
     pkgs.gnomeExtensions.pop-shell
     pkgs.dconf2nix
+    pkgs.bibata-cursors
 
     # Programming
     pkgs.devenv
@@ -99,6 +102,7 @@
     pkgs.git
     pkgs.gcc
     pkgs.gnumake
+    pkgs.zig
     
     # lsp 
     pkgs.taplo

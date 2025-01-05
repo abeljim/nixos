@@ -8,8 +8,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/abeljim/.config/background";
-      picture-uri-dark = "file:///home/abeljim/.config/background";
+      picture-uri = "file:///home/abeljim/nixos/wallpaper.png";
+      picture-uri-dark = "file:///home/abeljim/nixos/wallpaper.png";
       primary-color = "#3071AE";
       secondary-color = "#000000";
     };
@@ -21,6 +21,7 @@ with lib.hm.gvariant;
       enable-animations = true;
       gtk-theme = "Kanagawa-BL";
       icon-theme = "Kanagawa";
+      cursor-theme = "Bibata-Modern-Ice";
     };
 
     "org/gnome/desktop/screensaver" = {
@@ -33,7 +34,7 @@ with lib.hm.gvariant;
 
     "org/gnome/mutter" = {
       edge-tiling = false;
-      experimental-features = [ "scale-monitor-framebuffer" ];
+      experimental-features = [ "scale-monitor-framebuffer" "variable-refresh-rate" ];
       workspaces-only-on-primary = true;
     };
 

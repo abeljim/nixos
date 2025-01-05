@@ -3,7 +3,7 @@ last-window-maximised=false
 last-window-size=(810, 1311)
 
 [org/gnome/Extensions]
-window-height=779
+window-height=1599
 window-maximized=false
 window-width=1476
 
@@ -16,7 +16,7 @@ window-maximized=false
 window-size=(810, 635)
 
 [org/gnome/control-center]
-last-panel='power'
+last-panel='sound'
 window-state=(1476, 1599, false)
 
 [org/gnome/desktop/app-folders]
@@ -55,14 +55,20 @@ accent-color='red'
 clock-format='12h'
 color-scheme='prefer-dark'
 enable-animations=true
-gtk-theme='Kanagawa-BL'
+gtk-theme='Adwaita'
 icon-theme='Kanagawa'
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-power-panel']
+application-children=['gnome-power-panel', 'org-kicad-kicad', 'org-kicad-eeschema']
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/org-kicad-eeschema]
+application-id='org.kicad.eeschema.desktop'
+
+[org/gnome/desktop/notifications/application/org-kicad-kicad]
+application-id='org.kicad.kicad.desktop'
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
@@ -73,6 +79,15 @@ secondary-color='#000000'
 
 [org/gnome/desktop/session]
 idle-delay=uint32 0
+
+[org/gnome/desktop/wm/keybindings]
+move-to-workspace-left=['<Super>F1']
+move-to-workspace-right=['<Super>F2']
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-last=@as []
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:close'
@@ -116,6 +131,10 @@ initial-size-file-chooser=(890, 550)
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
 
+[org/gnome/settings-daemon/plugins/media-keys]
+help=@as []
+screensaver=['<Super>l']
+
 [org/gnome/settings-daemon/plugins/power]
 power-button-action='nothing'
 power-saver-profile-on-low-battery=true
@@ -124,7 +143,7 @@ sleep-inactive-ac-type='nothing'
 [org/gnome/shell]
 disable-user-extensions=false
 disabled-extensions=['light-style@gnome-shell-extensions.gcampax.github.com', 'rounded-window-corners@fxgn', 'just-perfection-desktop@just-perfection', 'status-icons@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx']
-enabled-extensions=['mediacontrols@cliffniff.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'openbar@neuromorph', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+enabled-extensions=['mediacontrols@cliffniff.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'openbar@neuromorph', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['org.gnome.Geary.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Music.desktop', 'org.gnome.Nautilus.desktop', 'zen.desktop']
 last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='47.2'
@@ -347,13 +366,19 @@ settings-version=uint32 6
 [org/gnome/shell/extensions/user-theme]
 name='Kanagawa-BL'
 
+[org/gnome/shell/keybindings]
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+
 [org/gnome/shell/world-clocks]
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1735491680
+check-timestamp=int64 1736104889
 first-run=false
-flatpak-purge-timestamp=int64 1735493454
+flatpak-purge-timestamp=int64 1735952573
 
 [org/gnome/tweaks]
 show-extensions-notice=false
@@ -368,7 +393,7 @@ location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=157
+sidebar-width=232
 sort-column='name'
 sort-directories-first=false
 sort-order='ascending'

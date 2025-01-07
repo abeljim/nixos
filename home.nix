@@ -89,8 +89,11 @@
 
     # Programming
     pkgs.python313
-    pkgs.vscode
     pkgs.yamlfmt
+
+    # Vscode 
+    pkgs.vscode
+    pkgs.tinymist # For typst
 
     # Shell
     pkgs.nushell

@@ -1,6 +1,6 @@
 [org/gnome/Console]
 last-window-maximised=false
-last-window-size=(810, 1311)
+last-window-size=(2992, 1599)
 
 [org/gnome/Extensions]
 window-height=1599
@@ -59,10 +59,13 @@ gtk-theme='Adwaita'
 icon-theme='Kanagawa'
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-power-panel', 'org-kicad-kicad', 'org-kicad-eeschema']
+application-children=['gnome-power-panel', 'org-kicad-kicad', 'org-kicad-eeschema', 'org-gnome-nautilus']
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [org/gnome/desktop/notifications/application/org-kicad-eeschema]
 application-id='org.kicad.eeschema.desktop'
@@ -145,7 +148,7 @@ disable-user-extensions=false
 disabled-extensions=['light-style@gnome-shell-extensions.gcampax.github.com', 'rounded-window-corners@fxgn', 'just-perfection-desktop@just-perfection', 'status-icons@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx']
 enabled-extensions=['mediacontrols@cliffniff.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'openbar@neuromorph', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com']
 favorite-apps=['org.gnome.Geary.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Music.desktop', 'org.gnome.Nautilus.desktop', 'zen.desktop']
-last-selected-power-profile='performance'
+last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='47.2'
 
 [org/gnome/shell/extensions/blur-my-shell]
@@ -376,9 +379,9 @@ switch-to-application-4=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1736104889
+check-timestamp=int64 1736179212
 first-run=false
-flatpak-purge-timestamp=int64 1735952573
+flatpak-purge-timestamp=int64 1736208083
 
 [org/gnome/tweaks]
 show-extensions-notice=false

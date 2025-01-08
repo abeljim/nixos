@@ -93,7 +93,6 @@
           }
         ];
       };
-
       # For Transparent
       luaConfig.post = ''
         vim.g.transparent_groups = vim.list_extend(

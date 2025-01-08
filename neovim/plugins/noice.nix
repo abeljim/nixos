@@ -37,7 +37,7 @@
 
       # For transparent
       # Might not be required anymore
-      mini = {
+      views.mini = {
         win_options = {
           winblend = 0;
         };

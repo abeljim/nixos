@@ -1,5 +1,5 @@
 {
-  plugins = {
+  programs.nixvim.plugins = {
     conform-nvim = {
       enable = true;
 
@@ -12,7 +12,8 @@
           lsp_format = "fallback";
         };
 
-        format_on_save = # Lua
+        format_on_save =
+          # Lua
           ''
             function(bufnr)
               if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -40,7 +41,8 @@
              end
           '';
 
-        format_after_save = # Lua
+        format_after_save =
+          # Lua
           ''
             function(bufnr)
               if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -69,40 +71,40 @@
             "shellharden"
             "shfmt"
           ];
-          bicep = [ "bicep" ];
-          c = [ "clang_format" ];
-          cmake = [ "cmake-format" ];
-          cpp = [ "clang_format" ];
-          cs = [ "csharpier" ];
-          css = [ "stylelint" ];
-          fish = [ "fish_indent" ];
-          fsharp = [ "fantomas" ];
-          gdscript = [ "gdformat" ];
-          java = [ "google-java-format" ];
+          bicep = ["bicep"];
+          c = ["clang_format"];
+          cmake = ["cmake-format"];
+          cpp = ["clang_format"];
+          cs = ["csharpier"];
+          css = ["stylelint"];
+          fish = ["fish_indent"];
+          fsharp = ["fantomas"];
+          gdscript = ["gdformat"];
+          java = ["google-java-format"];
           javascript = {
             __unkeyed-1 = "biome";
             __unkeyed-2 = "prettierd";
             timeout_ms = 2000;
             stop_after_first = true;
           };
-          json = [ "jq" ];
-          lua = [ "stylua" ];
-          markdown = [ "deno_fmt" ];
-          nix = [ "alejandra" ];
+          json = ["jq"];
+          lua = ["stylua"];
+          markdown = ["deno_fmt"];
+          nix = ["alejandra"];
           python = [
             "isort"
             "ruff"
           ];
-          rust = [ "rustfmt" ];
+          rust = ["rustfmt"];
           sh = [
             "shellcheck"
             "shellharden"
             "shfmt"
           ];
-          sql = [ "sqlfluff" ];
-          swift = [ "swift_format" ];
-          terraform = [ "terraform_fmt" ];
-          toml = [ "taplo" ];
+          sql = ["sqlfluff"];
+          swift = ["swift_format"];
+          terraform = ["terraform_fmt"];
+          toml = ["taplo"];
           typescript = {
             __unkeyed-1 = "biome";
             __unkeyed-2 = "prettierd";
@@ -113,8 +115,8 @@
             "xmlformat"
             "xmllint"
           ];
-          yaml = [ "yamlfmt" ];
-          zig = [ "zigfmt" ];
+          yaml = ["yamlfmt"];
+          zig = ["zigfmt"];
           "_" = [
             "squeeze_blanks"
             "trim_whitespace"
@@ -124,5 +126,4 @@
       };
     };
   };
-
 }

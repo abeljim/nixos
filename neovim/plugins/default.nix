@@ -13,5 +13,6 @@
     ./luasnip.nix
     ./snacks.nix
     ./toggleterm.nix
+    ./tscomments.nix
   ];
 }

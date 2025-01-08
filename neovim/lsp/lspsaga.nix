@@ -4,6 +4,7 @@
       enable = true;
       beacon.enable = true;
       ui.border = "rounded"; # One of none, single, double, rounded, solid, shadow
+      ui.devicon = true;
       hover = {
         openCmd = "!firfox";
         openLink = "gx";

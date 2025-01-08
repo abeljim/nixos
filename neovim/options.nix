@@ -1,10 +1,35 @@
+let 
+  icons = import ./icons.nix;
+in
 {
   programs.nixvim = {
     extraConfigLuaPre = ''
-      vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
-      vim.fn.sign_define("diagnosticsignwarn", { text = " ", texthl = "diagnosticwarn", linehl = "", numhl = "" })
-      vim.fn.sign_define("diagnosticsignhint", { text = "󰌵", texthl = "diagnostichint", linehl = "", numhl = "" })
-      vim.fn.sign_define("diagnosticsigninfo", { text = " ", texthl = "diagnosticinfo", linehl = "", numhl = "" })
+      vim.fn.sign_define(
+        'DiagnosticSignError',
+        { texthl = 'DiagnosticSignError', text = '${icons.diagnostics.BoldError}', numhl = 'DiagnosticSignError' }
+      )
+
+      vim.fn.sign_define(
+        'DiagnosticSignWarn',
+        { texthl = 'DiagnosticSignWarn', text = '${icons.diagnostics.BoldWarning}', numhl = 'DiagnosticSignWarn' }
+      )
+
+      vim.fn.sign_define(
+        'DiagnosticSignHint',
+        { texthl = 'DiagnosticSignHint', text = '${icons.diagnostics.BoldHint}', numhl = 'DiagnosticSignHint' }
+      )
+
+      vim.fn.sign_define(
+        'DiagnosticSignInfo',
+        { texthl = 'DiagnosticSignInfo', text = '${icons.diagnostics.BoldInformation}', numhl = 'DiagnosticSignInfo' }
+      )
+      
+      vim.diagnostic.config({
+        signs = {
+          --support diagnostic severity / diagnostic type name
+          text = { [1] = '${icons.diagnostics.BoldError}', ['WARN'] = '${icons.diagnostics.BoldWarning}', ['HINT'] = '${icons.diagnostics.BoldHint}' },
+        },
+      })
     '';
 
     clipboard = {

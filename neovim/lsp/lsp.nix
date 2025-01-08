@@ -7,7 +7,10 @@
       inlayHints = true;
 
       servers = {
-        typos_lsp.enable = true; # Spelling
+        typos_lsp = {
+          enable = true; # Spelling
+          extraOptions.init_options.diagnosticSeverity = "Hint";
+        };
         taplo.enable = true; # TOML
         zls.enable = true; # Zig
         nil_ls.enable = true; # Nix
@@ -22,7 +25,9 @@
         "<c-k>" = "signature_help";
         "gi" = "implementation";
       };
+
     };
+
     lint.enable = true;
 
     treesitter = {

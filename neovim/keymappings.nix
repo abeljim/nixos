@@ -115,6 +115,24 @@
           noremap = true;
         };
       }
+      
+      {
+        mode = "n";
+        action = ''"_d'';
+        key = "d";
+        options = {
+          noremap = true;
+        };
+      }
+      
+      {
+        mode = "v";
+        action = ''"_d'';
+        key = "d";
+        options = {
+          noremap = true;
+        };
+      }
     ];
   };
 }

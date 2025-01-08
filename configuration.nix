@@ -40,6 +40,11 @@
     options = "--delete-older-than 30d";
   };
 
+  fileSystems."/mnt/fatboi" = {
+    device = "192.168.50.221:/fatboi";
+    fsType = "nfs";
+  };
+
   # NixOS configuration for Star Citizen requirements
   boot.kernel.sysctl = {
     "vm.max_map_count" = 16777216;
@@ -116,10 +121,18 @@
       firefox
       fish
       xclip
+      nix-index
     ];
   };
 
   nix.settings.trusted-users = ["abeljim"];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [
+    pkgs.openssl
+    pkgs.curl 
+    pkgs.swt
+  ];
 
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;

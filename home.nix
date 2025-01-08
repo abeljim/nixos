@@ -18,13 +18,13 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
-  
+
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./neovim
     ./dconf.nix
   ];
-  
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -57,14 +57,14 @@
     pkgs.gnomeExtensions.open-bar
     pkgs.gnomeExtensions.pop-shell
     pkgs.dconf2nix
-    
+
     # Electrical
     pkgs.kicad
-    
+
     # Media Software
     pkgs.darktable
     pkgs.kdePackages.kdenlive
-    
+
     # Homelab
     pkgs.yt-dlp
     pkgs.filebot
@@ -103,15 +103,15 @@
     pkgs.gcc
     pkgs.gnumake
     pkgs.zig
-    
-    # lsp 
+
+    # lsp
     pkgs.taplo
     pkgs.lua-language-server
     pkgs.typos-lsp
 
     # Shell
     pkgs.nushell
-    
+
     # Cli Tools
     pkgs.ripgrep
     pkgs.fd

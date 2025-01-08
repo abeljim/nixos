@@ -1,7 +1,6 @@
-let 
+let
   icons = import ./icons.nix;
-in
-{
+in {
   programs.nixvim = {
     extraConfigLuaPre = ''
       vim.fn.sign_define(
@@ -23,13 +22,19 @@ in
         'DiagnosticSignInfo',
         { texthl = 'DiagnosticSignInfo', text = '${icons.diagnostics.BoldInformation}', numhl = 'DiagnosticSignInfo' }
       )
-      
+
       vim.diagnostic.config({
         signs = {
           --support diagnostic severity / diagnostic type name
           text = { [1] = '${icons.diagnostics.BoldError}', ['WARN'] = '${icons.diagnostics.BoldWarning}', ['HINT'] = '${icons.diagnostics.BoldHint}' },
         },
       })
+
+    '';
+
+    extraConfigLuaPost = ''
+      -- Fix todo color set to lotus yellow 4
+      vim.api.nvim_set_hl(0, "Todo", { fg = "#f9d791" })
     '';
 
     clipboard = {

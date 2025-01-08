@@ -25,7 +25,6 @@
         "<c-k>" = "signature_help";
         "gi" = "implementation";
       };
-
     };
 
     lint.enable = true;

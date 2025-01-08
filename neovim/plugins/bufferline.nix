@@ -91,7 +91,7 @@
             highlight = "Directory";
             text_align = "left";
           }
-        ]; 
+        ];
       };
       # For Transparent
       luaConfig.post = ''

@@ -81,9 +81,9 @@ in {
             scrollbar = false;
           };
           documentation = {
-              border = "rounded";
-              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
-              scrollbar = false;
+            border = "rounded";
+            winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+            scrollbar = false;
           };
         };
         # window = {

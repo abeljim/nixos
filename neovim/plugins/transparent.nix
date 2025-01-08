@@ -4,7 +4,7 @@
       enable = true;
       # autoLoad = true;
       settings = {
-        exclude_groups = [ ];
+        exclude_groups = [];
         # :Telescope highlights
         # To find the groups
         extra_groups = [

@@ -15,5 +15,6 @@
     ./toggleterm.nix
     ./tscomments.nix
     ./yazi.nix
+    ./conform.nix
   ];
 }

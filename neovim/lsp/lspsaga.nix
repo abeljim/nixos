@@ -10,7 +10,7 @@
         openLink = "gx";
       };
       symbolInWinbar = {
-        enable = true; # Breadcrumbs
+        enable = false; # Breadcrumbs
         showFile = false;
       };
 

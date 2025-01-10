@@ -12,6 +12,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./neovim
+    ./zsh
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -91,12 +92,15 @@
     pkgs.python313
     pkgs.yamlfmt
 
-    # Vscode 
+    # Vscode
     pkgs.vscode
     pkgs.tinymist # For typst
 
     # Shell
     pkgs.nushell
+
+    # Other
+    pkgs.remmina
   ];
 
   programs.vscode = {

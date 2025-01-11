@@ -92,7 +92,7 @@
           markdown = ["deno_fmt"];
           nix = ["alejandra"];
           python = [
-            "isort"
+            # "isort"
             "ruff"
           ];
           rust = ["rustfmt"];

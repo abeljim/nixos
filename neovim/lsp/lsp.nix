@@ -19,6 +19,10 @@
           enable = true;
           package = null;
         };
+
+        ruff = {
+          enable = true;
+        };
       };
 
       keymaps.lspBuf = {

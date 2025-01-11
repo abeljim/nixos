@@ -105,7 +105,7 @@
 
   programs.fish.enable = true;
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

@@ -185,9 +185,14 @@
   };
 
   programs.direnv.enableFishIntegration = true;
+  # This doesnt seem to be working?
+  programs.direnv.enableZshIntegration = true;
 
-  programs.starship.enable = true;
-  programs.starship.enableFishIntegration = true;
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+  };
 
   home.shellAliases = {
     nupdate = "sudo nix flake update";
@@ -200,6 +205,7 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   # Home Manager can also manage your environment variables through

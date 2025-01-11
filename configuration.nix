@@ -96,6 +96,7 @@
     packages = with pkgs; [
       firefox
       fish
+      zsh
       xclip
     ];
   };
@@ -103,7 +104,8 @@
   nix.settings.trusted-users = ["abeljim"];
 
   programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

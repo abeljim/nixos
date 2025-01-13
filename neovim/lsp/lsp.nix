@@ -20,8 +20,21 @@
           package = null;
         };
 
+        # Python Linter
         ruff = {
           enable = true;
+          package = null;
+        };
+
+        # Python Static Type Checker
+        basedpyright = {
+          enable = true;
+          package = null;
+        };
+
+        clangd = {
+          enable = true;
+          package = null;
         };
       };
 

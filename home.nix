@@ -101,6 +101,10 @@
 
     # Other
     pkgs.remmina
+
+    # Development
+    pkgs.ffmpeg
+    pkgs.v4l-utils
   ];
 
   programs.vscode = {

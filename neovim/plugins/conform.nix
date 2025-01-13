@@ -72,14 +72,15 @@
             "shfmt"
           ];
           bicep = ["bicep"];
-          c = ["clang_format"];
-          cmake = ["cmake-format"];
-          cpp = ["clang_format"];
+          c = ["clang-format"];
+          cmake = ["cmake_format"];
+          cpp = ["clang-format"];
           cs = ["csharpier"];
           css = ["stylelint"];
           fish = ["fish_indent"];
           fsharp = ["fantomas"];
           gdscript = ["gdformat"];
+          gleam = ["gleam"];
           java = ["google-java-format"];
           javascript = {
             __unkeyed-1 = "biome";
@@ -92,8 +93,8 @@
           markdown = ["deno_fmt"];
           nix = ["alejandra"];
           python = [
-            # "isort"
-            "ruff"
+            "isort"
+            "ruff_format"
           ];
           rust = ["rustfmt"];
           sh = [

@@ -43,6 +43,7 @@
   fileSystems."/mnt/fatboi" = {
     device = "192.168.50.221:/fatboi";
     fsType = "nfs";
+    options = ["x-systemd.automount" "noauto"];
   };
 
   # NixOS configuration for Star Citizen requirements

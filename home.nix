@@ -126,6 +126,9 @@
     pkgs.zoxide
     pkgs.fzf
     pkgs.fastfetch
+    pkgs.wget
+    pkgs.unzip
+    pkgs.libarchive
   ];
 
   programs.vscode = {

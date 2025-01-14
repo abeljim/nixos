@@ -135,6 +135,7 @@
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       myriad-dreamin.tinymist
+      ms-vscode-remote.remote-containers
     ];
   };
 

@@ -9,39 +9,27 @@
 }: 
 let
   machineType = builtins.getEnv "MACHINE_TYPE";
-  validMachineTypes = [ "laptop" "desktop" ];
-  isValidMachineType = machineType != null && builtins.elem machineType validMachineTypes;
-
   isLaptop = machineType == "laptop";
   isDesktop = machineType == "desktop";
-  # isServer = machineType == "server";
+  isServer = machineType == "server";
 in
 {
-
-  modules = lib.assert (
-    isValidMachineType
-  ) "Error: ENV variable MACHINE_TYPE must be one of 'laptop', 'desktop', or 'server'.";
-
   imports = [
-    # Hardware Configs
-    (if isLaptop then ./machines/hardware-configuration.nix else null)
-    # (if isDesktop then ./hardware-configuration.nix else null)
-
-    (if isLaptop then ./machines/laptop.nix else null)
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-
-    ./users/abeljim.nix
-  ]++ lib.filter (x: x != null) [];
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # TODO Make this modular
+  # Gaming cachix
   nix.settings = {
     substituters = [
       "https://nix-gaming.cachix.org"
@@ -61,6 +49,18 @@ in
 
   # Limit number of generations in grub
   boot.loader.grub.configurationLimit = 10;
+
+  fileSystems."/mnt/fatboi" = {
+    device = "192.168.50.221:/fatboi";
+    fsType = "nfs";
+    options = ["x-systemd.automount" "noauto"];
+  };
+
+  # NixOS configuration for Star Citizen requirements
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 16777216;
+    "fs.file-max" = 524288;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -123,6 +123,21 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.abeljim = {
+    isNormalUser = true;
+    description = "Abel Jimenez";
+    extraGroups = ["networkmanager" "wheel" "dialout" "docker"];
+    packages = with pkgs; [
+      firefox
+      fish
+      xclip
+      nix-index
+    ];
+  };
+
+  nix.settings.trusted-users = ["abeljim"];
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [
     pkgs.openssl
@@ -133,17 +148,33 @@ in
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    backupFileExtension = "backup";
+    users = {
+      "abeljim" = import ./home.nix;
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
   ];
 
   services.flatpak.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
   services.udev.packages = [
     (pkgs.segger-jlink.override {acceptLicense = true;})
@@ -154,4 +185,30 @@ in
   ];
 
   virtualisation.docker.enable = true;
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.05"; # Did you read the comment?
 }

@@ -21,8 +21,8 @@
 
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./neovim
-    ./dconf.nix
+    ../../modules/neovim
+    ../../modulues/gnome/dconf.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your

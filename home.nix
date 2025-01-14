@@ -1,5 +1,5 @@
 {
-  config,
+  # config,
   pkgs,
   inputs,
   ...
@@ -204,7 +204,7 @@
   home.shellAliases = {
     nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
-    nclean = "sudo nix-env --delete-generations old";
+    nclean = "nix-env --delete-generations 7d";
     ngarbage = "sudo nix-collect-garbage -d";
     cd = "z";
   };

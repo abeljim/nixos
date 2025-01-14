@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
+  # config,
   pkgs,
   inputs,
   ...
@@ -36,9 +36,12 @@
 
   nix.gc = {
     automatic = true;
-    dates = "monthly";
+    dates = "weekly";
     options = "--delete-older-than 30d";
   };
+
+  # Limit number of generations in grub
+  boot.loader.grub.configurationLimit = 10;
 
   fileSystems."/mnt/fatboi" = {
     device = "192.168.50.221:/fatboi";
@@ -117,7 +120,7 @@
   users.users.abeljim = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = ["networkmanager" "wheel" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "dialout" "docker"];
     packages = with pkgs; [
       firefox
       fish
@@ -153,7 +156,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+
+    # Embedded
+    (segger-jlink.override {acceptLicense = true;})
   ];
 
   services.flatpak.enable = true;
@@ -164,6 +169,15 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  services.udev.packages = [
+    (pkgs.segger-jlink.override {acceptLicense = true;})
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "segger-jlink-qt4-796s"
+  ];
+
+  virtualisation.docker.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

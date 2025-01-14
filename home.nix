@@ -71,8 +71,6 @@
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
     inputs.ghostty.packages.x86_64-linux.default
-    pkgs.typos-lsp
-    pkgs.alejandra
     pkgs.dbeaver-bin
 
     # Gnome
@@ -91,6 +89,8 @@
     # Programming
     pkgs.python313
     pkgs.yamlfmt
+    pkgs.typos-lsp
+    pkgs.alejandra
 
     # Vscode
     pkgs.vscode

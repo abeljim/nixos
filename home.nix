@@ -105,6 +105,8 @@
     # Development
     pkgs.ffmpeg
     pkgs.v4l-utils
+    pkgs.minicom
+    pkgs.tio
   ];
 
   programs.vscode = {

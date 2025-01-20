@@ -136,6 +136,7 @@
     pkgs.openssl
     pkgs.curl
     pkgs.swt
+    pkgs.tailscale
   ];
 
   programs.fish.enable = true;
@@ -160,6 +161,11 @@
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
   ];
+
+  services.tailscale.enable = true;
+  services.tailscale.port = 12345;
+  networking.firewall.allowedUDPPorts = [12345];
+  # services.tailscale.useRoutingFeatures = "client";
 
   services.flatpak.enable = true;
 

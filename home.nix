@@ -1,13 +1,16 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  # config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abelj1";
   home.homeDirectory = "/home/abelj1";
 
-  imports = [ 
-    inputs.nixvim.homeManagerModules.nixvim 
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     ./neovim
   ];
 
@@ -19,6 +22,8 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
+
+  # Allow the use of non opensource software.
   nixpkgs.config.allowUnfree = true;
 
   # The home.packages option allows you to install Nix packages into your
@@ -40,24 +45,36 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.zellij
-    pkgs.git
+
+    # Programming
     pkgs.devenv
     pkgs.direnv
-    pkgs.gh   
-    # pkgs.neovim
-    pkgs.lua-language-server
-    pkgs.lazygit
-    pkgs.ripgrep
-    pkgs.fd
+    pkgs.git
+    pkgs.gh
     pkgs.gcc
     pkgs.gnumake
-    pkgs.rustup    
+    pkgs.rustup
+
+    # LSP
+    pkgs.lua-language-server
+    pkgs.typos
+
+    # CLI Tools
     pkgs.yt-dlp
     pkgs.podman-tui
     pkgs.oxker
     pkgs.intel-gpu-tools
     pkgs.zenith
+    pkgs.zellij
+    pkgs.lazygit
+    pkgs.ripgrep
+    pkgs.fd
+
+    # Formatters
+    pkgs.yamlfmt
+    pkgs.taplo # Toml
+    pkgs.alejandra # Nix
+    pkgs.deno # Seems like best option for markdown.
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -74,47 +91,56 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
- 
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      
+      # Disable greeting for fish shell
+       set fish_greeting
 
+      # Copy command that uses rsync
       function cp2
-	    if test (count $argv) -ne 2
-		echo "Usage: cp2 <source> <destination>"
-		return 1
-	    end
+        if test (count $argv) -ne 2
+         echo "Usage: cp2 <source> <destination>"
+         return 1
+        end
 
-	    set source $argv[1]
-	    set destination $argv[2]
+        set source $argv[1]
+        set destination $argv[2]
 
-	    # Use rsync with progress and resumable options
-	    rsync -ah --progress --partial --inplace $source $destination
+        # Use rsync with progress and resumable options
+        rsync -ah --progress --partial --inplace $source $destination
       end
     '';
   };
 
-
+  # Configure GIT settings.
   programs.git = {
     enable = true;
     lfs.enable = true;
     userEmail = "abelj1@uci.edu";
     userName = "abeljim";
     extraConfig = {
+      # Sets how keys are stored.
+      # Works with gnome and kde need to test on server.
       credential.helper = "store";
     };
   };
 
+  # Enable DIRENV for fish
   programs.direnv.enableFishIntegration = true;
-  
+
+  # Enable Starship prompt for Fish
   programs.starship.enable = true;
   programs.starship.enableFishIntegration = true;
 
+  # shellAliases for cli commands
   home.shellAliases = {
-    nupdate = "sudo nix flake update";    
+    nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
+    nclean = "nix-env --delete-generations 3d";
+    ngarbage = "sudo nix-collect-garbage -d";
+    cd = "z";
   };
 
   # Home Manager can also manage your environment variables through
@@ -133,31 +159,10 @@
   #  /etc/profiles/per-user/abeljim/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    # Set your default editors.
     EDITOR = "nvim";
-  };
-
-
-  # programs.neovim = {
-  #   enable = true;
-  #   viAlias = true;
-  #   vimAlias = true;
-  #   vimdiffAlias = true;
-  # };
-
-  programs.nixvim = {
-    enable = true;
-
-    colorschemes.tokyonight.enable = true;
-    # plugins.lualine.enable = true;
-
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    luaLoader.enable = true;
-
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  #programs.devenv.enable = true;
 }

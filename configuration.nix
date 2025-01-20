@@ -23,12 +23,12 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # enable mdadm used for raid. I use it cloning my boot ssd but right now I just have 1.
-  boot.swraid.enable = true;
-  boot.swraid.mdadmConf = "MAILADDR abelj1@uci.edu";
-  fileSystems."/mnt/nvme" = {
-    device = "/dev/md127";
-    fsType = "ext4";
-  };
+  # boot.swraid.enable = true;
+  # boot.swraid.mdadmConf = "MAILADDR abelj1@uci.edu";
+  # fileSystems."/mnt/nvme" = {
+  #   device = "/dev/md127";
+  #   fsType = "ext4";
+  # };
 
   # Add ZFS Support. Might not needs these two lines
   boot.supportedFilesystems = ["zfs"];

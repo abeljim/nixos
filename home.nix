@@ -69,6 +69,7 @@
     pkgs.lazygit
     pkgs.ripgrep
     pkgs.fd
+    pkgs.zoxide
 
     # Formatters
     pkgs.yamlfmt
@@ -125,6 +126,11 @@
       # Works with gnome and kde need to test on server.
       credential.helper = "store";
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   # Enable DIRENV for fish

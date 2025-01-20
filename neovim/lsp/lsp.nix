@@ -35,6 +35,7 @@
         clangd = {
           enable = true;
           package = null;
+          extraOptions.capabilities.offsetEncoding = ''{ "utf-16" }'';
         };
       };
 

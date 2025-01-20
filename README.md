@@ -9,7 +9,8 @@
    install. It is currently 24.11. This can be located in ./configuration.nix.
 4. Change your name and email in all the sections that require it in
    ./configuration.nix and ./home.nix.
-5. Run for the first time `sudo nixos-rebuild switch --flake ~/nixos/#default`
+5. Delete ./flake.lock to start a fresh lockfile. Or you can follow mine.
+6. Run for the first time `sudo nixos-rebuild switch --flake ~/nixos/#default`
 
 # Commands
 

@@ -23,8 +23,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # enable mdadm used for raid. I use it cloning my boot ssd but right now I just have 1.
-  # boot.swraid.enable = true;
-  # boot.swraid.mdadmConf = "MAILADDR abelj1@uci.edu";
+  boot.swraid.enable = true;
+  boot.swraid.mdadmConf = "MAILADDR abelj1@uci.edu";
+  # # sudo mount /dev/md125 /mnt/nvme
+  # # I think below is suppose to be 125
   # fileSystems."/mnt/nvme" = {
   #   device = "/dev/md127";
   #   fsType = "ext4";

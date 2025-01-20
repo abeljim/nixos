@@ -20,8 +20,7 @@
     lazyLoading = true;
 
     modules = {
-      # 0 Idea what this does
-      # "core.defaults" = lib.mkIf config.plugins.treesitter.enable {__empty = null;};
+      "core.defaults" = {__empty = null;};
 
       "core.keybinds".config.hook.__raw = ''
         function(keybinds)

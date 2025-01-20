@@ -154,6 +154,8 @@
   };
 
   boot.kernel.sysctl = {
+    # I don't remember what this is for. I think this was required by rootless containers.
+    # Don't think its needed anymore but im gonna leave it for now.
     "net.ipv4.ip_unprivileged_port_start" = 80;
   };
 

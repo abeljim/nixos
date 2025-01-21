@@ -8,11 +8,12 @@
   imports = [ 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../commonconfig.nix
     # ./wireguard.nix
-    inputs.home-manager.nixosModules.default
+    # inputs.home-manager.nixosModules.default
   ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "spectre"; # Define your hostname.
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

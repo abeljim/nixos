@@ -95,7 +95,7 @@
   # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
+  serviI look forward to coordinating with you.ces.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;

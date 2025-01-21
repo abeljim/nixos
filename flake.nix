@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,33 +30,25 @@
     self,
     nixpkgs,
     ...
-  } @ inputs:
-  # let
-  #   machineType = builtins.getEnv "MACHINE_TYPE";
-  #   validMachineTypes = [ "laptop" "desktop" ];
-  #   isValidMachineType = machineType != null && builtins.elem machineType validMachineTypes;
-  #
-  #   isLaptop = machineType == "laptop";
-  #   isDesktop = machineType == "desktop";
-  #   # isServer = machineType == "server";
-  # in
-  {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix 
-        inputs.home-manager.nixosModules.default
-      ];
+  } @ inputs: {
+    nixosConfigurations = {
+
+      "spectre" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/laptop.nix 
+          inputs.home-manager.nixosModules.default
+        ];
+      };
       
-      # modules = lib.assert (
-      #   isValidMachineType
-      # ) "Error: ENV variable MACHINE_TYPE must be one of 'laptop', 'desktop', or 'server'.";
-      #
-      # modules = [
-      #   (if isDesktop then ./machines/desktop/configuration.nix else null)
-      #   (if is 
-      #   inputs.home-manager.nixosModules.default
-      # ] ++ lib.filter (x: x != null) [];
-    };
+      "north" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/desktop.nix 
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+
+    }
   };
 }

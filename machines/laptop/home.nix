@@ -1,15 +1,9 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "abeljim";
-  home.homeDirectory = "/home/abeljim";
 
   imports = [ 
-    inputs.nixvim.homeManagerModules.nixvim 
-    ../../modules/neovim
-    ../../modules/gnome/dconf.nix
+    ../commonhome.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -20,7 +14,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
-  nixpkgs.config.allowUnfree = true;
   # The home.p{ pkgs, ... }:ackages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -40,27 +33,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.git
-    pkgs.webcord
-    pkgs.devenv
-    pkgs.direnv
-    pkgs.alacritty
-    pkgs.alacritty-theme
-    pkgs.lazygit
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.rustup    
-    pkgs.vscode
-    pkgs.nerdfonts
-    pkgs.zellij
     pkgs.helix
-    pkgs.unzip
     # pkgs.krita
     # pkgs.arduino
-    inputs.zen-browser.packages.x86_64-linux.default
-    # pkgs.fzf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -78,17 +53,6 @@
     # '';
   };
 
-
-  programs.alacritty.enable = true;
-  programs.alacritty.settings = {
-   window.padding.x = 30;
-   window.padding.y = 30;
-   font.normal.family = "JetBrainsMonoNL Nerd Font";
-   font.normal.style = "Regular";
-   # window.opacity = 0.9;
-    general.import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
-  };
-
   programs.helix.enable = true;
   programs.helix.settings = {
       theme = "tokyonight";
@@ -103,27 +67,7 @@
       };
   };
   
-  programs.fish = {
-    enable = true;
-  };
-
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-    userEmail = "abelj1@uci.edu";
-    userName = "abeljim";
-    extraConfig = {
-      credential.helper = "store";
-    };
-  };
-
-  programs.direnv.enableFishIntegration = true;
-  
-  programs.starship.enable = true;
-  programs.starship.enableFishIntegration = true;
-
   home.shellAliases = {
-    nupdate = "sudo nix flake update";
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
   };
 
@@ -142,11 +86,4 @@
   #
   #  /etc/profiles/per-user/abeljim/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  #programs.devenv.enable = true;
 }

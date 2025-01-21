@@ -18,7 +18,7 @@
     # (if isLaptop then ./machines/laptop.nix else null)
     # (if isDesktop then ./machines/laptop.nix else null)
     inputs.home-manager.nixosModules.default
-    ./users/abeljim.nix
+    ../users/abeljim.nix
   ];
 
   # Bootloader.
@@ -95,7 +95,7 @@
   # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  serviI look forward to coordinating with you.ces.pipewire = {
+  services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;

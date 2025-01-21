@@ -36,7 +36,7 @@
       "spectre" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./machines/laptop.nix 
+          ./machines/laptop/laptop.nix 
           inputs.home-manager.nixosModules.default
         ];
       };
@@ -49,6 +49,6 @@
         ];
       };
 
-    }
+    };
   };
 }

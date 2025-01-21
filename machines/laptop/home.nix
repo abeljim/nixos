@@ -9,7 +9,7 @@
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
     ../../modules/neovim
-    ../../modulues/gnome/dconf.nix
+    ../../modules/gnome/dconf.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -57,7 +57,7 @@
     pkgs.zellij
     pkgs.helix
     pkgs.unzip
-    pkgs.krita
+    # pkgs.krita
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
     # pkgs.fzf
@@ -124,7 +124,7 @@
 
   home.shellAliases = {
     nupdate = "sudo nix flake update";
-    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#default";
+    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
   };
 
   # Home Manager can also manage your environment variables through
@@ -144,19 +144,6 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-  };
-
-  programs.nixvim = {
-    enable = true;
-
-    colorschemes.tokyonight.enable = true;
-    # plugins.lualine.enable = true;
-
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    luaLoader.enable = true;
-
   };
 
   # Let Home Manager install and manage itself.

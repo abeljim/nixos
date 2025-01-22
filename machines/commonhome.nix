@@ -64,20 +64,9 @@
 
     # Media Software
     pkgs.darktable
-    # -- pkgs.kdePackages.kdenlive
 
-    # Homelab
-    # -- pkgs.yt-dlp
-    # -- pkgs.filebot
-
-    # Game
-    # -- pkgs.prismlauncher
-    # -- inputs.nix-citizen.packages.${pkgs.system}.star-citizen
-    # -- inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
-    # -- pkgs.gamescope
+    # Discord
     pkgs.vesktop
-    # -- pkgs.mangohud
-    # -- pkgs.cemu
 
     # Gnome
     pkgs.gnome-tweaks

@@ -5,8 +5,8 @@ with lib.hm.gvariant; {
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/abeljim/nixos/wallpaper.png";
-      picture-uri-dark = "file:///home/abeljim/nixos/wallpaper.png";
+      picture-uri = "file:///home/abeljim/nixos/machines/wallpaper.png";
+      picture-uri-dark = "file:///home/abeljim/nixos/machines/wallpaper.png";
       primary-color = "#3071AE";
       secondary-color = "#000000";
     };

@@ -7,16 +7,8 @@
   pkgs,
   inputs,
   ...
-}: 
-{
-
+}: {
   imports = [
-    # Hardware Configs
-    # (if isLaptop then ./machines/laptop/hardware-configuration.nix else null)
-    # (if isDesktop then ./machines/desktop/hardware-configuration.nix else null)
-    #
-    # (if isLaptop then ./machines/laptop.nix else null)
-    # (if isDesktop then ./machines/laptop.nix else null)
     inputs.home-manager.nixosModules.default
     ../users/abeljim.nix
   ];
@@ -127,6 +119,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    wget
+    zip
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
   ];

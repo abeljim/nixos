@@ -35,9 +35,15 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.helix
-    # pkgs.krita
-    # pkgs.arduino
+
+    # Other
+    pkgs.remmina
+
+    # Development
+    pkgs.ffmpeg
+    pkgs.v4l-utils
+    pkgs.minicom
+    pkgs.tio
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -55,24 +61,10 @@
     # '';
   };
 
-  programs.helix.enable = true;
-  programs.helix.settings = {
-    theme = "tokyonight";
-    editor = {
-      line-number = "relative";
-      mouse = false;
-      lsp.display-inlay-hints = true;
-    };
-    keys.normal = {
-      space.space = "file_picker";
-      space.q.q = ":qa";
-    };
-  };
-
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userEmail = "abelj1@uci.edu";
+    userEmail = "abel.jimenez@rekovar.com";
     userName = "abeljim";
     extraConfig = {
       credential.helper = "store";

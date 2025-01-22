@@ -11,7 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,23 +31,29 @@
     ...
   } @ inputs: {
     nixosConfigurations = {
-
       "spectre" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./machines/laptop/laptop.nix 
-          inputs.home-manager.nixosModules.default
-        ];
-      };
-      
-      "north" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./machines/desktop.nix 
+          ./machines/laptop/laptop.nix
           inputs.home-manager.nixosModules.default
         ];
       };
 
+      "north" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/desktop/desktop.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+
+      "X1" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/work/work.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }

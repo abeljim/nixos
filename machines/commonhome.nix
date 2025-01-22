@@ -22,6 +22,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ../modules/neovim
+    ../modules/zsh
     ../modules/gnome/dconf.nix
   ];
 
@@ -129,6 +130,8 @@
     pkgs.wget
     pkgs.unzip
     pkgs.libarchive
+    pkgs.fishPlugins.bass
+    pkgs.rip2
   ];
 
   programs.vscode = {
@@ -187,16 +190,6 @@
     '';
   };
 
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-    userEmail = "abelj1@uci.edu";
-    userName = "abeljim";
-    extraConfig = {
-      credential.helper = "store";
-    };
-  };
-
   programs.direnv.enableFishIntegration = true;
 
   programs.starship.enable = true;
@@ -207,6 +200,7 @@
     nclean = "nix-env --delete-generations 7d";
     ngarbage = "sudo nix-collect-garbage -d";
     cd = "z";
+    rm = "rip";
   };
 
   programs.zoxide = {

@@ -13,6 +13,8 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  programs.nix-ld.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -92,7 +94,7 @@
   users.users.abeljim = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = ["networkmanager" "wheel" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "dialout" "docker"];
     packages = with pkgs; [
       firefox
       fish
@@ -126,6 +128,8 @@
   ];
 
   services.flatpak.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

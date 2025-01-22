@@ -60,6 +60,7 @@
     pkgs.zellij
     pkgs.helix
     pkgs.unzip
+    pkgs.zip
     pkgs.krita
     pkgs.zenith
     pkgs.kicad
@@ -68,6 +69,7 @@
     pkgs.zoxide
     pkgs.fzf
     pkgs.fastfetch
+    pkgs.wget
     # pkgs.arduino
     inputs.zen-browser.packages.x86_64-linux.default
     inputs.ghostty.packages.x86_64-linux.default
@@ -107,12 +109,14 @@
     pkgs.v4l-utils
     pkgs.minicom
     pkgs.tio
+    pkgs.fishPlugins.bass
   ];
 
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       myriad-dreamin.tinymist
+      ms-vscode-remote.remote-containers
     ];
   };
 

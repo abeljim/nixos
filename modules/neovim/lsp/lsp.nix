@@ -7,13 +7,26 @@
       inlayHints = true;
 
       servers = {
+        # Spelling
         typos_lsp = {
-          enable = true; # Spelling
+          enable = true;
           extraOptions.init_options.diagnosticSeverity = "Hint";
         };
-        taplo.enable = true; # TOML
-        zls.enable = true; # Zig
-        nil_ls.enable = true; # Nix
+
+        # TOML
+        taplo.enable = true;
+
+        # Zig
+        zls = {
+          enable = true;
+          package = null;
+        };
+
+        # Nix
+        nil_ls = {
+          enable = true;
+          package = null;
+        };
 
         gleam = {
           enable = true;
@@ -35,6 +48,12 @@
         clangd = {
           enable = true;
           package = null;
+          extraOptions.capabilities.offsetEncoding = ''{ "utf-16" }'';
+        };
+
+        terraform_lsp = {
+          enable = true;
+          package = null;
         };
       };
 
@@ -45,24 +64,5 @@
     };
 
     lint.enable = true;
-
-    treesitter = {
-      enable = true;
-      settings = {
-        incremental_selection = {
-          enable = true;
-          keymaps = {
-            init_selection = "gnn";
-            node_incremental = "grn";
-            scope_incremental = "grc";
-            node_decremental = "grm";
-          };
-        };
-
-        highlight.enable = true;
-        highlight.additional_vim_regex_highlighting = true;
-        indent.enable = true;
-      };
-    };
   };
 }

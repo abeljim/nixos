@@ -13,6 +13,7 @@
     ./options.nix
     ./plugins
     ./lsp/lsp.nix
+    ./lsp/treesitter.nix
     ./lsp/lspsaga.nix
     ./lsp/rustaceanvim.nix
   ];

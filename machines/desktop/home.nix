@@ -67,20 +67,6 @@
     # '';
   };
 
-  programs.helix.enable = true;
-  programs.helix.settings = {
-    theme = "tokyonight";
-    editor = {
-      line-number = "relative";
-      mouse = false;
-      lsp.display-inlay-hints = true;
-    };
-    keys.normal = {
-      space.space = "file_picker";
-      space.q.q = ":qa";
-    };
-  };
-
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -92,7 +78,7 @@
   };
 
   home.shellAliases = {
-    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
+    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#north";
   };
 
   # Home Manager can also manage your environment variables through

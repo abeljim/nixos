@@ -1,4 +1,17 @@
-{
+let
+  mouse = {
+    right =
+      # Lua
+      "'vertical sbuffer %d'";
+    close =
+      # Lua
+      ''
+        function(bufnum)
+          require("mini.bufremove").delete(bufnum)
+        end
+      '';
+  };
+in {
   programs.nixvim.plugins = {
     bufferline = {
       enable = true;
@@ -84,14 +97,18 @@
           };
         };
 
-        options.offsets = [
-          {
-            filetype = "neo-tree";
-            text = "Neo-tree";
-            highlight = "Directory";
-            text_align = "left";
-          }
-        ];
+        options = {
+          offsets = [
+            {
+              filetype = "neo-tree";
+              text = "Neo-tree";
+              highlight = "Directory";
+              text_align = "left";
+            }
+          ];
+          close_command.__raw = mouse.close;
+          right_mouse_command.__raw = mouse.right;
+        };
       };
       # For Transparent
       luaConfig.post = ''

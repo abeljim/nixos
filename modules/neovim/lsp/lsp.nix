@@ -11,10 +11,14 @@
         typos_lsp = {
           enable = true;
           extraOptions.init_options.diagnosticSeverity = "Hint";
+          package = null;
         };
 
         # TOML
-        taplo.enable = true;
+        taplo = {
+          enable = true;
+          package = null;
+        };
 
         # Zig
         zls = {

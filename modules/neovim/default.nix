@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
     #colorschemes.tokyonight.enable = true;
@@ -7,6 +7,18 @@
     viAlias = true;
     vimAlias = true;
   };
+
+  # Common LSP are enabled here so they can be overridden by virtual environments.
+  home.packages = [
+    # For Nix
+    pkgs.nil
+    # For Toml
+    pkgs.taplo
+    # For Spelling
+    pkgs.typos
+    # For Markdown
+    pkgs.deno
+  ];
 
   imports = [
     ./keymappings.nix

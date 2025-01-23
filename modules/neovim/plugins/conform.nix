@@ -104,7 +104,7 @@
           ];
           sql = ["sqlfluff"];
           swift = ["swift_format"];
-          terraform = ["terraform_fmt"];
+          terraform = ["tofu_fmt"];
           toml = ["taplo"];
           typescript = {
             __unkeyed-1 = "biome";

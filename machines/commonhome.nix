@@ -181,8 +181,15 @@
 
   programs.direnv.enableFishIntegration = true;
 
-  programs.starship.enable = true;
-  programs.starship.enableFishIntegration = true;
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = {
+      gcloud.disabled = true;
+      directory.truncate_to_repo = false;
+      # directory.truncation_length = 5;
+    };
+  };
 
   home.shellAliases = {
     nupdate = "sudo nix flake update";

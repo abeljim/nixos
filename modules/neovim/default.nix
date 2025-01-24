@@ -10,14 +10,16 @@
 
   # Common LSP are enabled here so they can be overridden by virtual environments.
   home.packages = [
-    # For Nix
+    # For Nix LSP
     pkgs.nil
-    # For Toml
+    # For Toml Format & LSP
     pkgs.taplo
-    # For Spelling
+    # For Spelling LSP
     pkgs.typos
-    # For Markdown
+    # For Markdown FMT
     pkgs.deno
+    # For YAML FMT
+    pkgs.yamlfmt
   ];
 
   imports = [

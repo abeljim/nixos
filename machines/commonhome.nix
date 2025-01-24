@@ -152,6 +152,7 @@
     theme = "Kanagawa Wave"
     font-family = "JetBrainsMonoNL Nerd Font"
     background-opacity = 0.9
+    clipboard-paste-protection = false
   '';
 
   programs.alacritty.enable = true;

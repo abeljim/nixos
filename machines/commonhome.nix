@@ -121,6 +121,7 @@
     pkgs.libarchive
     pkgs.fishPlugins.bass
     pkgs.rip2
+    pkgs.just
   ];
 
   programs.vscode = {

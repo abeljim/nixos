@@ -72,4 +72,13 @@
 
     lint.enable = true;
   };
+
+  programs.nixvim.keymaps = [
+    {
+      mode = "n";
+      action = "<cmd>LspStop<CR>";
+      key = "<leader>cs";
+      options.desc = "Stop LSP";
+    }
+  ];
 }

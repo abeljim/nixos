@@ -91,6 +91,8 @@
   environment.systemPackages = with pkgs; [
     wget
     zip
+    unzip
+    libarchive
     tailscale
   ];
 

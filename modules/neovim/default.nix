@@ -19,6 +19,10 @@
     pkgs.deno
     # For YAML FMT
     pkgs.yamlfmt
+    # NIX FMT
+    pkgs.alejandra
+    # LUA LSP
+    pkgs.lua-language-server
   ];
 
   imports = [

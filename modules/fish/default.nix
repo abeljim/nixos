@@ -3,7 +3,6 @@
     pkgs.rip2
     pkgs.zoxide
     pkgs.fishPlugins.bass
-    pkgs.rip2
   ];
 
   programs.fish = {
@@ -20,6 +19,9 @@
       end
     '';
     shellAliases = {
+      nupdate = "sudo nix flake update";
+      nclean = "nix-env --delete-generations 7d";
+      ngarbage = "sudo nix-collect-garbage -d";
       cd = "z";
       rm = "rip";
     };

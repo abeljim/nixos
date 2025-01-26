@@ -106,6 +106,12 @@
     # '';
   };
 
+  home.shellAliases = {
+    nupdate = "sudo nix flake update";
+    nclean = "nix-env --delete-generations 7d";
+    ngarbage = "sudo nix-collect-garbage -d";
+  };
+
   xdg.configFile."ghostty/config".text = ''
     window-padding-x = 20
     window-padding-y = 10

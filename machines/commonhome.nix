@@ -23,7 +23,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ../modules/neovim
     ../modules/zsh
-    ../modules/gnome/dconf.nix
+    ../modules/gnome
     ../modules/fish
     ../modules/vscode
     ../modules/clitools
@@ -52,17 +52,6 @@
     # Web Browsers
     pkgs.chromium
     inputs.zen-browser.packages.x86_64-linux.default
-
-    # Gnome
-    pkgs.gnome-tweaks
-    pkgs.kanagawa-gtk-theme
-    pkgs.kanagawa-icon-theme
-    pkgs.gnomeExtensions.just-perfection
-    pkgs.gnomeExtensions.media-controls
-    pkgs.gnomeExtensions.open-bar
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.dconf2nix
-    pkgs.bibata-cursors
 
     # Electrical
     pkgs.kicad

@@ -47,6 +47,7 @@
     pkgs.v4l-utils
     pkgs.minicom
     pkgs.tio
+    pkgs.android-studio
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

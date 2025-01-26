@@ -35,6 +35,7 @@
           };
         };
 
+        # Gleam Lang
         gleam = {
           enable = true;
           package = null;
@@ -52,12 +53,14 @@
           package = null;
         };
 
+        # C Lang
         clangd = {
           enable = true;
           package = null;
           extraOptions.capabilities.offsetEncoding = ''{ "utf-16" }'';
         };
 
+        # Terraform & opentofu
         terraform_lsp = {
           enable = true;
           package = null;

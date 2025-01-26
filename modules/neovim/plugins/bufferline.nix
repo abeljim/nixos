@@ -111,21 +111,23 @@ in {
         };
       };
       # For Transparent
-      luaConfig.post = ''
-        vim.g.transparent_groups = vim.list_extend(
-               vim.g.transparent_groups or {},
-               vim.tbl_map(function(v)
-                       return v.hl_group
-               end, vim.tbl_values(require("bufferline.config").highlights))
-        )
-      '';
+      luaConfig.post =
+        #Lua
+        ''
+          vim.g.transparent_groups = vim.list_extend(
+                 vim.g.transparent_groups or {},
+                 vim.tbl_map(function(v)
+                         return v.hl_group
+                 end, vim.tbl_values(require("bufferline.config").highlights))
+          )
+        '';
     };
   };
 
   programs.nixvim.keymaps = [
     {
       mode = "n";
-      key = "<C-Tab>";
+      key = "]b";
       action = "<cmd>BufferLineCycleNext<cr>";
       options = {
         desc = "Cycle to next buffer";
@@ -134,7 +136,7 @@ in {
 
     {
       mode = "n";
-      key = "<C-S-Tab>";
+      key = "[b";
       action = "<cmd>BufferLineCyclePrev<cr>";
       options = {
         desc = "Cycle to previous buffer";

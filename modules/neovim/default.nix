@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   programs.nixvim = {
     enable = true;
-    #colorschemes.tokyonight.enable = true;
     colorschemes.kanagawa.enable = true;
     defaultEditor = true;
     viAlias = true;

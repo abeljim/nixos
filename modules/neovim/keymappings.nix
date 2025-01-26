@@ -35,7 +35,7 @@
       }
 
       {
-        action = ":Neotree toggle<CR>";
+        action = "<cmd>Neotree toggle<CR>";
         key = "<leader>e";
         options = {
           silent = true;
@@ -45,7 +45,7 @@
       }
 
       {
-        action = ":qa<CR>";
+        action = "<cmd>qa<CR>";
         key = "<leader>qq";
         options = {
           silent = true;
@@ -56,7 +56,7 @@
 
       {
         mode = "n";
-        action = ":Telescope find_files<CR>";
+        action = "<cmd>Telescope find_files<CR>";
         key = "<leader><leader>";
         options = {
           silent = true;
@@ -67,7 +67,7 @@
 
       {
         mode = "n";
-        action = ":LazyGit<CR>";
+        action = "<cmd>LazyGit<CR>";
         key = "<leader>gg";
         options = {
           silent = true;

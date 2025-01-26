@@ -36,6 +36,9 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
+    # Testing
+    pkgs.zed-editor
+
     # Other
     pkgs.remmina
 

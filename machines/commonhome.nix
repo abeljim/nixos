@@ -24,6 +24,7 @@
     ../modules/neovim
     ../modules/zsh
     ../modules/gnome/dconf.nix
+    ../modules/fish
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -58,6 +59,7 @@
     pkgs.gnomeExtensions.open-bar
     pkgs.gnomeExtensions.pop-shell
     pkgs.dconf2nix
+    pkgs.bibata-cursors
 
     # Electrical
     pkgs.kicad
@@ -67,17 +69,6 @@
 
     # Discord
     pkgs.vesktop
-
-    # Gnome
-    pkgs.gnome-tweaks
-    pkgs.kanagawa-gtk-theme
-    pkgs.kanagawa-icon-theme
-    pkgs.gnomeExtensions.just-perfection
-    pkgs.gnomeExtensions.media-controls
-    pkgs.gnomeExtensions.open-bar
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.dconf2nix
-    pkgs.bibata-cursors
 
     # Programming
     pkgs.devenv
@@ -99,9 +90,6 @@
     pkgs.lua-language-server
     pkgs.typos-lsp
 
-    # Shell
-    pkgs.nushell
-
     # Cli Tools
     pkgs.ripgrep
     pkgs.fd
@@ -113,14 +101,11 @@
     inputs.ghostty.packages.x86_64-linux.default
     pkgs.btop
     pkgs.yazi
-    pkgs.zoxide
     pkgs.fzf
     pkgs.fastfetch
     pkgs.wget
     pkgs.unzip
     pkgs.libarchive
-    pkgs.fishPlugins.bass
-    pkgs.rip2
     pkgs.just
   ];
 
@@ -166,44 +151,10 @@
     general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
   };
 
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      set -x PATH ~/.cargo/bin/ $PATH
-
-      function kopen
-          set file (find . -type f -name "*.kicad_pro" | head -n 1)
-          if test -n "$file"
-              nohup kicad "$file" >/dev/null 2>&1 &
-          end
-      end
-    '';
-  };
-
-  programs.direnv.enableFishIntegration = true;
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      gcloud.disabled = true;
-      directory.truncate_to_repo = false;
-      # directory.truncation_length = 5;
-    };
-  };
-
   home.shellAliases = {
     nupdate = "sudo nix flake update";
     nclean = "nix-env --delete-generations 7d";
     ngarbage = "sudo nix-collect-garbage -d";
-    cd = "z";
-    rm = "rip";
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
   };
 
   # Home Manager can also manage your environment variables through
@@ -227,5 +178,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  #programs.devenv.enable = true;
 }

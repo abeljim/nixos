@@ -54,6 +54,14 @@
           inputs.home-manager.nixosModules.default
         ];
       };
+
+      "cowcloud" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/server/server.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }

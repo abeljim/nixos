@@ -1,7 +1,7 @@
 {
-  config,
+  # config,
   pkgs,
-  inputs,
+  # inputs,
   ...
 }: {
   imports = [
@@ -35,9 +35,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.helix
-    # pkgs.krita
-    # pkgs.arduino
+
+    pkgs.intel-gpu-tools
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -55,20 +54,6 @@
     # '';
   };
 
-  programs.helix.enable = true;
-  programs.helix.settings = {
-    theme = "tokyonight";
-    editor = {
-      line-number = "relative";
-      mouse = false;
-      lsp.display-inlay-hints = true;
-    };
-    keys.normal = {
-      space.space = "file_picker";
-      space.q.q = ":qa";
-    };
-  };
-
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -80,7 +65,7 @@
   };
 
   home.shellAliases = {
-    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
+    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#cowcloud";
   };
 
   # Home Manager can also manage your environment variables through

@@ -11,6 +11,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../commonconfig.nix
+    ../commonconfigpc.nix
   ];
 
   networking.hostName = "x1"; # Define your hostname.

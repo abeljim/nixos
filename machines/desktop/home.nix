@@ -74,6 +74,8 @@
     userName = "abeljim";
     extraConfig = {
       credential.helper = "store";
+      init.defaultBranch = "main";
+      pull.ff = "true";
     };
   };
 

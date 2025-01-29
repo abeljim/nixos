@@ -23,7 +23,10 @@
     inputs.nixvim.homeManagerModules.nixvim
     ../modules/neovim
     ../modules/zsh
-    ../modules/gnome/dconf.nix
+    ../modules/gnome
+    ../modules/fish
+    ../modules/vscode
+    ../modules/clitools
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -45,19 +48,10 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Web Browsers
     pkgs.chromium
     inputs.zen-browser.packages.x86_64-linux.default
-    pkgs.nerdfonts
-
-    # Gnome
-    pkgs.gnome-tweaks
-    pkgs.kanagawa-gtk-theme
-    pkgs.kanagawa-icon-theme
-    pkgs.gnomeExtensions.just-perfection
-    pkgs.gnomeExtensions.media-controls
-    pkgs.gnomeExtensions.open-bar
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.dconf2nix
 
     # Electrical
     pkgs.kicad
@@ -68,69 +62,23 @@
     # Discord
     pkgs.vesktop
 
-    # Gnome
-    pkgs.gnome-tweaks
-    pkgs.kanagawa-gtk-theme
-    pkgs.kanagawa-icon-theme
-    pkgs.gnomeExtensions.just-perfection
-    pkgs.gnomeExtensions.media-controls
-    pkgs.gnomeExtensions.open-bar
-    pkgs.gnomeExtensions.pop-shell
-    pkgs.dconf2nix
-    pkgs.bibata-cursors
-
     # Programming
     pkgs.devenv
     pkgs.direnv
     pkgs.python313
-    pkgs.vscode
     pkgs.erlang
     pkgs.gleam
-    pkgs.alejandra
     pkgs.rustup
-    pkgs.vscode
-    pkgs.git
     pkgs.gcc
     pkgs.gnumake
     pkgs.zig
 
-    # lsp
-    pkgs.taplo
-    pkgs.lua-language-server
-    pkgs.typos-lsp
-
-    # Shell
-    pkgs.nushell
-
-    # Cli Tools
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.zellij
-    pkgs.gh
-    pkgs.lazygit
+    # Terminal
+    pkgs.nerdfonts
     pkgs.alacritty
     pkgs.alacritty-theme
     inputs.ghostty.packages.x86_64-linux.default
-    pkgs.btop
-    pkgs.yazi
-    pkgs.zoxide
-    pkgs.fzf
-    pkgs.fastfetch
-    pkgs.wget
-    pkgs.unzip
-    pkgs.libarchive
-    pkgs.fishPlugins.bass
-    pkgs.rip2
-    pkgs.just
   ];
-
-  programs.vscode = {
-    enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      myriad-dreamin.tinymist
-      ms-vscode-remote.remote-containers
-    ];
-  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -145,6 +93,12 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+  };
+
+  home.shellAliases = {
+    nupdate = "sudo nix flake update";
+    nclean = "nix-env --delete-generations 7d";
+    ngarbage = "sudo nix-collect-garbage -d";
   };
 
   xdg.configFile."ghostty/config".text = ''
@@ -164,46 +118,6 @@
     font.normal.style = "Regular";
     window.opacity = 0.9;
     general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
-  };
-
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      set -x PATH ~/.cargo/bin/ $PATH
-
-      function kopen
-          set file (find . -type f -name "*.kicad_pro" | head -n 1)
-          if test -n "$file"
-              nohup kicad "$file" >/dev/null 2>&1 &
-          end
-      end
-    '';
-  };
-
-  programs.direnv.enableFishIntegration = true;
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      gcloud.disabled = true;
-      directory.truncate_to_repo = false;
-      # directory.truncation_length = 5;
-    };
-  };
-
-  home.shellAliases = {
-    nupdate = "sudo nix flake update";
-    nclean = "nix-env --delete-generations 7d";
-    ngarbage = "sudo nix-collect-garbage -d";
-    cd = "z";
-    rm = "rip";
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
   };
 
   # Home Manager can also manage your environment variables through
@@ -227,5 +141,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  #programs.devenv.enable = true;
 }

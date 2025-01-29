@@ -314,5 +314,22 @@ with lib.hm.gvariant; {
       window-position = mkTuple [26 23];
       window-size = mkTuple [1231 902];
     };
+
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [];
+      switch-to-application-2 = [];
+      switch-to-application-3 = [];
+      switch-to-application-4 = [];
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      move-to-workspace-left = ["<Super>F1"];
+      move-to-workspace-right = ["<Super>F2"];
+      switch-to-workspace-1 = ["<Super>1"];
+      switch-to-workspace-2 = ["<Super>2"];
+      switch-to-workspace-3 = ["<Super>3"];
+      switch-to-workspace-4 = ["<Super>4"];
+      switch-to-workspace-last = [];
+    };
   };
 }

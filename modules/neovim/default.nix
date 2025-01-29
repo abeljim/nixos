@@ -14,11 +14,15 @@
     # For Toml Format & LSP
     pkgs.taplo
     # For Spelling LSP
-    pkgs.typos
+    pkgs.typos-lsp
     # For Markdown FMT
     pkgs.deno
     # For YAML FMT
     pkgs.yamlfmt
+    # NIX FMT
+    pkgs.alejandra
+    # LUA LSP
+    pkgs.lua-language-server
   ];
 
   imports = [

@@ -27,6 +27,7 @@
     ../modules/fish
     ../modules/vscode
     ../modules/clitools
+    ../modules/helix
   ];
 
   # The home.packages option allows you to install Nix packages into your

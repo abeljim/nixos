@@ -35,7 +35,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.helix
     # pkgs.krita
     # pkgs.arduino
     pkgs.bambu-studio
@@ -55,20 +54,6 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
-
-  programs.helix.enable = true;
-  programs.helix.settings = {
-    theme = "tokyonight";
-    editor = {
-      line-number = "relative";
-      mouse = false;
-      lsp.display-inlay-hints = true;
-    };
-    keys.normal = {
-      space.space = "file_picker";
-      space.q.q = ":qa";
-    };
   };
 
   programs.git = {

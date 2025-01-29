@@ -3,7 +3,7 @@
   users.users.abeljim = {
     isNormalUser = true;
     description = "Abel Jimenez";
-    extraGroups = ["networkmanager" "wheel" "dialout" "docker" "adbusers" "plugdev" "kvm"];
+    extraGroups = ["networkmanager" "wheel" "dialout" "docker" "adbusers" "kvm"];
     packages = with pkgs; [
       # firefox
       fish

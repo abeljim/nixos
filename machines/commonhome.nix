@@ -103,6 +103,16 @@
     lg = "lazygit";
   };
 
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+    extraConfig = {
+      credential.helper = "store";
+      init.defaultBranch = "main";
+      pull.ff = "true";
+    };
+  };
+
   xdg.configFile."ghostty/config".text = ''
     window-padding-x = 20
     window-padding-y = 10

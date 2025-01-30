@@ -1,7 +1,7 @@
 {
-  config,
+  # config,
   pkgs,
-  inputs,
+  # inputs,
   ...
 }: {
   imports = [
@@ -57,13 +57,8 @@
   };
 
   programs.git = {
-    enable = true;
-    lfs.enable = true;
     userEmail = "abelj1@uci.edu";
     userName = "abeljim";
-    extraConfig = {
-      credential.helper = "store";
-    };
   };
 
   home.shellAliases = {

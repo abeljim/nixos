@@ -1,5 +1,5 @@
 {
-  config,
+  # config,
   pkgs,
   inputs,
   ...
@@ -68,15 +68,8 @@
   };
 
   programs.git = {
-    enable = true;
-    lfs.enable = true;
     userEmail = "abelj1@uci.edu";
     userName = "abeljim";
-    extraConfig = {
-      credential.helper = "store";
-      init.defaultBranch = "main";
-      pull.ff = "true";
-    };
   };
 
   home.shellAliases = {

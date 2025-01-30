@@ -21,10 +21,10 @@
 
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ../modules/neovim
-    ../modules/zsh
-    ../modules/fish
-    ../modules/clitools
+    ../../modules/neovim
+    ../../modules/zsh
+    ../../modules/fish
+    ../../modules/clitools
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -74,13 +74,8 @@
   };
 
   programs.git = {
-    enable = true;
-    lfs.enable = true;
     userEmail = "abelj1@uci.edu";
     userName = "abeljim";
-    extraConfig = {
-      credential.helper = "store";
-    };
   };
 
   home.shellAliases = {

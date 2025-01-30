@@ -12,5 +12,6 @@
     pkgs.fzf
     pkgs.fastfetch
     pkgs.just
+    pkgs.oxker
   ];
 }

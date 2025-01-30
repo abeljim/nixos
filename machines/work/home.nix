@@ -48,6 +48,8 @@
     pkgs.minicom
     pkgs.tio
     pkgs.android-studio
+
+    pkgs.cargo-cross
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

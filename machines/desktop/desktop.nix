@@ -46,6 +46,11 @@
     allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
   };
 
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["abeljim"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   services.ollama = {
     enable = true;
     acceleration = "rocm";

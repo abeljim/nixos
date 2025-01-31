@@ -50,6 +50,9 @@
     pkgs.gamescope
     pkgs.mangohud
     pkgs.cemu
+
+    # VM
+    pkgs.gnome-boxes
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -23,7 +23,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ../modules/neovim
     ../modules/zsh
-    ../modules/gnome
+    # ../modules/gnome
     ../modules/fish
     ../modules/vscode
     ../modules/clitools

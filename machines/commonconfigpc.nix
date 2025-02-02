@@ -5,24 +5,26 @@
   inputs,
   ...
 }: {
-  # TODO Make this modular
   nix.settings = {
     substituters = [
       "https://nix-gaming.cachix.org"
       "https://ghostty.cachix.org"
+      "https://cosmic.cachix.org/"
     ];
     trusted-public-keys = [
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
     ];
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the Gnome Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # # Enable the X11 windowing system.
+  # services.xserver.enable = true;
+  # # Enable the Gnome Desktop Environment.
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

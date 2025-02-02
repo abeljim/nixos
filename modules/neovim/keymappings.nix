@@ -118,8 +118,8 @@
 
       {
         mode = "n";
-        action = ''"_d'';
-        key = "d";
+        action = ''"_x'';
+        key = "<Del>";
         options = {
           noremap = true;
         };
@@ -127,8 +127,8 @@
 
       {
         mode = "v";
-        action = ''"_d'';
-        key = "d";
+        action = ''"_x'';
+        key = "<Del>";
         options = {
           noremap = true;
         };

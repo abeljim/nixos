@@ -37,6 +37,7 @@
       "spectre" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          nixos-cosmic.nixosModules.default
           ./machines/laptop/laptop.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -54,6 +55,7 @@
       "X1" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          nixos-cosmic.nixosModules.default
           ./machines/work/work.nix
           inputs.home-manager.nixosModules.default
         ];

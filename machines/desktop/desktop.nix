@@ -14,6 +14,9 @@
     ../commonconfigpc.nix
   ];
 
+  services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
+
   networking.hostName = "north"; # Define your hostname.
 
   home-manager = {

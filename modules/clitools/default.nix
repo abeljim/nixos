@@ -13,5 +13,6 @@
     pkgs.fastfetch
     pkgs.just
     pkgs.oxker
+    pkgs.tokei
   ];
 }

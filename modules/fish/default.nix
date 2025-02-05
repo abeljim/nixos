@@ -14,7 +14,7 @@
       function kopen
           set file (find . -type f -name "*.kicad_pro" | head -n 1)
           if test -n "$file"
-              nohup kicad "$file" >/dev/null 2>&1 &
+              GTK_THEME=Adwaita nohup kicad "$file" >/dev/null 2>&1 &
           end
       end
     '';

@@ -122,6 +122,15 @@
     clipboard-paste-protection = false
   '';
 
+  xdg.configFile."btop/btop.conf".text = ''
+    color_theme = "${pkgs.btop}/share/btop/themes/tokyo-night.theme"
+
+    #* If the theme set background should be shown, set to False if you want terminal background transparency.
+    theme_background = False
+
+    vim_keys = False
+  '';
+
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     window.padding.x = 30;

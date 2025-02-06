@@ -2,8 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
-  pkgs,
+  # config,
+  # pkgs,
   inputs,
   ...
 }: {
@@ -16,7 +16,7 @@
     # inputs.home-manager.nixosModules.default
   ];
 
-  services.desktopManager.cosmic.enable = true;
+  # services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
 
   networking.hostName = "spectre"; # Define your hostname.

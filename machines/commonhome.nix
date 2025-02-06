@@ -144,7 +144,7 @@
     font.normal.family = "JetBrainsMonoNL Nerd Font";
     font.normal.style = "Regular";
     window.opacity = 0.9;
-    general.import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
+    general.import = ["${pkgs.alacritty-theme}/kanagawa_wave.toml"];
   };
 
   # Home Manager can also manage your environment variables through

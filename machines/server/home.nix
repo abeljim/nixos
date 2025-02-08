@@ -74,6 +74,17 @@
   };
 
   programs.git = {
+    enable = true;
+    lfs.enable = true;
+    extraConfig = {
+      credential.helper = "store";
+      init.defaultBranch = "main";
+      pull.ff = "true";
+      color.ui = true;
+    };
+    aliases = {
+      prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+    };
     userEmail = "abelj1@uci.edu";
     userName = "abeljim";
   };

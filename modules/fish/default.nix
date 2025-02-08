@@ -17,6 +17,20 @@
               GTK_THEME=Adwaita nohup kicad "$file" >/dev/null 2>&1 &
           end
       end
+
+      # Copy command that uses rsync
+      function cp2
+        if test (count $argv) -ne 2
+         echo "Usage: cp2 <source> <destination>"
+         return 1
+        end
+
+        set source $argv[1]
+        set destination $argv[2]
+
+        # Use rsync with progress and resumable options
+        rsync -ah --progress --partial --inplace $source $destination
+      end
     '';
     shellAliases = {
       cd = "z";

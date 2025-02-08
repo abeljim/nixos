@@ -79,6 +79,9 @@
     pkgs.alacritty
     pkgs.alacritty-theme
     inputs.ghostty.packages.x86_64-linux.default
+
+    # Other Tools
+    pkgs.ventoy
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

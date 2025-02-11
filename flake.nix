@@ -68,6 +68,15 @@
           inputs.home-manager.nixosModules.default
         ];
       };
+
+      "quiet" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          nixos-cosmic.nixosModules.default
+          ./machines/research/research.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }

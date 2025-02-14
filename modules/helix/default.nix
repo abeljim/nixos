@@ -5,7 +5,7 @@
 
   programs.helix.enable = true;
   programs.helix.settings = {
-    theme = "tokyonight";
+    theme = "kanagawa";
     editor = {
       line-number = "relative";
       mouse = false;

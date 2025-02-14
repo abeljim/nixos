@@ -37,7 +37,7 @@
     # '')
 
     # Testing
-    pkgs.zed-editor
+    # pkgs.zed-editor
 
     # Other
     pkgs.remmina

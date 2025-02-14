@@ -17,7 +17,7 @@
           virt_text_pos = "eol";
         };
 
-        signcolumn = false;
+        signcolumn = true;
       };
     };
   };

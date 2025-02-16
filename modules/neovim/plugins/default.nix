@@ -18,5 +18,6 @@
     ./conform.nix
     ./neorg.nix
     ./gitsigns.nix
+    ./persistence.nix
   ];
 }

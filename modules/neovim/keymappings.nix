@@ -98,6 +98,7 @@
         };
       }
 
+      # Allows multiple indents
       {
         mode = "v";
         action = ">gv";
@@ -116,6 +117,7 @@
         };
       }
 
+      # Delete wont go to buffer
       {
         mode = "n";
         action = ''"_x'';
@@ -131,6 +133,32 @@
         key = "<Del>";
         options = {
           noremap = true;
+        };
+      }
+
+      # Windows
+      {
+        mode = "n";
+        action = "<C-W>s";
+        key = "<leader>-";
+        options = {
+          desc = "Split Window Below";
+        };
+      }
+      {
+        mode = "n";
+        action = "<C-W>v";
+        key = "<leader>|";
+        options = {
+          desc = "Split Window Right";
+        };
+      }
+      {
+        mode = "n";
+        action = "<C-W>c";
+        key = "<leader>wd";
+        options = {
+          desc = "Delete Window";
         };
       }
     ];

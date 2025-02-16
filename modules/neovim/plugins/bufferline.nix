@@ -145,8 +145,9 @@ in {
 
     {
       mode = "n";
-      key = "<C-x>";
-      action = "<cmd>:bp | bd #<cr>";
+      key = "<leader>bd";
+      # action = "<cmd>:bp | bd #<cr>";
+      action = "<cmd>:lua Snacks.bufdelete()<cr>";
       options = {
         desc = "Delete buffer";
       };

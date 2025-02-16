@@ -270,8 +270,8 @@ with lib.hm.gvariant; {
     };
 
     "org/gnome/shell/extensions/pop-shell" = {
-      gap-inner = mkUint32 10;
-      gap-outer = mkUint32 10;
+      gap-inner = mkUint32 0;
+      gap-outer = mkUint32 0;
       show-title = true;
       smart-gaps = false;
       tile-by-default = true;

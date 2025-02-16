@@ -16,7 +16,7 @@ with lib.hm.gvariant; {
       clock-format = "12h";
       color-scheme = "prefer-dark";
       enable-animations = true;
-      gtk-theme = "Kanagawa-BL";
+      gtk-theme = "Adwaita";
       icon-theme = "Kanagawa";
       cursor-theme = "Bibata-Modern-Ice";
     };

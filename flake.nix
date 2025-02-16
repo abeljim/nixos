@@ -37,6 +37,18 @@
       "spectre" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          {
+            nix.settings = {
+              substituters = [
+                "https://ghostty.cachix.org"
+                "https://cosmic.cachix.org/"
+              ];
+              trusted-public-keys = [
+                "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+              ];
+            };
+          }
           nixos-cosmic.nixosModules.default
           ./machines/laptop/laptop.nix
           inputs.home-manager.nixosModules.default
@@ -46,6 +58,20 @@
       "north" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          {
+            nix.settings = {
+              substituters = [
+                "https://nix-gaming.cachix.org"
+                "https://ghostty.cachix.org"
+                "https://cosmic.cachix.org/"
+              ];
+              trusted-public-keys = [
+                "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
+                "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+              ];
+            };
+          }
           nixos-cosmic.nixosModules.default
           ./machines/desktop/desktop.nix
           inputs.home-manager.nixosModules.default
@@ -55,6 +81,18 @@
       "X1" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          {
+            nix.settings = {
+              substituters = [
+                "https://ghostty.cachix.org"
+                "https://cosmic.cachix.org/"
+              ];
+              trusted-public-keys = [
+                "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+              ];
+            };
+          }
           nixos-cosmic.nixosModules.default
           ./machines/work/work.nix
           inputs.home-manager.nixosModules.default
@@ -72,6 +110,18 @@
       "quiet" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          {
+            nix.settings = {
+              substituters = [
+                "https://ghostty.cachix.org"
+                "https://cosmic.cachix.org/"
+              ];
+              trusted-public-keys = [
+                "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+              ];
+            };
+          }
           nixos-cosmic.nixosModules.default
           ./machines/research/research.nix
           inputs.home-manager.nixosModules.default

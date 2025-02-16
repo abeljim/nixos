@@ -1,0 +1,3 @@
+
+generate:
+  dconf dump / | dconf2nix > rawdconf.nix

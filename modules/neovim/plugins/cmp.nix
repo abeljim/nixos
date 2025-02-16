@@ -1,4 +1,3 @@
-# { config, ... }:
 {...}: let
   get_bufnrs.__raw = ''
     function()
@@ -16,7 +15,6 @@
 in {
   programs.nixvim.plugins = {
     cmp = {
-      # enable = !config.plugins.blink-cmp.enable;
       enable = true;
       autoEnableSources = true;
 
@@ -60,6 +58,31 @@ in {
             option = {
               inherit get_bufnrs;
             };
+          }
+          {
+            name = "nvim_lsp_signature_help";
+            priority = 1000;
+            option = {
+              inherit get_bufnrs;
+            };
+          }
+          {
+            name = "nvim_lsp_document_symbol";
+            priority = 1000;
+            option = {
+              inherit get_bufnrs;
+            };
+          }
+          {
+            name = "treesitter";
+            priority = 850;
+            option = {
+              inherit get_bufnrs;
+            };
+          }
+          {
+            name = "luasnip";
+            priority = 750;
           }
           {
             name = "buffer";

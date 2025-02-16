@@ -15,7 +15,20 @@ in {
     filesystem = {
       bindToCwd = false;
       useLibuvFileWatcher = true;
-      followCurrentFile.enabled = true;
+      followCurrentFile = {
+        enabled = true;
+        leaveDirsOpen = true;
+      };
+      filteredItems = {
+        hideDotfiles = false;
+        hideHidden = false;
+        neverShowByPattern = [
+          ".direnv"
+          ".devenv"
+          ".git"
+        ];
+        visible = true;
+      };
     };
 
     defaultComponentConfigs = {

@@ -37,6 +37,9 @@
     "aarch64-linux"
   ];
 
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
   # Enable udev rules for saleae-logic.
   hardware.saleae-logic.enable = true;
 

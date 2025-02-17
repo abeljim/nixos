@@ -38,6 +38,7 @@
 
     # VM
     pkgs.gnome-boxes
+    pkgs.virt-manager
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

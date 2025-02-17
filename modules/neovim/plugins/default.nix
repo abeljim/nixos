@@ -14,7 +14,7 @@
     ./snacks.nix
     ./toggleterm.nix
     ./tscomments.nix
-    ./yazi.nix
+    # ./yazi.nix
     ./conform.nix
     ./neorg.nix
     ./gitsigns.nix

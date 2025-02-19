@@ -3,7 +3,9 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abeljim";
@@ -64,7 +66,7 @@
     pkgs.vesktop
 
     # Programming
-    pkgs.devenv
+    pkgs-unstable.devenv
     pkgs.direnv
     pkgs.python313
     pkgs.erlang

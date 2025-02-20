@@ -40,7 +40,8 @@
     pkgs.bambu-studio
     pkgs.prusa-slicer
 
-    pkgs.gnome-boxes
+    # pkgs.gnome-boxes
+    pkgs.virt-manager
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -64,7 +65,7 @@
   };
 
   home.shellAliases = {
-    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
+    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre --cores 1";
   };
 
   # Home Manager can also manage your environment variables through

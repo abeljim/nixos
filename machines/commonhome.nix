@@ -84,6 +84,9 @@ in {
 
     # Other Tools
     pkgs.ventoy
+
+    # Office
+    pkgs.libreoffice
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -19,5 +19,6 @@
     ./neorg.nix
     ./gitsigns.nix
     ./persistence.nix
+    ./sleuth.nix
   ];
 }

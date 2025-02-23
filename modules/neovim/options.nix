@@ -61,6 +61,16 @@ in {
         vim.api.nvim_set_keymap('v', '<Down>', '<NOP>', { noremap = true })
         vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', { noremap = true })
         vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', { noremap = true })
+
+        -- For C Projects
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = { "c", "h" },
+          callback = function()
+            vim.bo.tabstop = 4
+            vim.bo.shiftwidth = 4
+            vim.bo.expandtab = true
+          end,
+        })
       '';
 
     clipboard = {

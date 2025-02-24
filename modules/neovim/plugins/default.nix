@@ -20,5 +20,6 @@
     ./gitsigns.nix
     ./persistence.nix
     ./sleuth.nix
+    ./avante.nix
   ];
 }

@@ -21,5 +21,6 @@
     ./persistence.nix
     ./sleuth.nix
     ./avante.nix
+    ./markdown-preview.nix
   ];
 }

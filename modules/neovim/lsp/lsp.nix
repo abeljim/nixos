@@ -65,6 +65,12 @@
           enable = true;
           package = null;
         };
+
+        # JavaScript, TypeScript, JSX, CSS and GraphQL
+        biome = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

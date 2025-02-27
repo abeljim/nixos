@@ -15,8 +15,8 @@
     pkgs.taplo
     # For Spelling LSP
     pkgs.typos-lsp
-    # For Markdown FMT
-    pkgs.deno
+    # For JavaScript, TypeScript, JSX, TSX, JSON, CSS FMT
+    pkgs.biome
     # For YAML FMT
     pkgs.yamlfmt
     # NIX FMT

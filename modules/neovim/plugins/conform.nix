@@ -76,19 +76,23 @@
           cmake = ["cmake_format"];
           cpp = ["clang-format"];
           cs = ["csharpier"];
-          css = ["stylelint"];
+          css = ["biome"];
           fish = ["fish_indent"];
           fsharp = ["fantomas"];
           gdscript = ["gdformat"];
           gleam = ["gleam"];
           java = ["google-java-format"];
-          javascript = {
-            __unkeyed-1 = "biome";
-            __unkeyed-2 = "prettierd";
-            timeout_ms = 2000;
-            stop_after_first = true;
-          };
-          json = ["jq"];
+          javascript = ["biome"];
+          typescript = ["biome"];
+          javascriptreact = ["biome"];
+          typescriptreact = ["biome"];
+          # javascript = {
+          #   __unkeyed-1 = "biome";
+          #   __unkeyed-2 = "prettierd";
+          #   timeout_ms = 2000;
+          #   stop_after_first = true;
+          # };
+          json = ["biome"];
           lua = ["stylua"];
           markdown = ["deno_fmt"];
           nix = ["alejandra"];
@@ -106,12 +110,12 @@
           swift = ["swift_format"];
           terraform = ["tofu_fmt"];
           toml = ["taplo"];
-          typescript = {
-            __unkeyed-1 = "biome";
-            __unkeyed-2 = "prettierd";
-            timeout_ms = 2000;
-            stop_after_first = true;
-          };
+          # typescript = {
+          #   __unkeyed-1 = "biome";
+          #   __unkeyed-2 = "prettierd";
+          #   timeout_ms = 2000;
+          #   stop_after_first = true;
+          # };
           xml = [
             "xmlformat"
             "xmllint"

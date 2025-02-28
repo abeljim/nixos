@@ -70,11 +70,12 @@ in {
     pkgs.direnv
     pkgs.python313
     pkgs.erlang
-    pkgs.gleam
+    pkgs-unstable.gleam
     pkgs.rustup
     pkgs.gcc
     pkgs.gnumake
-    pkgs.zig
+    pkgs-unstable.zig
+    pkgs.nodejs_22
 
     # Terminal
     pkgs.nerdfonts

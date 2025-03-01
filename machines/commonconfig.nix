@@ -82,6 +82,7 @@
     unzip
     libarchive
     tailscale
+    git-crypt
   ];
 
   virtualisation.docker.enable = true;

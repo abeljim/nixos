@@ -32,7 +32,9 @@
     nixpkgs,
     nixos-cosmic,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
+  in {
     nixosConfigurations = {
       "spectre" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -100,7 +102,10 @@
       };
 
       "cowcloud" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          inherit secrets;
+        };
         modules = [
           ./machines/server/server.nix
           inputs.home-manager.nixosModules.default

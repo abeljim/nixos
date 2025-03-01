@@ -1,5 +1,2 @@
 [default]
-extend-ignore-words-re = [
-  "\\bnoice\\b",
-  "\\bNoice\\b",
-]
+extend-ignore-words-re = ["\\bnoice\\b", "\\bNoice\\b", "\\btio\\b"]

@@ -41,6 +41,7 @@
 
     # Other
     pkgs.remmina
+    pkgs.dbeaver-bin
 
     # Development
     pkgs.ffmpeg

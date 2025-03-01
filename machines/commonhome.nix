@@ -28,7 +28,7 @@ in {
     ../modules/gnome
     ../modules/fish
     ../modules/vscode
-    ../modules/clitools
+    ../modules/cli
     ../modules/helix
   ];
 
@@ -103,15 +103,6 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
-
-  home.shellAliases = {
-    nupdate = "sudo nix flake update";
-    nclean = "nix-env --delete-generations 7d";
-    ngarbage = "sudo nix-collect-garbage -d";
-    lg = "lazygit";
-    gs = "git status";
-    gl = "git prettylog";
   };
 
   programs.git = {

@@ -24,7 +24,7 @@
     ../../modules/neovim
     ../../modules/zsh
     ../../modules/fish
-    ../../modules/clitools
+    ../../modules/cli
   ];
 
   # This value determines the Home Manager release that your configuration is

@@ -9,7 +9,7 @@ create_key:
 
 # Decode Key
 unlock_base64 KEY:
-  base64 --decode {{KEY}} > ./secret-key
+  echo {{KEY}} | base64 --decode > ./secret-key
 
 # Unlock gitcrypt
 unlock:

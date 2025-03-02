@@ -16,6 +16,10 @@
     (import ../../modules/tailscale {inherit pkgs secrets;})
   ];
 
+  services.tailscale.extraSetFlags = [
+    "--advertise-exit-node"
+  ];
+
   services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
 

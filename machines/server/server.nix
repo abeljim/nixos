@@ -15,6 +15,10 @@
     (import ../../modules/tailscale {inherit pkgs secrets;})
   ];
 
+  services.tailscale.extraSetFlags = [
+    "--advertise-exit-node"
+  ];
+
   networking.hostName = "cowcloud"; # Define your hostname.
 
   # enable mdadm used for raid. I use it cloning my boot ssd but right now I just have 1.

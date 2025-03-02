@@ -102,10 +102,7 @@
       };
 
       "cowcloud" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          inherit secrets;
-        };
+        specialArgs = {inherit inputs secrets;};
         modules = [
           ./machines/server/server.nix
           inputs.home-manager.nixosModules.default
@@ -113,7 +110,7 @@
       };
 
       "quiet" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs secrets;};
         modules = [
           {
             nix.settings = {

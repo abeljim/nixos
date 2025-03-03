@@ -3,6 +3,8 @@
   secrets,
   ...
 }: {
+  # This module will auto login to tailscale
+
   # create a oneshot job to authenticate to Tailscale
   systemd.services.tailscale-autoconnect = {
     description = "Automatic connection to Tailscale";

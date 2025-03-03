@@ -14,6 +14,8 @@
     pkgs.just
     pkgs.oxker
     pkgs.tokei
+    pkgs.rip2
+    pkgs.zoxide
   ];
 
   home.shellAliases = {

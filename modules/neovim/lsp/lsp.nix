@@ -66,8 +66,8 @@
           package = null;
         };
 
-        # JavaScript, TypeScript, JSX, CSS and GraphQL
-        biome = {
+        # Web
+        eslint = {
           enable = true;
           package = null;
         };

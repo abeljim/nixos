@@ -71,6 +71,12 @@
           enable = true;
           package = null;
         };
+
+        # Typescript
+        ts_ls = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

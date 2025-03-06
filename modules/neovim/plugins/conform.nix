@@ -82,16 +82,22 @@
           gdscript = ["gdformat"];
           gleam = ["gleam"];
           java = ["google-java-format"];
-          javascript = ["biome"];
-          typescript = ["biome"];
-          javascriptreact = ["biome"];
-          typescriptreact = ["biome"];
-          # javascript = {
-          #   __unkeyed-1 = "biome";
-          #   __unkeyed-2 = "prettierd";
-          #   timeout_ms = 2000;
-          #   stop_after_first = true;
-          # };
+          # javascript = ["biome"];
+          # typescript = ["biome"];
+          # javascriptreact = ["biome"];
+          # typescriptreact = ["biome"];
+          javascript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "biome";
+            timeout_ms = 2000;
+            stop_after_first = true;
+          };
+          javascriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "biome";
+            timeout_ms = 2000;
+            stop_after_first = true;
+          };
           json = ["biome"];
           lua = ["stylua"];
           markdown = ["deno_fmt"];
@@ -110,12 +116,18 @@
           swift = ["swift_format"];
           terraform = ["tofu_fmt"];
           toml = ["taplo"];
-          # typescript = {
-          #   __unkeyed-1 = "biome";
-          #   __unkeyed-2 = "prettierd";
-          #   timeout_ms = 2000;
-          #   stop_after_first = true;
-          # };
+          typescript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "biome";
+            timeout_ms = 2000;
+            stop_after_first = true;
+          };
+          typescriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "biome";
+            timeout_ms = 2000;
+            stop_after_first = true;
+          };
           xml = [
             "xmlformat"
             "xmllint"

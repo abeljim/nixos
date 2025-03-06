@@ -3,8 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
-  # pkgs,
+  pkgs,
   inputs,
+  secrets,
   ...
 }: {
   imports = [
@@ -12,6 +13,11 @@
     ./hardware-configuration.nix
     ../commonconfig.nix
     ../commonconfigpc.nix
+    (import ../../modules/tailscale {inherit pkgs secrets;})
+  ];
+
+  services.tailscale.extraSetFlags = [
+    "--advertise-exit-node"
   ];
 
   services.desktopManager.cosmic.enable = true;

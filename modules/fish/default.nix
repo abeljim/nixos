@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.rip2
-    pkgs.zoxide
     pkgs.fishPlugins.bass
   ];
 

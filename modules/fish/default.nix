@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  secrets,
+  ...
+}: {
   home.packages = [
     pkgs.fishPlugins.bass
   ];
@@ -29,6 +33,7 @@
         # Use rsync with progress and resumable options
         rsync -ah --progress --partial --inplace $source $destination
       end
+      set -x ANTHROPIC_API_KEY ${secrets.claude.key};
     '';
     shellAliases = {
       cd = "z";

@@ -2,6 +2,7 @@
   # config,
   pkgs,
   inputs,
+  secrets,
   ...
 }: let
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
@@ -165,6 +166,7 @@ in {
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    ANTHROPIC_API_KEY = "${secrets.claude.key}";
   };
 
   # Let Home Manager install and manage itself.

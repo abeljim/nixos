@@ -5,6 +5,7 @@
   # config,
   # pkgs,
   inputs,
+  secrets,
   ...
 }: {
   imports = [
@@ -22,7 +23,7 @@
   networking.hostName = "spectre"; # Define your hostname.
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs secrets;};
     backupFileExtension = "backup";
     users = {
       "abeljim" = import ./home.nix;

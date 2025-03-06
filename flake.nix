@@ -37,7 +37,7 @@
   in {
     nixosConfigurations = {
       "spectre" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs secrets;};
         modules = [
           {
             nix.settings = {
@@ -58,7 +58,7 @@
       };
 
       "north" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs secrets;};
         modules = [
           {
             nix.settings = {
@@ -81,7 +81,7 @@
       };
 
       "X1" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs secrets;};
         modules = [
           {
             nix.settings = {

@@ -5,6 +5,7 @@
   config,
   pkgs,
   inputs,
+  secrets,
   ...
 }: {
   imports = [
@@ -20,7 +21,7 @@
   networking.hostName = "north"; # Define your hostname.
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs secrets;};
     backupFileExtension = "backup";
     users = {
       "abeljim" = import ./home.nix;

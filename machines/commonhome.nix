@@ -76,6 +76,7 @@ in {
     pkgs.gnumake
     pkgs-unstable.zig
     pkgs.nodejs_22
+    pkgs-unstable.zed-editor
 
     # Terminal
     pkgs.nerdfonts

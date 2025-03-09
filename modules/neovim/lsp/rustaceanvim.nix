@@ -59,8 +59,9 @@
       };
     };
 
+    # Had issues with tauri disabled for now
     crates-nvim = {
-      enable = true;
+      enable = false;
     };
   };
 }

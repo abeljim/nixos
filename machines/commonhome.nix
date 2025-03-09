@@ -58,7 +58,7 @@ in {
     inputs.zen-browser.packages.x86_64-linux.default
 
     # Electrical
-    pkgs.kicad
+    pkgs-unstable.kicad
 
     # Media Software
     pkgs.darktable

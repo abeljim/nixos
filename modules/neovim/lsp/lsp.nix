@@ -77,6 +77,12 @@
           enable = true;
           package = null;
         };
+
+        # Go Lang
+        gopls = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

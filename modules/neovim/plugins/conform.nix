@@ -81,6 +81,7 @@
           fsharp = ["fantomas"];
           gdscript = ["gdformat"];
           gleam = ["gleam"];
+          go = ["goimports" "gofmt"];
           java = ["google-java-format"];
           # javascript = ["biome"];
           # typescript = ["biome"];

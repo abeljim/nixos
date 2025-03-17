@@ -39,6 +39,8 @@
     # VM
     pkgs.gnome-boxes
     pkgs.virt-manager
+
+    pkgs.android-studio
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

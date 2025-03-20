@@ -17,7 +17,7 @@
     # inputs.home-manager.nixosModules.default
   ];
 
-  # services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
 
   networking.hostName = "spectre"; # Define your hostname.

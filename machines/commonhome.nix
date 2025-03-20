@@ -83,7 +83,7 @@ in {
     pkgs.nerdfonts
     pkgs.alacritty
     pkgs.alacritty-theme
-    inputs.ghostty.packages.x86_64-linux.default
+    pkgs.ghostty
 
     # Other Tools
     pkgs.ventoy

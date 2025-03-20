@@ -115,6 +115,7 @@
           ];
           sql = ["sqlfluff"];
           swift = ["swift_format"];
+          templ = ["templ"];
           terraform = ["tofu_fmt"];
           toml = ["taplo"];
           typescript = {

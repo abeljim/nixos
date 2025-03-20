@@ -83,6 +83,12 @@
           enable = true;
           package = null;
         };
+
+        # Go Templ
+        templ = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

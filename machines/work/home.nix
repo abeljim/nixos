@@ -75,7 +75,7 @@ in {
   };
 
   home.shellAliases = {
-    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#X1";
+    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#X1 --max-jobs 4";
   };
 
   # Home Manager can also manage your environment variables through

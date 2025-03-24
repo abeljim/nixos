@@ -67,7 +67,7 @@
         };
 
         # Web
-        eslint = {
+        biome = {
           enable = true;
           package = null;
         };

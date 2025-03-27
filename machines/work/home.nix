@@ -3,9 +3,11 @@
   pkgs,
   inputs,
   ...
-}: let
-  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-in {
+}:
+# let
+#   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+# in
+{
   imports = [
     ../commonhome.nix
   ];
@@ -39,7 +41,7 @@ in {
     # '')
 
     # Testing
-    pkgs-unstable.zed-editor
+    pkgs.zed-editor
 
     # Other
     pkgs.remmina

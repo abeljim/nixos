@@ -4,9 +4,11 @@
   inputs,
   secrets,
   ...
-}: let
-  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-in {
+}:
+# let
+#   pkgs = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+# in
+{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abeljim";
@@ -58,7 +60,7 @@ in {
     inputs.zen-browser.packages.x86_64-linux.default
 
     # Electrical
-    pkgs-unstable.kicad
+    pkgs.kicad
 
     # Media Software
     pkgs.darktable
@@ -67,17 +69,17 @@ in {
     pkgs.vesktop
 
     # Programming
-    pkgs-unstable.devenv
+    pkgs.devenv
     pkgs.direnv
     pkgs.python313
     pkgs.erlang
-    pkgs-unstable.gleam
+    pkgs.gleam
     pkgs.rustup
     pkgs.gcc
     pkgs.gnumake
-    pkgs-unstable.zig
+    pkgs.zig
     pkgs.nodejs_22
-    pkgs-unstable.zed-editor
+    pkgs.zed-editor
 
     # Terminal
     pkgs.nerdfonts

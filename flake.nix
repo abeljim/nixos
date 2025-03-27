@@ -3,19 +3,19 @@
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs.follows = "nixos-cosmic/nixpkgs-stable";
+    nixpkgs.follows = "nixos-cosmic/nixpkgs";
 
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

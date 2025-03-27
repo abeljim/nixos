@@ -82,7 +82,6 @@
     pkgs.zed-editor
 
     # Terminal
-    pkgs.nerdfonts
     pkgs.alacritty
     pkgs.alacritty-theme
     pkgs.ghostty

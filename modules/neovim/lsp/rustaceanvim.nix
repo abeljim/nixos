@@ -60,7 +60,7 @@
     };
 
     # Had issues with tauri disabled for now
-    crates-nvim = {
+    crates = {
       enable = false;
     };
   };

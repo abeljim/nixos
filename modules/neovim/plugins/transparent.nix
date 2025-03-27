@@ -2,7 +2,7 @@
   programs.nixvim.plugins = {
     transparent = {
       enable = true;
-      # autoLoad = true;
+      autoLoad = true;
       settings = {
         exclude_groups = [
           # Doesnt work cause it links to CursorLine

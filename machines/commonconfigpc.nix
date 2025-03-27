@@ -16,7 +16,7 @@
 
   # Enable sound with pipewire.
   # sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -34,6 +34,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.zed-mono
+  ];
+
   environment.systemPackages = with pkgs; [
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
@@ -46,6 +51,6 @@
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-    "segger-jlink-qt4-796s"
+    "segger-jlink-qt4-810"
   ];
 }

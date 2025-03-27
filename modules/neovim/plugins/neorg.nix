@@ -17,9 +17,9 @@
     # Not sure what this does.
     # telescopeIntegration.enable = true;
 
-    lazyLoading = true;
+    settings.lazy_loading = true;
 
-    modules = {
+    settings.load = {
       "core.defaults" = {__empty = null;};
 
       "core.keybinds".config.hook.__raw = ''

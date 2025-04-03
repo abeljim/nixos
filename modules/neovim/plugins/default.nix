@@ -20,8 +20,8 @@
     ./gitsigns.nix
     ./persistence.nix
     ./sleuth.nix
-    # ./avante.nix
-    ./codecompanion.nix
+    ./avante.nix
+    # ./codecompanion.nix
     ./markdown-preview.nix
   ];
 }

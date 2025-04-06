@@ -10,7 +10,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
-    ../users/abeljim.nix
+    ../users/danieljim.nix
   ];
 
   # Bootloader.

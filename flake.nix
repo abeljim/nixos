@@ -20,13 +20,11 @@
   outputs = {
     self,
     nixpkgs,
-    nixos-cosmic,
     ...
   } @ inputs: {
     nixosConfigurations = {
       "mini" = nixpkgs.lib.nixosSystem {
         modules = [
-          nixos-cosmic.nixosModules.default
           ./machines/desktop/desktop.nix
           inputs.home-manager.nixosModules.default
         ];

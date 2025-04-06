@@ -89,6 +89,12 @@
           enable = true;
           package = null;
         };
+
+        # Elixir
+        elixirls = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

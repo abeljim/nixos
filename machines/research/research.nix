@@ -76,6 +76,8 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
+  networking.firewall.enable = false;
+
   # services.ollama = {
   #   enable = true;
   #   acceleration = "rocm";

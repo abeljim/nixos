@@ -21,6 +21,7 @@
     ./persistence.nix
     ./sleuth.nix
     ./avante.nix
+    # ./codecompanion.nix
     ./markdown-preview.nix
   ];
 }

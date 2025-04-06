@@ -4,7 +4,7 @@
 {
   # config,
   # pkgs,
-  # inputs,
+  inputs,
   ...
 }: {
   imports = [
@@ -17,9 +17,10 @@
   networking.hostName = "mini"; # Define your hostname.
 
   home-manager = {
+    extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
     users = {
-      "abeljim" = import ./home.nix;
+      "danieljim" = import ./home.nix;
     };
   };
 

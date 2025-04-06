@@ -24,6 +24,7 @@
   } @ inputs: {
     nixosConfigurations = {
       "mini" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         modules = [
           ./machines/desktop/desktop.nix
           inputs.home-manager.nixosModules.default

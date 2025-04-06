@@ -34,18 +34,18 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    # Embedded
-    (segger-jlink.override {acceptLicense = true;})
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   # Embedded
+  #   (segger-jlink.override {acceptLicense = true;})
+  # ];
 
   services.flatpak.enable = true;
 
-  services.udev.packages = [
-    (pkgs.segger-jlink.override {acceptLicense = true;})
-  ];
+  # services.udev.packages = [
+  #   (pkgs.segger-jlink.override {acceptLicense = true;})
+  # ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "segger-jlink-qt4-796s"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "segger-jlink-qt4-796s"
+  # ];
 }

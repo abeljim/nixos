@@ -2,10 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
-  pkgs,
-  inputs,
-  secrets,
+  # config,
+  # pkgs,
+  # inputs,
   ...
 }: {
   imports = [
@@ -15,29 +14,13 @@
     ../commonconfigpc.nix
   ];
 
-  services.desktopManager.cosmic.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
-
-  networking.hostName = "north"; # Define your hostname.
+  networking.hostName = "mini"; # Define your hostname.
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs secrets;};
     backupFileExtension = "backup";
     users = {
       "abeljim" = import ./home.nix;
     };
-  };
-
-  fileSystems."/mnt/fatboi" = {
-    device = "192.168.50.221:/fatboi";
-    fsType = "nfs";
-    options = ["x-systemd.automount" "noauto"];
-  };
-
-  # NixOS configuration for Star Citizen requirements
-  boot.kernel.sysctl = {
-    "vm.max_map_count" = 16777216;
-    "fs.file-max" = 524288;
   };
 
   programs.steam = {
@@ -51,15 +34,9 @@
   };
 
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["abeljim"];
+  users.groups.libvirtd.members = ["danieljim"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-
-  services.ollama = {
-    enable = true;
-    acceleration = "rocm";
-  };
-  services.open-webui.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -67,5 +44,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }

@@ -2,15 +2,14 @@
   # config,
   pkgs,
   inputs,
-  secrets,
   ...
 }: let
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
 in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "abeljim";
-  home.homeDirectory = "/home/abeljim";
+  home.username = "danieljim";
+  home.homeDirectory = "/home/danieljim";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -55,7 +54,6 @@ in {
 
     # Web Browsers
     pkgs.chromium
-    inputs.zen-browser.packages.x86_64-linux.default
 
     # Electrical
     pkgs-unstable.kicad

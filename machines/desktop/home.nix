@@ -16,7 +16,7 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
-  # The home.p{ pkgs, ... }:ackages option allows you to install Nix packages into your
+  # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -36,23 +36,10 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    # Media Software
-    pkgs.kdePackages.kdenlive
-
-    # Homelab
-    pkgs.yt-dlp
-    pkgs.filebot
-
     # Game
     pkgs.prismlauncher
-    inputs.nix-citizen.packages.${pkgs.system}.star-citizen
-    inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
     pkgs.gamescope
     pkgs.mangohud
-    pkgs.cemu
-
-    # VM
-    pkgs.gnome-boxes
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -71,12 +58,12 @@
   };
 
   programs.git = {
-    userEmail = "abelj1@uci.edu";
-    userName = "abeljim";
+    userEmail = "git email";
+    userName = "git username";
   };
 
   home.shellAliases = {
-    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#north";
+    nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#mini";
   };
 
   # Home Manager can also manage your environment variables through

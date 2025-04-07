@@ -20,7 +20,7 @@
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
     users = {
-      "danieljim" = import ./home.nix;
+      "danielj" = import ./home.nix;
     };
   };
 
@@ -35,7 +35,7 @@
   };
 
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["danieljim"];
+  users.groups.libvirtd.members = ["danielj"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 

@@ -5,8 +5,8 @@ with lib.hm.gvariant; {
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/danieljim/nixos/machines/wallpaper.png";
-      picture-uri-dark = "file:///home/danieljim/nixos/machines/wallpaper.png";
+      picture-uri = "file:///home/danielj/nixos/machines/wallpaper.png";
+      picture-uri-dark = "file:///home/danielj/nixos/machines/wallpaper.png";
       primary-color = "#3071AE";
       secondary-color = "#000000";
     };
@@ -144,7 +144,7 @@ with lib.hm.gvariant; {
       bgcolor = ["0.208" "0.263" "0.333"];
       bgcolor-wmax = ["0.118" "0.118" "0.118"];
       bgcolor2 = ["0.271" "0.325" "0.380"];
-      bguri = "file:///home/danieljim/.config/background";
+      bguri = "file:///home/danielj/.config/background";
       boxalpha = 0.0;
       boxcolor = ["0.208" "0.263" "0.333"];
       bradius = 20.0;
@@ -166,7 +166,7 @@ with lib.hm.gvariant; {
       dark-bgcolor = ["0.208" "0.263" "0.333"];
       dark-bgcolor-wmax = ["0.118" "0.118" "0.118"];
       dark-bgcolor2 = ["0.271" "0.325" "0.380"];
-      dark-bguri = "file:///home/danieljim/.config/background";
+      dark-bguri = "file:///home/danielj/.config/background";
       dark-boxcolor = ["0.208" "0.263" "0.333"];
       dark-hscd-color = ["0.776" "0.329" "0.361"];
       dark-iscolor = ["0.208" "0.263" "0.333"];
@@ -208,7 +208,7 @@ with lib.hm.gvariant; {
       light-bgcolor = ["0.820" "0.851" "0.878"];
       light-bgcolor-wmax = ["0.922" "0.922" "0.922"];
       light-bgcolor2 = ["0.745" "0.761" "0.800"];
-      light-bguri = "file:///home/danieljim/.config/background";
+      light-bguri = "file:///home/danielj/.config/background";
       light-boxcolor = ["0.820" "0.851" "0.878"];
       light-hscd-color = ["0.859" "0.349" "0.384"];
       light-iscolor = ["0.820" "0.851" "0.878"];

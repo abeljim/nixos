@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.danieljim = {
+  users.users.danielj = {
     isNormalUser = true;
     description = "Daniel Jimenez";
     extraGroups = ["networkmanager" "wheel" "dialout" "docker" "adbusers" "kvm"];
@@ -12,5 +12,5 @@
     ];
   };
 
-  nix.settings.trusted-users = ["danieljim"];
+  nix.settings.trusted-users = ["danielj"];
 }

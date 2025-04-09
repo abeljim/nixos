@@ -42,12 +42,14 @@
   environment.systemPackages = with pkgs; [
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
+    vial
   ];
 
   services.flatpak.enable = true;
 
   services.udev.packages = [
     (pkgs.segger-jlink.override {acceptLicense = true;})
+    pkgs.vial
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

@@ -80,6 +80,7 @@
     pkgs.zig
     pkgs.nodejs_22
     pkgs.zed-editor
+    pkgs.esp-generate
 
     # Terminal
     pkgs.alacritty

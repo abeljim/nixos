@@ -22,6 +22,8 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
+
+    probe-rs-rules.url = "github:jneem/probe-rs-rules";
   };
 
   outputs = {

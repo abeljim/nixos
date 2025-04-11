@@ -5,6 +5,11 @@
   inputs,
   ...
 }: {
+  imports = [
+    inputs.probe-rs-rules.nixosModules.x86_64-linux.default
+  ];
+  hardware.probe-rs.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable the Gnome Desktop Environment.

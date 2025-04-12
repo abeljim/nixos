@@ -24,6 +24,8 @@
     nix-citizen.url = "github:LovingMelody/nix-citizen";
 
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
+
+    nixgl.url = "github:nix-community/nixGL";
   };
 
   outputs = {
@@ -126,8 +128,8 @@
     homeConfigurations = {
       "abeljim" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs secrets;};
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-	modules = [
+        pkgs = import nixpkgs {system = "x86_64-linux";};
+        modules = [
           ./machines/ubuntu/home.nix
         ];
       };

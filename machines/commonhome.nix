@@ -1,5 +1,5 @@
 {
-  # config,
+  config,
   pkgs,
   inputs,
   secrets,
@@ -56,17 +56,18 @@
     # '')
 
     # Web Browsers
-    pkgs.chromium
-    inputs.zen-browser.packages.x86_64-linux.default
+    (config.lib.nixGL.wrap pkgs.chromium)
+
+    (config.lib.nixGL.wrap inputs.zen-browser.packages.x86_64-linux.default)
 
     # Electrical
-    pkgs.kicad
+    (config.lib.nixGL.wrap pkgs.kicad)
 
     # Media Software
-    pkgs.darktable
+    (config.lib.nixGL.wrap pkgs.darktable)
 
     # Discord
-    pkgs.vesktop
+    (config.lib.nixGL.wrap pkgs.vesktop)
 
     # Programming
     pkgs.devenv
@@ -79,19 +80,18 @@
     pkgs.gnumake
     pkgs.zig
     pkgs.nodejs_22
-    pkgs.zed-editor
+    (config.lib.nixGL.wrap pkgs.zed-editor)
     pkgs.esp-generate
 
     # Terminal
-    pkgs.alacritty
     pkgs.alacritty-theme
-    pkgs.ghostty
+    (config.lib.nixGL.wrap pkgs.ghostty)
 
     # Other Tools
     pkgs.ventoy
 
     # Office
-    pkgs.libreoffice
+    (config.lib.nixGL.wrap pkgs.libreoffice)
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -142,6 +142,7 @@
   '';
 
   programs.alacritty.enable = true;
+  programs.alacritty.package = config.lib.nixGL.wrap pkgs.alacritty;
   programs.alacritty.settings = {
     window.padding.x = 30;
     window.padding.y = 30;

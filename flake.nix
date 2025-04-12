@@ -30,6 +30,7 @@
     self,
     nixpkgs,
     nixos-cosmic,
+    home-manager,
     ...
   } @ inputs: let
     secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
@@ -117,6 +118,17 @@
           }
           nixos-cosmic.nixosModules.default
           ./machines/research/research.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      "abeljim" = home-manager.lib.homeManagerConfiguration {
+        # specialArgs = {inherit inputs secrets;};
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+	modules = [
+          ./machines/ubuntu/ubuntu.nix
           inputs.home-manager.nixosModules.default
         ];
       };

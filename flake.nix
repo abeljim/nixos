@@ -125,11 +125,10 @@
 
     homeConfigurations = {
       "abeljim" = home-manager.lib.homeManagerConfiguration {
-        # specialArgs = {inherit inputs secrets;};
+        extraSpecialArgs = {inherit inputs secrets;};
         pkgs = import nixpkgs { system = "x86_64-linux"; };
 	modules = [
-          ./machines/ubuntu/ubuntu.nix
-          inputs.home-manager.nixosModules.default
+          ./machines/ubuntu/home.nix
         ];
       };
     };

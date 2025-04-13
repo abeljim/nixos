@@ -11,6 +11,7 @@
   home.packages = [
     # For Nix LSP
     pkgs.nil
+    pkgs.nixd
     # For Toml Format & LSP
     pkgs.taplo
     # For Spelling LSP

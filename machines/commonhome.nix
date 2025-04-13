@@ -33,6 +33,9 @@
     ../modules/vscode
     ../modules/cli
     ../modules/helix
+    ../modules/ghostty
+    ../modules/alacritty
+    ../modules/btop
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -82,11 +85,6 @@
     pkgs.zed-editor
     pkgs.esp-generate
 
-    # Terminal
-    pkgs.alacritty
-    pkgs.alacritty-theme
-    pkgs.ghostty
-
     # Other Tools
     pkgs.ventoy
 
@@ -121,34 +119,6 @@
     aliases = {
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
     };
-  };
-
-  xdg.configFile."ghostty/config".text = ''
-    window-padding-x = 20
-    window-padding-y = 10
-    theme = "Kanagawa Wave"
-    font-family = "JetBrainsMonoNL Nerd Font"
-    background-opacity = 0.9
-    clipboard-paste-protection = false
-  '';
-
-  xdg.configFile."btop/btop.conf".text = ''
-    color_theme = "${pkgs.btop}/share/btop/themes/tokyo-night.theme"
-
-    #* If the theme set background should be shown, set to False if you want terminal background transparency.
-    theme_background = False
-
-    vim_keys = False
-  '';
-
-  programs.alacritty.enable = true;
-  programs.alacritty.settings = {
-    window.padding.x = 30;
-    window.padding.y = 30;
-    font.normal.family = "JetBrainsMonoNL Nerd Font";
-    font.normal.style = "Regular";
-    window.opacity = 0.9;
-    general.import = ["${pkgs.alacritty-theme}/kanagawa_wave.toml"];
   };
 
   # Home Manager can also manage your environment variables through

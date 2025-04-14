@@ -15,9 +15,6 @@
     ../commonconfigpc.nix
   ];
 
-  services.desktopManager.cosmic.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
-
   networking.hostName = "x1"; # Define your hostname.
 
   home-manager = {

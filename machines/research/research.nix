@@ -20,9 +20,6 @@
     "--advertise-exit-node"
   ];
 
-  services.desktopManager.cosmic.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
-
   # Enable OpenGL
   hardware.graphics = {
     enable = true;

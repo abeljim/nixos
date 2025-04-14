@@ -84,6 +84,7 @@
     pkgs.nodejs_22
     pkgs.zed-editor
     pkgs.esp-generate
+    pkgs.espflash
 
     # Other Tools
     pkgs.ventoy

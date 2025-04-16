@@ -23,5 +23,6 @@
     ./avante.nix
     # ./codecompanion.nix
     ./markdown-preview.nix
+    ./typst.nix
   ];
 }

@@ -76,6 +76,7 @@
     pkgs.direnv
     pkgs.python313
     pkgs.erlang
+    pkgs.rebar3
     pkgs.gleam
     pkgs.rustup
     pkgs.gcc

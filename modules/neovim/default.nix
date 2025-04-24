@@ -24,6 +24,8 @@
     pkgs.alejandra
     # LUA LSP
     pkgs.lua-language-server
+    # Typescript Lsp
+    pkgs.typescript-language-server
   ];
 
   imports = [

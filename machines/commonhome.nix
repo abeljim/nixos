@@ -82,6 +82,7 @@
     pkgs.gnumake
     pkgs.zig
     pkgs.nodejs_22
+    pkgs.pnpm_10
     pkgs.zed-editor
     pkgs.esp-generate
     pkgs.espflash

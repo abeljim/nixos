@@ -17,7 +17,7 @@
     };
 
     # Should not be needed bug with Home Manager
-    initExtra = ''
+    initContent = ''
       eval "$(direnv hook zsh)"
     '';
   };

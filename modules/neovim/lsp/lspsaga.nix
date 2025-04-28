@@ -118,7 +118,7 @@
       key = "<leader>cd";
       action = "<cmd>Lspsaga show_buf_diagnostics<CR>";
       options = {
-        desc = "Line Diagnostics";
+        desc = "Buffer Diagnostics";
         silent = true;
       };
     }

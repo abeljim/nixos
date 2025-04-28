@@ -108,6 +108,7 @@
             "isort"
             "ruff_format"
           ];
+          ruby = ["rufo"];
           rust = ["rustfmt"];
           sh = [
             "shellcheck"

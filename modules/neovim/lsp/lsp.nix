@@ -95,6 +95,12 @@
           enable = true;
           package = null;
         };
+
+        # Ruby
+        solargraph = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

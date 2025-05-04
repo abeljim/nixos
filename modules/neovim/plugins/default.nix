@@ -14,6 +14,7 @@
     ./snacks.nix
     ./toggleterm.nix
     ./tscomments.nix
+    ./ts-autotag.nix
     # ./yazi.nix
     ./conform.nix
     ./neorg.nix

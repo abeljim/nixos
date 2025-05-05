@@ -26,6 +26,8 @@
     pkgs.lua-language-server
     # Typescript Lsp
     pkgs.typescript-language-server
+    # Typst
+    pkgs.tinymist
   ];
 
   imports = [

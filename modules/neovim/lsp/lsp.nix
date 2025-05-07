@@ -101,6 +101,12 @@
           enable = true;
           package = null;
         };
+
+        # Typst
+        tinymist = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps.lspBuf = {

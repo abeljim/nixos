@@ -25,5 +25,6 @@
     # ./codecompanion.nix
     ./markdown-preview.nix
     ./typst.nix
+    ./neoscroll.nix
   ];
 }

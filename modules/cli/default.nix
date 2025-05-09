@@ -16,6 +16,8 @@
     pkgs.tokei
     pkgs.rip2
     pkgs.zoxide
+    pkgs.jujutsu
+    pkgs.lazyjj
   ];
 
   home.shellAliases = {

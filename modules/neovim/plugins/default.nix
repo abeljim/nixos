@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./nui.nix
     ./mini.nix
     ./lazygit.nix
     ./neotree.nix

@@ -9,6 +9,7 @@
 
   # Common LSP are enabled here so they can be overridden by virtual environments.
   home.packages = [
+    pkgs.tree-sitter
     # For Nix LSP
     pkgs.nil
     pkgs.nixd

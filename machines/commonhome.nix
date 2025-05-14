@@ -89,7 +89,7 @@
     pkgs.espflash
 
     # Other Tools
-    pkgs.ventoy
+    # pkgs.ventoy
 
     # Office
     pkgs.libreoffice

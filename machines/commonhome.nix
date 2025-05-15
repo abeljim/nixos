@@ -4,9 +4,7 @@
   inputs,
   secrets,
   ...
-}: let
-  pkgs-master = inputs.nixpkgs-master.legacyPackages.x86_64-linux;
-in {
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abeljim";
@@ -83,7 +81,6 @@ in {
     pkgs.zig
     pkgs.nodejs_22
     pkgs.pnpm_10
-    pkgs-master.zed-editor
     pkgs.esp-generate
     pkgs.espflash
 

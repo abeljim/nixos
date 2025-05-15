@@ -6,6 +6,7 @@
     nixpkgs.follows = "nixos-cosmic/nixpkgs";
 
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 

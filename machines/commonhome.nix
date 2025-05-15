@@ -34,6 +34,7 @@ in {
     ../modules/ghostty
     ../modules/alacritty
     ../modules/btop
+    ../modules/zed
   ];
 
   # The home.packages option allows you to install Nix packages into your

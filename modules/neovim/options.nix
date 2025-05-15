@@ -38,7 +38,7 @@ in {
       #Lua
       ''
         -- Fix todo color set to lotus yellow 4
-        vim.api.nvim_set_hl(0, "Todo", { fg = "#f9d791" })
+        -- vim.api.nvim_set_hl(0, "Todo", { fg = "#f9d791" })
 
         -- Turn off mouse support
         vim.o.mouse = ""

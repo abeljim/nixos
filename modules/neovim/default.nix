@@ -2,6 +2,10 @@
   programs.nixvim = {
     enable = true;
     colorschemes.kanagawa.enable = true;
+    colorschemes.kanagawa.settings = {
+      transparent = true;
+    };
+
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;

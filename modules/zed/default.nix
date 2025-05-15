@@ -311,8 +311,8 @@ in {
     buffer_font_size = 18;
     theme = {
       mode = "system";
-      light = "Kanso Pearl (Blurred)";
-      dark = "Kanso Ink (Blurred)";
+      light = "Kanagawa Lotus";
+      dark = "Kanagawa Wave";
     };
     load_direnv = "shell_hook";
     ui_font_family = "JetBrainsMono Nerd Font";

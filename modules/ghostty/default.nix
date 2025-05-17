@@ -5,9 +5,10 @@
     settings = {
       window-padding-x = 20;
       window-padding-y = 10;
-      theme = "dark:kanagawa-wave, light:kanagawa-lotus";
+      theme = "dark:kanagawa-wave, light:kanagawa-white-lotus";
       font-family = "JetBrainsMonoNL Nerd Font";
-      background-opacity = 0.9;
+      font-size = 18;
+      background-opacity = 0.95;
       clipboard-paste-protection = false;
     };
   };
@@ -37,7 +38,7 @@
       selection-background = 2d4f67
       selection-foreground = c8c093
     '';
-    ".config/ghostty/themes/kanagawa-lotus".text = ''
+    ".config/ghostty/themes/kanagawa-white-lotus".text = ''
       palette = 0=#1f1f28
       palette = 1=#c84053
       palette = 2=#6f894e
@@ -55,7 +56,7 @@
       palette = 14=#5e857a
       palette = 15=#43436c
 
-      background = f2ecbc
+      background = f9f6e0
       foreground = 545464
       cursor-color = 43436c
       selection-background = c9cbd1

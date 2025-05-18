@@ -7,7 +7,7 @@
       window-padding-y = 10;
       theme = "dark:kanagawa-wave, light:kanagawa-white-lotus";
       font-family = "JetBrainsMonoNL Nerd Font";
-      font-size = 18;
+      font-size = 16;
       background-opacity = 0.95;
       clipboard-paste-protection = false;
     };

@@ -322,7 +322,7 @@ in {
         delay_ms = 1000;
       };
     };
-    preferred_line_length = 100;
+    preferred_line_length = 120;
     soft_wrap = "preferred_line_length";
   };
 

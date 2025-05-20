@@ -61,6 +61,9 @@ in {
         -- vim.api.nvim_set_keymap('v', '<Down>', '<NOP>', { noremap = true })
         -- vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', { noremap = true })
         -- vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', { noremap = true })
+
+        -- Make ESC exit highlight
+        vim.keymap.set('n', '<Esc>', '<cmd>noh<CR><Esc>', { silent = true })
       '';
 
     clipboard = {

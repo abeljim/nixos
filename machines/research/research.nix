@@ -58,6 +58,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
+  # Nvidia Container
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.daemon.settings.features.cdi = true;
+
   networking.hostName = "quiet"; # Define your hostname.
 
   home-manager = {

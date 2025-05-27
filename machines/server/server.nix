@@ -82,7 +82,8 @@
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
     /fatboi/content/media  192.168.50.94(ro,nohide,insecure,no_subtree_check) 192.168.50.185(rw,sync,nohide,insecure,no_subtree_check,no_root_squash)
-    /fatboi  192.168.50.185(rw,sync,nohide,insecure,no_subtree_check,no_root_squash)
+    /fatboi  192.168.50.0/24(rw,sync,nohide,insecure,no_subtree_check,no_root_squash)
+    /fatboi/personal  192.168.50.0/24(rw,sync,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
   home-manager = {
@@ -108,6 +109,12 @@
     allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
   };
   networking.firewall.enable = false;
+
+  # for virtualisation
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["abeljim"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

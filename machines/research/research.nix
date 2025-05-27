@@ -13,11 +13,7 @@
     ./hardware-configuration.nix
     ../commonconfig.nix
     ../commonconfigpc.nix
-    (import ../../modules/tailscale {inherit pkgs secrets;})
-  ];
-
-  services.tailscale.extraSetFlags = [
-    "--advertise-exit-node"
+    (import ../../modules/tailscale/server.nix {inherit pkgs secrets;})
   ];
 
   # Enable OpenGL

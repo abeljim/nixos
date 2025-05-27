@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   # config,
-  # pkgs,
+  pkgs,
   inputs,
   secrets,
   ...
@@ -13,11 +13,10 @@
     ./hardware-configuration.nix
     ../commonconfig.nix
     ../commonconfigpc.nix
+    (import ../../modules/tailscale/client.nix {inherit pkgs secrets;})
     # ./wireguard.nix
     # inputs.home-manager.nixosModules.default
   ];
-
-  services.tailscale.useRoutingFeatures = "client";
 
   networking.hostName = "spectre"; # Define your hostname.
 

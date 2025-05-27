@@ -3,6 +3,10 @@
   secrets,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    tailscale
+  ];
+
   # This module will auto login to tailscale
 
   # create a oneshot job to authenticate to Tailscale
@@ -32,4 +36,8 @@
       ${tailscale}/bin/tailscale up -authkey ${secrets.tailscale.authkey}
     '';
   };
+
+  services.tailscale.enable = true;
+  services.tailscale.port = 12345;
+  networking.firewall.allowedUDPPorts = [12345];
 }

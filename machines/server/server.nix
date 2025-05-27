@@ -12,11 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../commonconfig.nix
-    (import ../../modules/tailscale {inherit pkgs secrets;})
-  ];
-
-  services.tailscale.extraSetFlags = [
-    "--advertise-exit-node"
+    (import ../../modules/tailscale/server.nix {inherit pkgs secrets;})
   ];
 
   networking.hostName = "cowcloud"; # Define your hostname.

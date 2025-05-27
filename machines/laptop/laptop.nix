@@ -17,6 +17,8 @@
     # inputs.home-manager.nixosModules.default
   ];
 
+  services.tailscale.useRoutingFeatures = "client";
+
   networking.hostName = "spectre"; # Define your hostname.
 
   home-manager = {

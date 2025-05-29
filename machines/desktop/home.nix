@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../commonhome.nix
+    ../../modules/hyprland
   ];
 
   # This value determines the Home Manager release that your configuration is

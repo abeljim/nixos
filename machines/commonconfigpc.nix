@@ -18,8 +18,6 @@
   services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
 
-  programs.hyprland.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -52,6 +50,7 @@
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
     vial
+    kitty
   ];
 
   services.flatpak.enable = true;

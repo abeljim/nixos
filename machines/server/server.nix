@@ -92,7 +92,7 @@
 
   environment.systemPackages = with pkgs; [
     # Enable ZFS
-    linuxKernel.packages.linux_6_6.zfs
+    linuxKernel.packages.linux_6_12.zfs_2_3
     # Enable ZFS userspace tools
     zfs
     # podman-compose

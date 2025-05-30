@@ -20,6 +20,23 @@
           end
       end
 
+      # Use instead of source in fish
+      function envsource
+        for line in (cat $argv)
+          # Ignore empty lines and lines that start with a comment
+          if echo $line | grep -qv '^\s*#' && test -n (string trim $line)
+            set item (string split -m 1 '=' (string trim $line))
+            if count $item = 2
+              set -gx $item[1] $item[2]
+              echo "Exported key $item[1]"
+            else
+              echo "Skipping invalid line: $line"
+            end
+          end
+        end
+      end
+
+
       # Copy command that uses rsync
       function cp2
         if test (count $argv) -ne 2

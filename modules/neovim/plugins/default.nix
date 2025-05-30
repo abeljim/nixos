@@ -6,7 +6,7 @@
     ./neotree.nix
     ./whichkey.nix
     ./telescope.nix
-    ./bufferline.nix
+    # ./bufferline.nix
     ./lualine.nix
     ./noice.nix
     ./cmp.nix

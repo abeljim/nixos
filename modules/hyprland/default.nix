@@ -91,6 +91,7 @@
 
       theme.bar.transparent = true;
 
+      bar.launcher.autoDetectIcon = true;
       # theme.font = {
       #   name = "CaskaydiaCove NF";
       #   size = "16px";

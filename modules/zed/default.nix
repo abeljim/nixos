@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  pkgs-master = inputs.nixpkgs-master.legacyPackages.x86_64-linux;
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
 in {
   # home.packages = [
   #   pkgs.zed-editor
@@ -11,7 +11,7 @@ in {
 
   programs.zed-editor.enable = true;
 
-  programs.zed-editor.package = pkgs-master.zed-editor;
+  programs.zed-editor.package = pkgs-unstable.zed-editor;
 
   programs.zed-editor.extensions = ["gleam" "nix" "toml" "yaml" "kanso"];
 

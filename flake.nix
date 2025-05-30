@@ -3,12 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    # nixpkgs.follows = "nixos-cosmic/nixpkgs";
 
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
-
-    # nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -30,7 +27,6 @@
   outputs = {
     self,
     nixpkgs,
-    # nixos-cosmic,
     ...
   } @ inputs: let
     secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
@@ -49,7 +45,6 @@
               ];
             };
           }
-          # nixos-cosmic.nixosModules.default
           ./machines/laptop/laptop.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -70,7 +65,6 @@
               ];
             };
           }
-          # nixos-cosmic.nixosModules.default
           ./machines/desktop/desktop.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -89,7 +83,6 @@
               ];
             };
           }
-          # nixos-cosmic.nixosModules.default
           ./machines/work/work.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -116,7 +109,6 @@
               ];
             };
           }
-          # nixos-cosmic.nixosModules.default
           ./machines/research/research.nix
           inputs.home-manager.nixosModules.default
         ];

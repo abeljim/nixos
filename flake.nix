@@ -2,32 +2,31 @@
   description = "Nixos config flake";
 
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs.follows = "nixos-cosmic/nixpkgs-stable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
+
+    probe-rs-rules.url = "github:jneem/probe-rs-rules";
   };
 
   outputs = {
     self,
     nixpkgs,
-    nixos-cosmic,
     ...
   } @ inputs: let
     secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
@@ -46,7 +45,6 @@
               ];
             };
           }
-          nixos-cosmic.nixosModules.default
           ./machines/laptop/laptop.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -67,7 +65,6 @@
               ];
             };
           }
-          nixos-cosmic.nixosModules.default
           ./machines/desktop/desktop.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -86,7 +83,6 @@
               ];
             };
           }
-          nixos-cosmic.nixosModules.default
           ./machines/work/work.nix
           inputs.home-manager.nixosModules.default
         ];
@@ -113,7 +109,6 @@
               ];
             };
           }
-          nixos-cosmic.nixosModules.default
           ./machines/research/research.nix
           inputs.home-manager.nixosModules.default
         ];

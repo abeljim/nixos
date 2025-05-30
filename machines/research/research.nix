@@ -13,15 +13,8 @@
     ./hardware-configuration.nix
     ../commonconfig.nix
     ../commonconfigpc.nix
-    (import ../../modules/tailscale {inherit pkgs secrets;})
+    (import ../../modules/tailscale/server.nix {inherit pkgs secrets;})
   ];
-
-  services.tailscale.extraSetFlags = [
-    "--advertise-exit-node"
-  ];
-
-  services.desktopManager.cosmic.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
 
   # Enable OpenGL
   hardware.graphics = {
@@ -61,6 +54,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
+  # Nvidia Container
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.daemon.settings.features.cdi = true;
+
   networking.hostName = "quiet"; # Define your hostname.
 
   home-manager = {
@@ -75,6 +72,8 @@
   users.groups.libvirtd.members = ["abeljim"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+
+  networking.firewall.enable = false;
 
   # services.ollama = {
   #   enable = true;

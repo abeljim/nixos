@@ -5,7 +5,7 @@
       claude = {
         endpoint = "https://api.anthropic.com";
         max_tokens = 4096;
-        model = "claude-3-7-sonnet-20250219";
+        model = "claude-3-5-sonnet-20240620";
         temperature = 0;
       };
       diff = {

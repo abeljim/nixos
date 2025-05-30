@@ -5,18 +5,27 @@
   inputs,
   ...
 }: {
+  imports = [
+    inputs.probe-rs-rules.nixosModules.x86_64-linux.default
+  ];
+  hardware.probe-rs.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable the Gnome Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
+
+  programs.hyprland.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
   # sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -34,18 +43,26 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.zed-mono
+  ];
+
   environment.systemPackages = with pkgs; [
     # Embedded
     (segger-jlink.override {acceptLicense = true;})
+    vial
+    hyprpaper
   ];
 
   services.flatpak.enable = true;
 
   services.udev.packages = [
     (pkgs.segger-jlink.override {acceptLicense = true;})
+    pkgs.vial
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-    "segger-jlink-qt4-796s"
+    "segger-jlink-qt4-810"
   ];
 }

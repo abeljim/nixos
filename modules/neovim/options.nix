@@ -38,29 +38,32 @@ in {
       #Lua
       ''
         -- Fix todo color set to lotus yellow 4
-        vim.api.nvim_set_hl(0, "Todo", { fg = "#f9d791" })
+        -- vim.api.nvim_set_hl(0, "Todo", { fg = "#f9d791" })
 
         -- Turn off mouse support
         vim.o.mouse = ""
 
-        -- Turn off arrow keys
-        -- Disable arrow keys in normal mode
-        vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true })
+        -- -- Turn off arrow keys
+        -- -- Disable arrow keys in normal mode
+        -- vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true })
+        --
+        -- -- Disable arrow keys in insert mode
+        -- vim.api.nvim_set_keymap('i', '<Up>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('i', '<Down>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('i', '<Left>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('i', '<Right>', '<NOP>', { noremap = true })
+        --
+        -- -- Disable arrow keys in visual mode
+        -- vim.api.nvim_set_keymap('v', '<Up>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('v', '<Down>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', { noremap = true })
+        -- vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', { noremap = true })
 
-        -- Disable arrow keys in insert mode
-        vim.api.nvim_set_keymap('i', '<Up>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('i', '<Down>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('i', '<Left>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('i', '<Right>', '<NOP>', { noremap = true })
-
-        -- Disable arrow keys in visual mode
-        vim.api.nvim_set_keymap('v', '<Up>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('v', '<Down>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', { noremap = true })
-        vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', { noremap = true })
+        -- Make ESC exit highlight
+        vim.keymap.set('n', '<Esc>', '<cmd>noh<CR><Esc>', { silent = true })
       '';
 
     clipboard = {

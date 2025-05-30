@@ -1,6 +1,6 @@
 {
   programs.nixvim.plugins = {
-    lsp-signature.enable = true;
+    # lsp-signature.enable = true;
 
     lsp = {
       enable = true;
@@ -86,6 +86,24 @@
 
         # Go Templ
         templ = {
+          enable = true;
+          package = null;
+        };
+
+        # Elixir
+        elixirls = {
+          enable = true;
+          package = null;
+        };
+
+        # Ruby
+        solargraph = {
+          enable = true;
+          package = null;
+        };
+
+        # Typst
+        tinymist = {
           enable = true;
           package = null;
         };

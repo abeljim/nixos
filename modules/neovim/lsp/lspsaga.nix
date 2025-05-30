@@ -72,15 +72,7 @@
     {
       mode = "n";
       key = "K";
-      # action = "<cmd>Lspsaga hover_doc<CR>";
-      action.__raw = ''
-        function()
-          local winid = require("ufo").peekFoldedLinesUnderCursor()
-          if not winid then
-            vim.cmd("Lspsaga hover_doc")
-          end
-        end
-      '';
+      action = "<cmd>Lspsaga hover_doc<CR>";
       options = {
         desc = "Hover";
         silent = true;
@@ -118,7 +110,7 @@
       key = "<leader>cd";
       action = "<cmd>Lspsaga show_buf_diagnostics<CR>";
       options = {
-        desc = "Line Diagnostics";
+        desc = "Buffer Diagnostics";
         silent = true;
       };
     }

@@ -80,7 +80,7 @@
   };
 
   programs.nixvim.plugins.notify = {
-    backgroundColour = "#000000";
+    settings.background_colour = "#000000";
   };
 
   # programs.nixvim.keymaps = [

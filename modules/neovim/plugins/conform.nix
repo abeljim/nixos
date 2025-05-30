@@ -77,6 +77,7 @@
           cpp = ["clang-format"];
           cs = ["csharpier"];
           css = ["biome"];
+          elixir = ["mix"];
           fish = ["fish_indent"];
           fsharp = ["fantomas"];
           gdscript = ["gdformat"];
@@ -107,6 +108,7 @@
             "isort"
             "ruff_format"
           ];
+          ruby = ["rufo"];
           rust = ["rustfmt"];
           sh = [
             "shellcheck"

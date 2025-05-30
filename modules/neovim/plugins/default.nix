@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./nui.nix
     ./mini.nix
     ./lazygit.nix
     ./neotree.nix
@@ -14,6 +15,7 @@
     ./snacks.nix
     ./toggleterm.nix
     ./tscomments.nix
+    ./ts-autotag.nix
     # ./yazi.nix
     ./conform.nix
     ./neorg.nix
@@ -21,6 +23,9 @@
     ./persistence.nix
     ./sleuth.nix
     ./avante.nix
+    # ./codecompanion.nix
     ./markdown-preview.nix
+    ./typst.nix
+    ./neoscroll.nix
   ];
 }

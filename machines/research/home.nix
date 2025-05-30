@@ -41,6 +41,8 @@
     pkgs.virt-manager
 
     pkgs.android-studio
+
+    pkgs.code-cursor
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

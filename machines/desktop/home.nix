@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../commonhome.nix
+    ../../modules/hyprland
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -45,8 +46,8 @@
 
     # Game
     pkgs.prismlauncher
-    inputs.nix-citizen.packages.${pkgs.system}.star-citizen
-    inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
+    # inputs.nix-citizen.packages.${pkgs.system}.star-citizen
+    # inputs.nix-citizen.packages.${pkgs.system}.star-citizen-helper
     pkgs.gamescope
     pkgs.mangohud
     pkgs.cemu

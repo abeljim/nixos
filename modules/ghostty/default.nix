@@ -5,7 +5,8 @@
     settings = {
       window-padding-x = 20;
       window-padding-y = 10;
-      theme = "dark:kanagawa-wave, light:kanagawa-white-lotus";
+      # theme = "dark:kanagawa-wave, light:kanagawa-white-lotus";
+      theme = "kanagawa-wave";
       font-family = "JetBrainsMonoNL Nerd Font";
       font-size = 16;
       background-opacity = 0.95;

@@ -26,35 +26,39 @@ in {
     location = "center";
     terminal = "${pkgs.alacritty}/bin/alacritty";
 
+    # Rofi theme for kanagawa wave
     theme = mkForce {
       "*" = {
-        color0 = mkLiteral "#2e3440";
-        color1 = mkLiteral "#3b4252";
-        color2 = mkLiteral "#434c5e";
-        color3 = mkLiteral "#4c566a";
+        color0 = mkLiteral "#16161D";
+        color1 = mkLiteral "#181820";
+        color2 = mkLiteral "#1a1a22";
+        color3 = mkLiteral "#1F1F28";
 
-        color4 = mkLiteral "#d8dee9";
-        color5 = mkLiteral "#e5e9f0";
-        color6 = mkLiteral "#eceff4";
+        color4 = mkLiteral "#C8C093";
+        color5 = mkLiteral "#DCD7BA";
+        color6 = mkLiteral "#727169";
 
-        color7 = mkLiteral "#8fbcbb";
-        color8 = mkLiteral "#88c0d0";
-        color9 = mkLiteral "#81a1c1";
-        color10 = mkLiteral "#5e81ac";
-        color11 = mkLiteral "#bf616a";
+        color7 = mkLiteral "#b8b4d0";
+        color8 = mkLiteral "#7E9CD8";
+        color9 = mkLiteral "#938AA9";
+        color10 = mkLiteral "#7FB4CA";
+        color11 = mkLiteral "#E46876";
 
-        color12 = mkLiteral "#d08770";
-        color13 = mkLiteral "#ebcb8b";
-        color14 = mkLiteral "#a3be8c";
-        color15 = mkLiteral "#b48ead";
+        color12 = mkLiteral "#FFA066";
+        color13 = mkLiteral "#E6C384";
+        color14 = mkLiteral "#98BB6C";
+        color15 = mkLiteral "#957FB8";
 
-        foreground = mkLiteral "@color9";
-        backlight = mkLiteral "#ccffeedd";
+        color16 = mkLiteral "#DCD7BA";
+        color17 = mkLiteral "#2D4F67";
+
+        foreground = mkLiteral "@color4";
+        backlight = mkLiteral "#16161DDD";
         background-color = mkLiteral "transparent";
 
-        highlight = mkLiteral "underline bold #eceff4";
+        highlight = mkLiteral "underline bold #223249";
 
-        transparent = mkLiteral "rgba(46,52,64,0)";
+        transparent = mkLiteral "rgba(31,31,40,0)";
       };
 
       window = {
@@ -87,7 +91,7 @@ in {
       inputbar = {
         color = mkLiteral "@color6";
         padding = mkLiteral "11px";
-        background-color = mkLiteral "#3b4252";
+        background-color = mkLiteral "@color3";
 
         border = mkLiteral "1px";
         border-radius = mkLiteral "6px 6px 0px 0px";
@@ -108,7 +112,7 @@ in {
         border-radius = mkLiteral "0px 0px 6px 6px";
         border-color = mkLiteral "@color10";
         border = mkLiteral "0px 1px 1px 1px";
-        background-color = mkLiteral "rgba(46,52,64,0.9)";
+        background-color = mkLiteral "rgba(31,31,40,0.9)";
         dynamic = false;
       };
 
@@ -118,12 +122,12 @@ in {
         border-radius = mkLiteral "4px";
         background-color = mkLiteral "transparent";
         color = mkLiteral "@foreground";
-        text-color = mkLiteral "rgb(216, 222, 233)";
+        text-color = mkLiteral "@color16";
       };
 
       "element selected.normal" = {
-        background-color = mkLiteral "@color7";
-        text-color = mkLiteral "#2e3440";
+        background-color = mkLiteral "@color17";
+        text-color = mkLiteral "@color16";
       };
 
       "element-text, element-icon" = {
@@ -151,7 +155,7 @@ in {
         border-radius = mkLiteral "6px 6px 6px 6px";
         border-color = mkLiteral "@color10";
         border = mkLiteral "1px 1px 1px 1px";
-        background-color = mkLiteral "rgba(46,52,64,0.9)";
+        background-color = mkLiteral "rgba(31,31,40,0.9)";
         dynamic = true;
         text-color = mkLiteral "@backlight";
       };

@@ -180,7 +180,7 @@
       }
 
       window#waybar {
-        background-color: #181825;
+        background-color: transparent;
         transition-property: background-color;
         transition-duration: 0.5s;
       }

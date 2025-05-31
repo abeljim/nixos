@@ -8,7 +8,10 @@
     inputs.hyprpanel.packages.${pkgs.system}.wrapper
   ];
 
-  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
+  imports = [
+    inputs.hyprpanel.homeManagerModules.hyprpanel
+    ../rofi
+  ];
 
   programs.hyprpanel = {
     # Enable the module.
@@ -98,11 +101,6 @@
       #   size = "16px";
       # };
     };
-  };
-
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi-wayland;
   };
 
   wayland.windowManager.hyprland.enable = true;

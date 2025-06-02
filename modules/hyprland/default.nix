@@ -171,57 +171,57 @@
     };
 
     style = ''
-      * {
-        border: none;
-        border-radius: 0;
-        min-height: 0;
-        font-family: JetBrainsMono Nerd Font;
-        font-size: 13px;
-      }
+            * {
+              border: none;
+              border-radius: 0;
+              min-height: 0;
+              font-family: JetBrainsMono Nerd Font;
+              font-size: 13px;
+            }
 
-      window#waybar {
-        background-color: transparent;
-        transition-property: background-color;
-        transition-duration: 0.5s;
-      }
+            window#waybar {
+              background-color: transparent;
+              transition-property: background-color;
+              transition-duration: 0.5s;
+            }
 
-      window#waybar.hidden {
-        opacity: 0.5;
-      }
+            window#waybar.hidden {
+              opacity: 0.5;
+            }
 
       #workspaces {
-        background-color: transparent;
-      }
+              background-color: transparent;
+            }
 
       #workspaces button {
-        all: initial;
-        /* Remove GTK theme values (waybar #1351) */
-        min-width: 0;
-        /* Fix weird spacing in materia (waybar #450) */
-        box-shadow: inset 0 -3px transparent;
-        /* Use box-shadow instead of border so the text isn't offset */
-        padding: 6px 18px;
-        margin: 6px 3px;
-        border-radius: 4px;
-        background-color: #1e1e2e;
-        color: #cdd6f4;
-      }
+              all: initial;
+              /* Remove GTK theme values (waybar #1351) */
+              min-width: 0;
+              /* Fix weird spacing in materia (waybar #450) */
+              box-shadow: inset 0 -3px transparent;
+              /* Use box-shadow instead of border so the text isn't offset */
+              padding: 6px 18px;
+              margin: 6px 3px;
+              border-radius: 4px;
+              background-color: #1F1F28;
+              color: #DCD7BA;
+            }
 
       #workspaces button.active {
-        color: #1e1e2e;
-        background-color: #cdd6f4;
-      }
+              color: #1F1F28;
+              background-color: #DCD7BA;
+            }
 
       #workspaces button:hover {
-        box-shadow: inherit;
-        text-shadow: inherit;
-        color: #1e1e2e;
-        background-color: #cdd6f4;
-      }
+              box-shadow: inherit;
+              text-shadow: inherit;
+              color: #1F1F28;
+              background-color: #DCD7BA;
+            }
 
       #workspaces button.urgent {
-        background-color: #f38ba8;
-      }
+              background-color: #D27E99;
+            }
 
       #memory,
       #custom-power,
@@ -231,79 +231,78 @@
       #network,
       #clock,
       #tray {
-        border-radius: 4px;
-        margin: 6px 3px;
-        padding: 6px 12px;
-        background-color: #1e1e2e;
-        color: #181825;
-      }
+              border-radius: 4px;
+              margin: 6px 3px;
+              padding: 6px 12px;
+              background-color: #1F1F28;
+              color: #181820;
+            }
 
       #custom-power {
-        margin-right: 6px;
-      }
+              margin-right: 6px;
+            }
 
       #custom-logo {
-        padding-right: 7px;
-        padding-left: 7px;
-        margin-left: 5px;
-        font-size: 15px;
-        border-radius: 8px 0px 0px 8px;
-        color: #1793d1;
-      }
+              padding-right: 7px;
+              padding-left: 7px;
+              margin-left: 5px;
+              font-size: 15px;
+              border-radius: 8px 0px 0px 8px;
+              color: #7E9CD8;
+            }
 
       #memory {
-        background-color: #fab387;
-      }
+              background-color: #FFA066;
+            }
 
       #battery {
-        background-color: #f38ba8;
-      }
+              background-color: #D27E99;
+            }
 
       #battery.warning,
       #battery.critical,
       #battery.urgent {
-        background-color: #ff0000;
-        color: #FFFF00;
-      }
+              background-color: #E82424;
+              color: #DCA561;
+            }
 
       #battery.charging {
-        background-color: #a6e3a1;
-        color: #181825;
-      }
+              background-color: #98BB6C;
+              color: #181820;
+            }
 
       #backlight {
-        background-color: #fab387;
-      }
+              background-color: #FFA066;
+            }
 
       #wireplumber {
-        background-color: #f9e2af;
-      }
+              background-color: #E6C384;
+            }
 
       #network {
-        background-color: #94e2d5;
-        padding-right: 17px;
-      }
+              background-color: #7AA89F;
+              padding-right: 17px;
+            }
 
       #clock {
-        font-family: JetBrainsMono Nerd Font;
-        background-color: #cba6f7;
-      }
+              font-family: JetBrainsMono Nerd Font;
+              background-color: #957FB8;
+            }
 
       #custom-power {
-        background-color: #f2cdcd;
-      }
+              background-color: #D27E99;
+            }
 
+            tooltip {
+              border-radius: 8px;
+              padding: 15px;
+              background-color: #16161D;
+            }
 
-      tooltip {
-        border-radius: 8px;
-        padding: 15px;
-        background-color: #131822;
-      }
-
-      tooltip label {
-        padding: 5px;
-        background-color: #131822;
-      }
+            tooltip label {
+              padding: 5px;
+              background-color: #16161D;
+            }
     '';
   };
 

@@ -4,7 +4,13 @@
   inputs,
   secrets,
   ...
-}: {
+}: let
+  system = pkgs.system;
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "abeljim";
@@ -90,6 +96,8 @@
     # Office
     pkgs.libreoffice
     pkgs.typst
+
+    pkgs-unstable.claude-code
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

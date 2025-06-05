@@ -3,13 +3,13 @@
   pkgs,
   inputs,
   ...
-}:
-# let
-#   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-# in
-{
+}: let
+  #   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  monitors = ["DP-6" "HDMI-A-1"];
+in {
   imports = [
     ../commonhome.nix
+    (import ../../modules/hyprland {inherit pkgs inputs monitors;})
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -39,9 +39,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-
-    # Testing
-    pkgs.zed-editor
 
     # Other
     pkgs.remmina

@@ -4,7 +4,7 @@
   inputs,
   ...
 }: let
-  monitors = ["DP-2" "DP-3"];
+  monitors = ["DP-1" "DP-4"];
 in {
   imports = [
     ../commonhome.nix

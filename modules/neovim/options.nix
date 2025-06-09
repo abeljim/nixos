@@ -64,6 +64,56 @@ in {
 
         -- Make ESC exit highlight
         vim.keymap.set('n', '<Esc>', '<cmd>noh<CR><Esc>', { silent = true })
+
+        local lspconfig = require("lspconfig")
+        local configs = require("lspconfig.configs")
+
+        -- Define custom kotlin-lsp
+        if not configs.kotlin_lsp then
+            configs.kotlin_lsp = {
+                default_config = {
+                    cmd = { "kotlin-lsp", "--stdio"},
+                    filetypes = { "kotlin" },
+                    root_dir = lspconfig.util.root_pattern(
+                        "settings.gradle", -- Gradle (multi-project)
+                        "settings.gradle.kts", -- Gradle (multi-project)
+                        "pom.xml", -- Maven
+                        "build.gradle", -- Gradle
+                        "build.gradle.kts", -- Gradle
+                        "workspace.json" -- Used to integrate your own build system
+                    ),
+                    settings = {},
+                },
+            }
+        end
+
+        -- Actually setup the LSP
+        lspconfig.kotlin_lsp.setup({
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        })
+
+        -- local lspconfig = require("lspconfig")
+        -- local util = require("lspconfig.util")
+        --
+        -- -- Custom configuration for kotlin-lsp
+        -- lspconfig.configs.kotlin_custom = {
+        --   default_config = {
+        --     cmd = { "kotlin-lsp", "--stdio" },
+        --     filetypes = { "kotlin" },
+        --     root_dir = util.root_pattern(
+        --       "settings.gradle",
+        --       "settings.gradle.kts",
+        --       "pom.xml",
+        --       "build.gradle",
+        --       "build.gradle.kts",
+        --       "workspace.json"
+        --     ),
+        --     settings = {},
+        --   },
+        -- }
+        --
+        -- lspconfig.kotlin_custom.setup({})
+
       '';
 
     clipboard = {

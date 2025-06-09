@@ -107,6 +107,11 @@
           enable = true;
           package = null;
         };
+
+        # kotlin_language_server = {
+        #   enable = true;
+        #   package = null;
+        # };
       };
 
       keymaps.lspBuf = {

@@ -28,6 +28,7 @@ in {
 
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    inputs.modali-launcher.homeManagerModules.default
     ../modules/neovim
     ../modules/zsh
     ../modules/gnome
@@ -39,6 +40,7 @@ in {
     ../modules/alacritty
     ../modules/btop
     ../modules/zed
+    ../modules/modali
   ];
 
   # The home.packages option allows you to install Nix packages into your

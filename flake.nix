@@ -22,6 +22,11 @@
     nix-citizen.url = "github:LovingMelody/nix-citizen";
 
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
+
+    modali-launcher = {
+      url = "github:danieljimenez1337/modali";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

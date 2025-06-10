@@ -1,11 +1,14 @@
 {
   # config,
   pkgs,
-  # inputs,
+  inputs,
   ...
-}: {
+}: let
+  monitors = ["DP-2" "eDP-1"];
+in {
   imports = [
     ../commonhome.nix
+    (import ../../modules/hyprland {inherit pkgs inputs monitors;})
   ];
 
   # This value determines the Home Manager release that your configuration is

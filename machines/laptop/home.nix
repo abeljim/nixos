@@ -42,6 +42,7 @@ in {
     # pkgs.arduino
     pkgs.bambu-studio
     pkgs.prusa-slicer
+    pkgs.orca-slicer
 
     # pkgs.gnome-boxes
     pkgs.virt-manager

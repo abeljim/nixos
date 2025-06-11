@@ -28,8 +28,8 @@
       "9, monitor:${builtins.elemAt monitors 0}"
       "10, monitor:${builtins.elemAt monitors 1}"
 
-      "monitor=${builtins.elemAt monitors 0},preferred,0x0,1"
-      "monitor=${builtins.elemAt monitors 1},preferred,3440x0,1"
+      "monitor=${builtins.elemAt monitors 0},preferred,auto,1"
+      "monitor=${builtins.elemAt monitors 1},preferred,auto-right,1"
     ];
   };
 

@@ -9,6 +9,10 @@
     (import ../waybar {inherit pkgs monitors;})
   ];
 
+  home.packages = [
+    pkgs.udiskie
+  ];
+
   wayland.windowManager.hyprland.enable = true;
 
   wayland.windowManager.hyprland.settings = {

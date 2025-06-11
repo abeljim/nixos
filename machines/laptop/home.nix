@@ -5,10 +5,11 @@
   ...
 }: let
   monitors = ["eDP-1" "DP-4"];
+  monitor_configs = ["eDP-1,1920x1080@60,auto,1" "DP-4,preferred,auto-right,1"];
 in {
   imports = [
     ../commonhome.nix
-    (import ../../modules/hyprland {inherit pkgs inputs monitors;})
+    (import ../../modules/hyprland {inherit pkgs inputs monitors monitor_configs;})
   ];
 
   # This value determines the Home Manager release that your configuration is

@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   monitors,
+  monitor_configs,
   ...
 }: {
   imports = [
@@ -28,8 +29,8 @@
       "9, monitor:${builtins.elemAt monitors 0}"
       "10, monitor:${builtins.elemAt monitors 1}"
 
-      "monitor=${builtins.elemAt monitors 0},preferred,auto,1"
-      "monitor=${builtins.elemAt monitors 1},preferred,auto-right,1"
+      "monitor=${builtins.elemAt monitor_configs 0}"
+      "monitor=${builtins.elemAt monitor_configs 1}"
     ];
   };
 

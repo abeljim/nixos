@@ -99,6 +99,10 @@ in {
     pkgs.libreoffice
     pkgs.typst
 
+    # IDE
+    pkgs.jetbrains.idea-community-bin
+
+    # AI
     pkgs-unstable.claude-code
   ];
 

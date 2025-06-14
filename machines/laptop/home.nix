@@ -73,9 +73,6 @@ in {
     nupgrade = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.05"
-  ];
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
   # Manager then you have to manually source 'hm-session-vars.sh' located at

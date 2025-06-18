@@ -27,7 +27,7 @@
       "7, monitor:${builtins.elemAt monitors 0}"
       "8, monitor:${builtins.elemAt monitors 0}"
       "9, monitor:${builtins.elemAt monitors 0}"
-      "10, monitor:${builtins.elemAt monitors 1}"
+      # "10, monitor:${builtins.elemAt monitors 1}"
 
       "monitor=${builtins.elemAt monitor_configs 0}"
       "monitor=${builtins.elemAt monitor_configs 1}"
@@ -44,9 +44,13 @@
 
     preload = ["/home/abeljim/nixos/machines/wallpaper.png"];
 
+    # wallpaper = [
+    #   "${builtins.elemAt monitors 0},/home/abeljim/nixos/machines/wallpaper.png"
+    #   "${builtins.elemAt monitors 1},/home/abeljim/nixos/machines/wallpaper.png"
+    # ];
+
     wallpaper = [
-      "${builtins.elemAt monitors 0},/home/abeljim/nixos/machines/wallpaper.png"
-      "${builtins.elemAt monitors 1},/home/abeljim/nixos/machines/wallpaper.png"
+      ",/home/abeljim/nixos/machines/wallpaper.png"
     ];
   };
 }

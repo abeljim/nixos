@@ -5,12 +5,14 @@
 }: {
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
+
     settings = {
       mainBar = {
-        output = [
-          "${builtins.elemAt monitors 0}"
-          "${builtins.elemAt monitors 1}"
-        ];
+        # output = [
+        #   "${builtins.elemAt monitors 0}"
+        #   "${builtins.elemAt monitors 1}"
+        # ];
 
         layer = "top";
         position = "top";

@@ -31,6 +31,8 @@
 
       "monitor=${builtins.elemAt monitor_configs 0}"
       "monitor=${builtins.elemAt monitor_configs 1}"
+      # For random monitors
+      "monitor = , preferred, auto, 1"
     ];
   };
 

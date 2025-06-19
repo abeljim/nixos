@@ -4,8 +4,8 @@
   inputs,
   ...
 }: let
-  monitors = ["eDP-1" "DP-5"];
-  monitor_configs = ["eDP-1,1920x1080@60,auto,1" "DP-4,preferred,auto-right,1"];
+  monitors = ["eDP-1" "DP-2"];
+  monitor_configs = ["eDP-1,1920x1080@60,auto,1" "DP-2,preferred,auto-right,1"];
 in {
   imports = [
     ../commonhome.nix

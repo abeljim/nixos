@@ -65,4 +65,6 @@
   nixpkgs.config.permittedInsecurePackages = [
     "segger-jlink-qt4-810"
   ];
+
+  security.pam.services.hyprlock = {};
 }

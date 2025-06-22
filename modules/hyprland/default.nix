@@ -31,11 +31,13 @@ in {
       "8, monitor:${builtins.elemAt monitors 0}"
       "9, monitor:${builtins.elemAt monitors 0}"
       # "10, monitor:${builtins.elemAt monitors 1}"
+    ];
 
-      "monitor=${builtins.elemAt monitor_configs 0}"
-      "monitor=${builtins.elemAt monitor_configs 1}"
+    monitor = [
+      "${builtins.elemAt monitor_configs 0}"
+      "${builtins.elemAt monitor_configs 1}"
       # For random monitors
-      "monitor = , preferred, auto, 1"
+      " , preferred, auto, 1"
     ];
   };
 

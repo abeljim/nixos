@@ -68,6 +68,7 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/hypr/switch.sh".source = ./switch.sh;
   };
 
   programs.git = {

@@ -20,7 +20,7 @@
         height = 34;
 
         modules-left = [
-          "custom/logo"
+          # "custom/logo"
           "hyprland/workspaces"
         ];
 

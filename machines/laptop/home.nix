@@ -5,8 +5,8 @@
   lib,
   ...
 }: let
-  monitors = ["eDP-1" "DP-2"];
-  monitor_configs = ["eDP-1,1920x1080@60,auto,1" "DP-2,preferred,auto-right,1"];
+  monitors = ["eDP-1" "DP-4"];
+  monitor_configs = ["eDP-1,1920x1080@60,auto,1" "DP-4,preferred,auto-right,1"];
 in {
   imports = [
     ../commonhome.nix
@@ -63,6 +63,7 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/hypr/switch.sh".source = ./switch.sh;
   };
 
   programs.git = {

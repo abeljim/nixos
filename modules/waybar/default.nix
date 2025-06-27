@@ -205,15 +205,15 @@
             }
 
       #workspaces button.active {
-              color: #1F1F28;
-              background-color: #DCD7BA;
+              color: #181820;
+              background-color: #D27E99;
             }
 
       #workspaces button:hover {
               box-shadow: inherit;
               text-shadow: inherit;
-              color: #1F1F28;
-              background-color: #DCD7BA;
+              color: #181820;
+              background-color: #98BB6C;
             }
 
       #workspaces button.urgent {

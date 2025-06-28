@@ -37,7 +37,7 @@ in {
       "${builtins.elemAt monitor_configs 0}"
       "${builtins.elemAt monitor_configs 1}"
       # For random monitors
-      " , preferred, auto, 1"
+      " , preferred, auto-right, 1"
     ];
   };
 

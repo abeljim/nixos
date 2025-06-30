@@ -10,7 +10,8 @@
 in {
   imports = [
     ../rofi
-    (import ../waybar {inherit pkgs monitors;})
+    # (import ../waybar {inherit pkgs monitors;})
+    ../caelestia
   ];
 
   home.packages = [

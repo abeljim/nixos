@@ -27,11 +27,14 @@
       url = "github:danieljimenez1337/modali";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixgl.url = "github:nix-community/nixGL";
   };
 
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: let
     secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
@@ -116,6 +119,16 @@
           }
           ./machines/research/research.nix
           inputs.home-manager.nixosModules.default
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      "abeljim" = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {inherit inputs secrets;};
+        pkgs = import nixpkgs {system = "x86_64-linux";};
+        modules = [
+          ./machines/ubuntu/home.nix
         ];
       };
     };

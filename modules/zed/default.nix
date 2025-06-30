@@ -1,5 +1,6 @@
 {
   # pkgs,
+  config,
   inputs,
   ...
 }: let
@@ -11,7 +12,7 @@ in {
 
   programs.zed-editor.enable = true;
 
-  programs.zed-editor.package = pkgs-unstable.zed-editor;
+  programs.zed-editor.package = config.lib.nixGL.wrap pkgs-unstable.zed-editor;
 
   programs.zed-editor.extensions = ["gleam" "nix" "toml" "yaml" "kanso"];
 

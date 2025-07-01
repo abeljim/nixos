@@ -12,6 +12,7 @@ nupgrade - applies the changes to the system, you can add programs without runni
 
 # Setup for Non-Nixos
 1. Setup nix and home-manager
+2. Install non-nix dependencies `sudo apt install gnome-shell-extension-prefs fish`
 2. TODO
 1. `nix-shell -p git-crypt just git`
 2. Unencrypt secrets file

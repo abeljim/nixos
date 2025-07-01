@@ -1,3 +1,13 @@
 
+default:
+  @just --list
+
+# This will do it all at once. Default commands.
 generate:
   dconf dump / | dconf2nix > rawdconf.nix
+
+dump:
+  dconf dump / > dconf.settings
+
+convert:
+  dconf2nix -i dconf.settings -o rawdconf.nix

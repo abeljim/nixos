@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../commonhome.nix
+    ../../modules/gnome
   ];
 
   nixGL.packages = inputs.nixgl.packages;

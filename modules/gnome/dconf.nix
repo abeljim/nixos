@@ -47,8 +47,8 @@ with lib.hm.gvariant; {
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      disabled-extensions = ["light-style@gnome-shell-extensions.gcampax.github.com" "rounded-window-corners@fxgn" "just-perfection-desktop@just-perfection" "status-icons@gnome-shell-extensions.gcampax.github.com" "blur-my-shell@aunetx"];
-      enabled-extensions = ["mediacontrols@cliffniff.github.com" "system-monitor@gnome-shell-extensions.gcampax.github.com" "openbar@neuromorph" "user-theme@gnome-shell-extensions.gcampax.github.com" "pop-shell@system76.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com"];
+      disabled-extensions = ["light-style@gnome-shell-extensions.gcampax.github.com" "rounded-window-corners@fxgn" "just-perfection-desktop@just-perfection" "status-icons@gnome-shell-extensions.gcampax.github.com" "blur-my-shell@aunetx" "ubuntu-dock@ubuntu.com" "ding@rastersoft.com" "ubuntu-appindicators@ubuntu.com" "pop-shell@system76.com" "mediacontrols@cliffniff.github.com"];
+      enabled-extensions = ["system-monitor@gnome-shell-extensions.gcampax.github.com" "openbar@neuromorph" "user-theme@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "tiling-assistant@ubuntu.com"];
       favorite-apps = ["org.gnome.Geary.desktop" "org.gnome.Calendar.desktop" "org.gnome.Music.desktop" "org.gnome.Nautilus.desktop" "zen.desktop"];
       last-selected-power-profile = "performance";
       welcome-dialog-last-shown-version = "47.2";

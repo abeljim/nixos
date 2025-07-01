@@ -31,7 +31,6 @@ in {
     inputs.modali-launcher.homeManagerModules.default
     ../modules/neovim
     ../modules/zsh
-    ../modules/gnome
     ../modules/fish
     ../modules/vscode
     ../modules/cli

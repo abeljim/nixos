@@ -49,7 +49,7 @@ in {
     splash = false;
     splash_offset = 2.0;
 
-    preload = ["/home/abeljim/nixos/machines/wallpaper.jpg"];
+    preload = ["/home/abeljim/nixos/machines/wallpaper.png"];
 
     # wallpaper = [
     #   "${builtins.elemAt monitors 0},/home/abeljim/nixos/machines/wallpaper.png"
@@ -57,7 +57,7 @@ in {
     # ];
 
     wallpaper = [
-      ",/home/abeljim/nixos/machines/wallpaper.jpg"
+      ",/home/abeljim/nixos/machines/wallpaper.png"
     ];
   };
 

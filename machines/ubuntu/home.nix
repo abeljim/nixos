@@ -43,6 +43,10 @@
     # pkgs.nerd-fonts.zed-mono
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nerd-fonts.zed-mono
+
+    (config.lib.nixGL.wrap pkgs.dsview)
+    #  It is necessary to add the following line to the /etc/udev/rules.d/60-dreamsourcelab.rules file:
+    # SUBSYSTEM=="usb", ATTRS{idVendor}=="2a0e", MODE="0666"
   ];
 
   fonts.fontconfig.enable = true;

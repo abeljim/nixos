@@ -86,6 +86,7 @@ in {
     pkgs.gcc
     pkgs.gnumake
     pkgs.zig
+    pkgs.zls
     pkgs.nodejs_22
     pkgs.pnpm_10
     pkgs.esp-generate

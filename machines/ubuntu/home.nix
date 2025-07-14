@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -73,6 +74,9 @@
   };
 
   home.shellAliases = {
+    nupdate = lib.mkForce "nix flake update";
+    nclean = lib.mkForce "nix-env --delete-generations 7d";
+    ngarbage = lib.mkForce "nix-collect-garbage -d";
     nupgrade = "home-manager switch --flake ~/nixos/#abeljim";
   };
 

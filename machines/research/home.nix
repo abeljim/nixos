@@ -2,13 +2,15 @@
   # config,
   pkgs,
   inputs,
+  lib,
   ...
 }: let
-  monitors = ["DP-1" "DP-4"];
+  monitors = ["DP-1" "HDMI-A-1"];
+  monitor_configs = ["DP-1,preferred,auto,1" "HDMI-A-1,preferred,auto-right,1"];
 in {
   imports = [
     ../commonhome.nix
-    (import ../../modules/hyprland {inherit pkgs inputs monitors;})
+    (import ../../modules/hyprland {inherit pkgs inputs lib monitors monitor_configs;})
   ];
 
   # This value determines the Home Manager release that your configuration is

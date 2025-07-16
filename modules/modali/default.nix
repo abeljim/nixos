@@ -4,7 +4,7 @@
   ...
 }: {
   programs.modali = {
-    enable = true;
+    enable = false;
     keybindings = [
       {
         key = "r";

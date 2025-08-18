@@ -15,6 +15,8 @@ in {
 
   home.packages = [
     pkgs.udiskie
+    pkgs.hyprshot
+    pkgs.mako
   ];
 
   wayland.windowManager.hyprland.enable = true;

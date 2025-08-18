@@ -15,7 +15,7 @@
   # Enable the Gnome Desktop Environment.
   services.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
-  services.desktopManager.cosmic.enable = true;
+  # services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
 
   programs.hyprland.enable = true;

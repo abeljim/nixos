@@ -58,6 +58,7 @@
     pkgs.intel-gpu-tools
 
     pkgs.immich-cli
+    pkgs.gallery-dl
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -67,7 +67,7 @@ in {
     (config.lib.nixGL.wrap inputs.zen-browser.packages.x86_64-linux.default)
 
     # Electrical
-    (config.lib.nixGL.wrap pkgs.kicad)
+    (config.lib.nixGL.wrap pkgs-unstable.kicad)
 
     # Media Software
     (config.lib.nixGL.wrap pkgs.darktable)
@@ -78,7 +78,7 @@ in {
     # Programming
     pkgs.devenv
     pkgs.direnv
-    pkgs.python313
+    # pkgs.python313
     pkgs.erlang
     pkgs.rebar3
     pkgs.gleam

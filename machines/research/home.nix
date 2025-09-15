@@ -6,7 +6,7 @@
   ...
 }: let
   monitors = ["DP-1" "HDMI-A-1"];
-  monitor_configs = ["DP-1,preferred,0x0,1" "HDMI-A-1,preferred,auto-right,1"];
+  monitor_configs = ["DP-1,3440x1440@143.97,0x0,1" "HDMI-A-1,preferred,auto-right,1"];
 in {
   imports = [
     ../commonhome.nix

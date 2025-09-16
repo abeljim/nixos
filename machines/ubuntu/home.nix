@@ -8,6 +8,7 @@
   imports = [
     ../commonhome.nix
     ../../modules/gnome
+    ../../modules/fonts/oxanium
   ];
 
   nixGL.packages = inputs.nixgl.packages;
@@ -44,6 +45,7 @@
     # pkgs.nerd-fonts.zed-mono
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nerd-fonts.zed-mono
+    pkgs.roboto
 
     (config.lib.nixGL.wrap pkgs.dsview)
     (config.lib.nixGL.wrap pkgs.vial)

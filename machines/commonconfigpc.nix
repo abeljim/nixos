@@ -54,6 +54,7 @@
     (segger-jlink.override {acceptLicense = true;})
     vial
     hyprpaper
+    pkgs.distrobox
   ];
 
   services.flatpak.enable = true;

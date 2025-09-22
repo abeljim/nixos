@@ -48,6 +48,8 @@ in {
     pkgs.android-studio
 
     pkgs.code-cursor
+
+    pkgs.amdgpu_top
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

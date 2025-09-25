@@ -104,7 +104,7 @@ in {
 
     # AI
     pkgs-unstable.claude-code
-    pkgs-unstable.gemini-cli
+    pkgs-unstable.gemini-cli-bin
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

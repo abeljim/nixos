@@ -29,6 +29,7 @@ in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     inputs.modali-launcher.homeManagerModules.default
+    inputs.caelestia-shell.homeManagerModules.default
     ../modules/neovim
     ../modules/zsh
     ../modules/fish

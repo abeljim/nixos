@@ -18,8 +18,12 @@ in {
     pkgs.hyprshot
     pkgs.mako
     pkgs.hyprcursor
-    inputs.caelestia-shell.packages.x86_64-linux.with-cli
   ];
+
+  programs.caelestia = {
+    enable = true;
+    cli.enable = true;
+  };
 
   wayland.windowManager.hyprland.enable = true;
 

@@ -29,6 +29,11 @@
     };
 
     nixgl.url = "github:nix-community/nixGL";
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

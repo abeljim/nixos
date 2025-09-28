@@ -10,13 +10,15 @@
 in {
   imports = [
     ../rofi
-    (import ../waybar {inherit pkgs monitors;})
+    # (import ../waybar {inherit pkgs monitors;})
   ];
 
   home.packages = [
     pkgs.udiskie
     pkgs.hyprshot
     pkgs.mako
+    pkgs.hyprcursor
+    inputs.caelestia-shell.packages.x86_64-linux.with-cli
   ];
 
   wayland.windowManager.hyprland.enable = true;

@@ -12,6 +12,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       set -x PATH ~/.cargo/bin/ $PATH
+      set -x PATH ~/.local/bin/ $PATH
 
       function kopen
           set file (find . -type f -name "*.kicad_pro" | head -n 1)

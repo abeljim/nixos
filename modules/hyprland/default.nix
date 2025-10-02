@@ -23,6 +23,25 @@ in {
   programs.caelestia = {
     enable = true;
     cli.enable = true;
+    settings = {
+      general = {
+        idle = {
+          lockBeforeSleep = false;
+          inhibitWhenAudio = true;
+          timeouts = [
+            # {
+            #   timeout = 300;
+            #   idleAction = "dpms off";
+            #   returnAction = "dpms on";
+            # }
+            # {
+            #   timeout = 600;
+            #   idleAction = ["systemctl" "suspend-then-hibernate"];
+            # }
+          ];
+        };
+      };
+    };
   };
 
   wayland.windowManager.hyprland.enable = true;

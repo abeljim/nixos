@@ -106,6 +106,8 @@ in {
     # AI
     pkgs-unstable.claude-code
     pkgs-unstable.gemini-cli-bin
+
+    pkgs.slack
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

@@ -77,7 +77,7 @@ in {
     (config.lib.nixGL.wrap pkgs.vesktop)
 
     # Programming
-    pkgs.devenv
+    pkgs-unstable.devenv
     pkgs.direnv
     # pkgs.python313
     pkgs.erlang

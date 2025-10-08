@@ -47,6 +47,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nerd-fonts.zed-mono
     pkgs.roboto
+    pkgs.inter
   ];
 
   environment.systemPackages = with pkgs; [

@@ -46,6 +46,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nerd-fonts.zed-mono
     pkgs.roboto
+    pkgs.inter
 
     (config.lib.nixGL.wrap pkgs.dsview)
     (config.lib.nixGL.wrap pkgs.vial)

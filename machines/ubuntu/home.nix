@@ -4,7 +4,13 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  system = pkgs.system;
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
+in {
   imports = [
     ../commonhome.nix
     ../../modules/gnome
@@ -58,6 +64,7 @@
     # SUBSYSTEM=="usb", ATTRS{idVendor}=="2a0e", MODE="0666"
 
     pkgs.mermaid-cli
+    pkgs-unstable.cursor-cli
   ];
 
   fonts.fontconfig.enable = true;

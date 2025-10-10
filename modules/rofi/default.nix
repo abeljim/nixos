@@ -9,7 +9,7 @@
 in {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    # package = pkgs.rofi-wayland;
 
     extraConfig = {
       modi = "window,drun,run,ssh";

@@ -111,7 +111,7 @@ in {
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.05"
+    "ventoy-1.1.07"
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

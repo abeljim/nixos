@@ -56,6 +56,7 @@
     vial
     hyprpaper
     pkgs.distrobox
+    pkgs.p7zip
   ];
 
   services.flatpak.enable = true;
@@ -66,7 +67,7 @@
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-    "segger-jlink-qt4-810"
+    "segger-jlink-qt4-824"
   ];
 
   security.pam.services.hyprlock = {};

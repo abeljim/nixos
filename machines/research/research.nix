@@ -50,11 +50,11 @@
     # capSysNice = true;
   };
 
-  services.ollama = {
-    enable = true;
-    acceleration = "rocm";
-  };
-  services.open-webui.enable = true;
+  # services.ollama = {
+  #   enable = true;
+  #   acceleration = "rocm";
+  # };
+  # services.open-webui.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

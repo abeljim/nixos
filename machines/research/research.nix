@@ -13,7 +13,7 @@
     ./hardware-configuration.nix
     ../commonconfig.nix
     ../commonconfigpc.nix
-    (import ../../modules/tailscale/server.nix {inherit pkgs secrets;})
+    # (import ../../modules/tailscale/server.nix {inherit pkgs secrets;})
   ];
 
   networking.hostName = "quiet"; # Define your hostname.

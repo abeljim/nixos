@@ -20,7 +20,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ../../modules/neovim
     ../../modules/zsh
     ../../modules/fish

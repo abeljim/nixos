@@ -27,7 +27,7 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     inputs.modali-launcher.homeManagerModules.default
     inputs.caelestia-shell.homeManagerModules.default
     ../modules/neovim

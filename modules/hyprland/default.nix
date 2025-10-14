@@ -16,7 +16,7 @@ in {
   home.packages = [
     pkgs.udiskie
     pkgs.hyprshot
-    pkgs.mako
+    # pkgs.mako
     pkgs.hyprcursor
   ];
 

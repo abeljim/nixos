@@ -20,6 +20,13 @@ in {
     pkgs.hyprcursor
   ];
 
+  home.pointerCursor = {
+    name = "Bibata-Original-Ice";
+    size = 24;
+    package = pkgs.bibata-cursors;
+    hyprcursor.enable = true;
+  };
+
   programs.caelestia = {
     enable = true;
     cli.enable = true;

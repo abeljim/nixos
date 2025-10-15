@@ -48,6 +48,15 @@ in {
           ];
         };
       };
+
+      bar = {
+        workspaces = {
+          activeLabel = null;
+          activeTrail = false;
+          perMonitorWorkspaces = false;
+          showWindows = false;
+        };
+      };
     };
   };
 
@@ -64,7 +73,7 @@ in {
       "7, monitor:${builtins.elemAt monitors 0}"
       "8, monitor:${builtins.elemAt monitors 0}"
       "9, monitor:${builtins.elemAt monitors 0}"
-      # "10, monitor:${builtins.elemAt monitors 1}"
+      "10, monitor:${builtins.elemAt monitors 1}"
     ];
 
     monitor = [

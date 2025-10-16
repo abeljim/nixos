@@ -50,6 +50,8 @@
     # capSysNice = true;
   };
 
+  services.udisks2.enable = true;
+
   # services.ollama = {
   #   enable = true;
   #   acceleration = "rocm";

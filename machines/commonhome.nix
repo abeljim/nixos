@@ -33,13 +33,13 @@ in {
     ../modules/neovim
     ../modules/zsh
     ../modules/fish
-    ../modules/vscode
+    # ../modules/vscode
     ../modules/cli
-    ../modules/helix
+    # ../modules/helix
     ../modules/ghostty
     ../modules/alacritty
     ../modules/btop
-    ../modules/zed
+    # ../modules/zed
     ../modules/modali
   ];
 
@@ -97,11 +97,11 @@ in {
     pkgs.ventoy
 
     # Office
-    pkgs.libreoffice
+    # pkgs.libreoffice
     pkgs.typst
 
     # IDE
-    (config.lib.nixGL.wrap pkgs.jetbrains.idea-community-bin)
+    # (config.lib.nixGL.wrap pkgs.jetbrains.idea-community-bin)
 
     # AI
     pkgs-unstable.claude-code
